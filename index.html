@@ -245,16 +245,49 @@ textarea{resize:vertical}
 .faq details[open] summary::after{content:'–'}
 .faq details p{margin-top:10px}
 .hist{display:flex;flex-direction:column;gap:clamp(14px,2vw,22px)}
-.site-foot{margin-top:clamp(40px,6vw,70px);padding:24px 0 8px;border-top:var(--line);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;font-size:var(--fs-xs);color:var(--ink2)}
-.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.site-foot{margin-top:clamp(40px,6vw,70px);padding:18px 0 8px;border-top:1px solid var(--bg3);font-size:var(--fs-xs);color:var(--ink2)}
+.foot-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px}
+.foot-pills{display:flex;flex-wrap:wrap;gap:6px}
+.foot-pill{background:none;border:1px solid var(--bg3);border-radius:50px;padding:5px 12px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--ink2);cursor:pointer}
+.foot-pill:hover{border-color:var(--ink3);color:var(--ink)}
+.foot-pill.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.foot-copy{font-size:12px;color:var(--ink3)}
+.foot-panel{margin-top:12px;padding:16px 18px;border:1px solid var(--bg3);border-radius:var(--r);background:var(--paper)}
+.foot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px 28px}
+.foot-sec h3{font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:var(--ink);margin-bottom:8px}
+.foot-panel p{font-size:var(--fs-xs);line-height:1.6;color:var(--ink2);margin-bottom:8px}
+.foot-panel p:last-child{margin-bottom:0}
+.foot-panel a{color:var(--ink);text-underline-offset:2px}
+.mail-shown{font-weight:700;color:var(--ink);font-size:var(--fs-md)}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:10px}
 .tile{border:var(--line);border-radius:var(--r);background:var(--paper);padding:12px 14px;display:flex;flex-direction:column;gap:4px}
 .tile-tag{font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:10px;color:var(--ink2);align-self:flex-start;background:var(--bg2);border-radius:20px;padding:3px 8px 2px}
+.howto-img{display:block;width:100%;max-width:420px;height:auto;margin:6px 0 14px;border:1px solid var(--bg3);border-radius:var(--r)}
+.faq-img{display:block;width:100%;max-width:460px;height:auto;margin:10px 0;border:1px solid var(--bg3);border-radius:var(--r)}
+.link-off{color:var(--ink3);font-weight:700;text-decoration:underline dotted;cursor:not-allowed}
+.soon-tag{font-size:11px;font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--bg2);border-radius:20px;padding:3px 8px 2px;color:var(--ink2)}
+.vmodal-bg{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:200;padding:clamp(12px,4vw,40px)}
+.vmodal{position:relative;width:min(960px,100%);background:#000;border-radius:var(--rlg);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.vframe{position:relative;width:100%;aspect-ratio:16/9}
+.vframe video{position:absolute;inset:0;width:100%;height:100%;border-radius:var(--rlg);background:#000}
+.vfallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;text-align:center;padding:20px}
+.vframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:var(--rlg)}
+.vmodal-x{position:absolute;top:-16px;right:-16px;width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--ink);font-size:18px;font-weight:700;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center}
+.vmodal-x:hover{background:var(--yl)}
+@media (max-width:600px){.vmodal-x{top:-12px;right:-6px}}
+.tile-plus{text-decoration:none;color:var(--ink);background:var(--yl);border-style:dashed}
+.tile-plus:hover{background:var(--yl-dk)}
+.tile-plus .plus{font-family:'Antonio',sans-serif;font-weight:700;font-size:44px;line-height:.9}
+.tile-plus p{color:rgba(0,0,0,.72)}
+.tile-go{margin-top:auto;padding-top:6px;font-weight:700;font-size:var(--fs-xs);text-decoration:underline;text-underline-offset:2px}
+a.btn,a.btn-video{text-decoration:none}
 .tile h3{font-family:'DM Sans',sans-serif;letter-spacing:0;text-transform:none;font-size:var(--fs-sm);margin:4px 0 0}
 .tile p{font-size:var(--fs-xs);line-height:1.45;color:var(--ink2)}
-.tile-links{display:flex;gap:14px;margin-top:auto;padding-top:6px;font-size:var(--fs-xs)}
+.tile-links{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:auto;padding-top:6px;font-size:var(--fs-xs)}
 .tile-links .link-btn{font-size:var(--fs-xs)}
 a.link-btn{color:var(--ink);font-weight:700}
-@media (max-width:760px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 .q-text,.sol-text,.mini-q-text{white-space:pre-line}
 .vorteile{display:flex;flex-direction:column;gap:10px}
 .vt{background:var(--yl);border-radius:var(--rlg);border:var(--line);overflow:hidden}
@@ -332,6 +365,25 @@ button.link-btn.order-link:hover{color:var(--ink)}
 .tool-row{display:flex;align-items:center;gap:8px;margin-bottom:16px;flex-wrap:wrap}
 @media (max-width:700px){.doors{grid-template-columns:1fr}.door{min-height:0}.door-art{height:clamp(150px,24vh,210px)}.door-teach .door-art>svg{width:60%;margin:0 auto}}
 
+/* ══ RESPONSIVE: nichts darf über den Rand ragen ══ */
+html,body{overflow-x:clip}
+h1,h2,h3,.tile h3,.door h2{overflow-wrap:break-word;hyphens:auto}
+.kicker{flex-wrap:wrap}
+.game-panel,.intro-panel,.coach-card,.q-card{min-width:0}
+.score-row{flex-wrap:wrap}
+.score-btn{min-width:0;flex:1 1 64px}
+.my-score{flex-wrap:wrap}
+@media (max-width:700px){.back-link{position:static;display:inline-block;margin:0 0 8px}}
+@media (max-width:480px){
+  .intro-panel{padding:16px 8px;gap:10px}
+  .intro-badge{width:54px;height:54px;font-size:30px}
+  .intro-role{font-size:15px}
+  .intro-tip{font-size:13px}
+  .btn-los{padding:9px 18px;font-size:20px}
+  .divider{width:40px}
+  .game-panel{padding:8px}
+  .score-label{font-size:13px}
+}
 @media (max-width:560px){
   .grid2{grid-template-columns:1fr}
   .flow-label{font-size:12px}
@@ -496,7 +548,7 @@ function infoModalHTML(){
       <p class="modal-tip">Tipp 2: Bevor man zur nächsten Aufgabe geht, lohnt es sich, den Sichtschutz wegzunehmen und die Lösung gemeinsam anzuschauen.</p>
       <p>Klickt man auf «Nächste Aufgabe», kommt B an die Reihe und löst eine Aufgabe. Es gewinnt, wer am Ende mehr Punkte hat.</p>
       <hr style="border:none;border-top:1px solid var(--bg3);margin:14px 0">
-      <p style="font-size:var(--fs-xs);color:var(--ink3);line-height:1.6"><strong style="color:var(--ink2)">Credits</strong><br>Dieses Tandemübungsformat wurde in den 90er-Jahren von Anita Pfau auf Papier entwickelt, 2020 in digitaler Version in die Webapp des Lehrmittels «Tocca a te!» (HEP Verlag) integriert und 2026 als eigenständige HTML-App von Sara Alloatti in Ko-Konstruktion mit Claude Sonnet 4.6 umgesetzt.<br>Illustrationen: Open Peeps von Pablo Stanley (CC0).</p>
+      <p style="font-size:var(--fs-xs);color:var(--ink3);line-height:1.6"><strong style="color:var(--ink2)">Credits</strong><br>Die Tandemübung wurde in den 90er-Jahren von Anita Pfau auf Papier entwickelt und 2020 erstmals digital im Lehrmittel «Tocca a te!» (HEP Verlag) umgesetzt. Tandem.li hat Sara Alloatti 2026 im Vibe-Coding mit Claude (Anthropic) entwickelt – mit der Unterstützung von Leo Waltenspül bei der technischen Umsetzung sowie von Italienisch-Kolleg:innen und ihren Klassen.<br>Lizenz: CC BY-NC-SA 4.0 · Illustrationen: Open Peeps (CC0).</p>
       <button class="modal-close caps" data-a="closeInfo">Verstanden ✓</button>
     </div>
   </div>`;
@@ -525,11 +577,26 @@ function homeHTML(){
     </div>
     ${siteHTML()}
     ${S.showPrompt?promptModalHTML():''}
+    ${S.video?videoModalHTML():''}
     ${infoModalHTML()}
   </div>`;
 }
 
 // ══ WEBSITE-INHALT (nach Saras Mockup, überarbeitet) ══
+// Videos liegen als MP4 im Ordner «videos» auf der Website. Fehlt die Datei, öffnet sich der Link zu MediaSpace.
+const VIDEOS={
+  lp:{titel:'Video für Lehrpersonen',file:'videos/lehrpersonen.mp4',url:'https://uzh.mediaspace.cast.switch.ch/media/AnweisungenTANDEMLI/0_xhsbwgxn'},
+  ln:{titel:'Video für Lernende',file:'videos/lernende.mp4',url:'https://uzh.mediaspace.cast.switch.ch/media/ANWEISUNG_LERNENDE_TANDEMLI/0_gl3t2byi/141205'}
+};
+function videoModalHTML(){
+  const v=VIDEOS[S.video];if(!v)return'';
+  return`<div class="vmodal-bg" data-a="closeVideo"><div class="vmodal" onclick="event.stopPropagation()" role="dialog" aria-label="${v.titel}">
+    <button class="vmodal-x" data-a="closeVideo" aria-label="Schliessen">✕</button>
+    <div class="vframe"><video src="${v.file}" controls autoplay playsinline preload="metadata" title="${v.titel}"
+      onerror="this.closest('.vframe').innerHTML='<div class=&quot;vfallback&quot;><p>Das Video lässt sich hier gerade nicht abspielen.</p><a class=&quot;btn&quot; href=&quot;${v.url}&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Video in neuem Tab öffnen</a></div>'"></video></div>
+  </div></div>`;
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&S.video){S.video=null;re();}});
 const BEISPIELE=[
   {file:'denksport.tandem.json',tag:'Für alle',titel:'Denksport',text:'Knifflige Rätsel und Zahlenfolgen – erklären, wie man darauf kommt.'},
   {file:'behauptungen-pruefen.tandem.json',tag:'MINT',titel:'Behauptungen prüfen',text:'Rabatte, Risiken, Physik: Stimmt das? Mit Begründung.'},
@@ -539,7 +606,6 @@ const BEISPIELE=[
   {file:'stage-italienisch.tandem.json',tag:'Sprachen',titel:'Stage-Vorbereitung',text:'Nützliche Sätze auf Italienisch für zwei Wochen in einer anderen Sprachregion.'}
 ];
 function siteHTML(){
-  const soon="onclick=\"alert('Das Video folgt bald.')\"";
   const vorteile=[
    ['Echte Gespräche statt Bildschirm-Verstecken','Lernende, die sich hinter ihren Bildschirmen verstecken oder nebenbei online shoppen? Nicht mit Tandem.li! Hier regt der Bildschirm mündliche Gespräche an: Die Lernenden coachen sich beim Lösen der Challenges gegenseitig.'],
    ['Wer coacht, lernt doppelt','Beim Erklären, Nachfragen und Korrigieren verarbeiten die Lernenden den Stoff tiefer als beim blossen Lösen.'],
@@ -566,6 +632,10 @@ function siteHTML(){
      <p>Die Excel-Tabelle kannst du auch von einer KI erstellen lassen. <button class="link-btn" data-a="showPrompt">Hier ist ein fertiger Prompt dafür.</button> Prüfe die Musterlösungen aber immer, bevor du das Tandem mit der Klasse teilst.</p>`],
    ['Kann ich meine Tandems später weiterbearbeiten?','Ja. Über «Tandem erstellen» → «Tandem öffnen» öffnest du ein bereits gespeichertes Tandem wieder, kannst es ändern und neu abspeichern. Zusätzlich lassen sich die Aufgaben als Excel-Datei exportieren.'],
    ['Welche Geräte brauche ich im Unterricht?','Pro Tandem ein Gerät mit Browser (Laptop, Tablet) und einen einfachen Sichtschutz – ein aufgestelltes Buch oder Mäppli genügt, damit beide nur ihre Hälfte des Bildschirms sehen.'],
+   ['Wie baue ich einen Sichtschutz?',`<p>Am einfachsten: ein Buch, ein Mäppli oder ein gefaltetes A4-Blatt senkrecht auf den schwarzen Streifen in der Mitte des Bildschirms stellen. Wichtig ist nur, dass A die rechte und B die linke Hälfte nicht sehen kann.</p>
+     <img class="faq-img" src="sichtschutz.svg" alt="Ein aufgestelltes Buch trennt die beiden Bildschirmhälften.">
+     <p><em>Fotos mit weiteren Varianten (z.&nbsp;B. gefaltete Papierwände) folgen.</em></p>
+     <p><span class="link-off" aria-disabled="true">⬇ Vorlage für den 3D-Drucker</span> <span class="soon-tag">folgt bald</span></p>`],
    ['Braucht es eine Internetverbindung?','Nur zum Laden. Einmal geladen, läuft jedes Tandem.li auch ohne Internetverbindung weiter – solange man die Seite nicht neu lädt.'],
    ['Funktioniert Tandem.li nur im Sprachunterricht?','Nein. Überall, wo es Aufgaben mit Musterlösungen gibt, gibt es auch Challenges – von Mathematik über Geschichte bis Chemie.'],
    ['Kann ich bestehende Tandemübungen aus Lehrmitteln digitalisieren?','Technisch ja. Wenn du die Übung weitergeben willst, brauchst du dafür aber die Erlaubnis des Verlags. Für den eigenen Unterricht gelten die üblichen Schranken des Schulgebrauchs.'],
@@ -576,7 +646,7 @@ function siteHTML(){
   const acc=(list,cls)=>list.map(([q,a])=>`<details class="${cls}"><summary>${q}</summary>${a.startsWith('<p>')?a:`<p>${a}</p>`}</details>`).join('');
   return`
   <nav class="site-nav" aria-label="Seiteninhalt">
-    <a href="#vorteile">Vorteile</a><a href="#anleitung">Anleitung</a><a href="#beispiele">Beispiele</a><a href="#faq">FAQ</a><a href="#kontakt">Kontakt</a>
+    <a href="#vorteile">Vorteile</a><a href="#anleitung">Anleitung</a><a href="#beispiele">Beispiele</a><a href="#faq">FAQ</a><a href="#fuss" data-a="footOpen" data-k="kontakt">Kontakt</a>
   </nav>
 
   <section class="sec" id="vorteile">
@@ -594,7 +664,7 @@ function siteHTML(){
           <li><span class="step-n">2</span><span><strong>«Tandem speichern»</strong> – das Tandem landet als Datei auf deinem Gerät.</span></li>
           <li><span class="step-n">3</span><span>Die Datei mit der Klasse teilen: in Teams, per Mail oder auf der Lernplattform.</span></li>
         </ol>
-        <button class="btn" ${soon}>▶ Video für Lehrpersonen</button>
+        <button class="btn" data-a="video" data-v="lp">▶ Video für Lehrpersonen</button>
       </div>
       <div class="card">
         <h3>Für Lernende</h3>
@@ -603,19 +673,26 @@ function siteHTML(){
           <li><span class="step-n">2</span><span>Ein Blatt oder Buch als Sichtschutz auf den schwarzen Streifen in der Mitte stellen.</span></li>
           <li><span class="step-n">3</span><span>Abwechselnd lösen und coachen. Die gelbe Fläche zeigt, wer gerade dran ist.</span></li>
         </ol>
-        <button class="btn" ${soon}>▶ Video für Lernende</button>
+        <img class="howto-img" src="sichtschutz.svg" alt="Zwei Lernende an einem Laptop: Ein aufgestelltes Buch trennt die gelbe Aufgaben-Hälfte von der Lösungs-Hälfte.">
+        <button class="btn" data-a="video" data-v="ln">▶ Video für Lernende</button>
       </div>
     </div>
   </section>
 
   <section class="sec" id="beispiele">
-    <h2>Beispiele</h2>
+    <h2>Beispiele &amp; Tandems von Kolleg:innen</h2>
     <div class="tiles">${BEISPIELE.map(b=>`<div class="tile">
         <span class="tile-tag">${b.tag}</span>
         <h3>${b.titel}</h3>
         <p>${b.text}</p>
         <div class="tile-links"><button class="link-btn" data-a="tryExample" data-file="${b.file}">Ausprobieren</button><a class="link-btn" href="beispiele/${b.file}" download>Herunterladen</a></div>
-      </div>`).join('')}</div>
+      </div>`).join('')}
+      <a class="tile tile-plus" href="https://padlet.com/sara_alloatti/tandem-li-s023z1e4598e2429lmo7" target="_blank" rel="noopener">
+        <span class="plus" aria-hidden="true">+</span>
+        <h3>Tandems teilen und entdecken</h3>
+        <p>Auf unserem Padlet laden Lehrpersonen ihre Tandem-Dateien hoch und finden Tandems von Kolleg:innen. Neue Beiträge werden vor der Veröffentlichung kurz geprüft.</p>
+        <span class="tile-go">Zum Padlet →</span>
+      </a></div>
   </section>
 
   <section class="sec faq" id="faq">
@@ -623,15 +700,21 @@ function siteHTML(){
     ${acc(faq,'')}
   </section>
 
-  <section class="sec" id="kontakt">
-    <h2>Kontakt</h2>
-    <div class="card"><p>Fragen, Rückmeldungen oder Ideen für Tandem.li? <strong>[Kontaktangaben folgen]</strong></p></div>
-  </section>
 
-  <footer class="site-foot">
-    <span>${logoHTML()} · Challenges &amp; Coaching für jeden Unterricht</span>
-    <span>Illustrationen: Open Peeps von Pablo Stanley (CC0)</span>
+  <footer class="site-foot" id="fuss">
+    <div class="foot-row">
+      <button class="foot-pill${S.footOpen?' on':''}" data-a="footToggle" aria-expanded="${!!S.footOpen}">Über Tandem.li · Kontakt · Datenschutz · Lizenz ${S.footOpen?'▴':'▾'}</button>
+      <span class="foot-copy">Sara Alloatti, 2026 · Lizenz CC BY-NC-SA 4.0</span>
+    </div>
+    ${S.footOpen?`<div class="foot-panel foot-grid">${FOOT.map(([k,t])=>`<div class="foot-sec" id="fs-${k}"><h3>${t}</h3>${footPanel(k)}</div>`).join('')}</div>`:''}
   </footer>`;
+}
+const FOOT=[['ueber','Über Tandem.li'],['kontakt','Kontakt'],['datenschutz','Datenschutz'],['lizenz','Lizenz']];
+function footPanel(k){
+  if(k==='ueber')return`<p>Konzipiert und entwickelt von <a href="https://www.ife.uzh.ch/de/llbm/personen/fachdidaktikerinnen/alloattisara.html" target="_blank" rel="noopener">Sara Alloatti</a> im Vibe-Coding mit Claude (Anthropic) – mit der Unterstützung von Leo Waltenspül bei der technischen Umsetzung sowie von Italienisch-Kolleg:innen und ihren Klassen, die Tandem.li im Unterricht erprobt haben, darunter Klassen der <a href="https://www.kuezh.ch" target="_blank" rel="noopener">Kantonsschule Uetikon am See</a>.</p><p>Die Idee der Tandemübung stammt von Anita Pfau; digital umgesetzt wurde sie erstmals 2020 im Lehrmittel «Tocca a te!» (HEP Verlag).</p>`;
+  if(k==='kontakt')return`<p>Fragen, Rückmeldungen oder Ideen für Tandem.li? Wir freuen uns über deine Nachricht.</p><p><button class="btn btn-ink" data-a="mailMe">E-Mail schreiben</button> <span class="mail-shown" id="mailShown"></span></p>`;
+  if(k==='datenschutz')return`<p>Keine Cookies, kein Tracking, kein Konto. Tandems bleiben auf deinem Gerät und werden nie an einen Server übertragen.</p><p>Die Website wird über GitHub Pages (GitHub Inc., USA) bereitgestellt; GitHub speichert aus Sicherheitsgründen technische Zugriffsdaten wie die IP-Adresse. Wer uns schreibt, dessen E-Mail-Adresse verwenden wir nur für die Antwort.</p><p>Die Anleitungsvideos liegen direkt auf dieser Website. Der Austausch von Tandems läuft über Padlet (Wallwisher Inc., USA); diese Seite öffnet sich separat, dort gelten deren Datenschutzbestimmungen.</p>`;
+  return`<p>Tandem.li – Code, Texte und Beispiel-Tandems – steht unter der Lizenz <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>: frei nutzbar und veränderbar mit Namensnennung, nicht kommerziell, Weitergabe unter gleichen Bedingungen. Deine eigenen Tandems gehören dir.</p><p>Bausteine Dritter: Illustrationen Open Peeps von Pablo Stanley (CC0) · Schriften Antonio, Josefin Sans, DM Sans (SIL Open Font License) · Excel-Bibliothek SheetJS (Apache 2.0).</p>`;
 }
 
 // ══ INTRO (erste Folie) ══
@@ -722,11 +805,11 @@ function setupHTML(){
       </div>`;}).join('')}</div>
       ${c>1?`<div class="order-row"><span class="drag-hint">↕ Reihenfolge per Drag &amp; Drop ändern</span><span class="order-sep">oder</span><button class="link-btn order-link" data-a="shufflePairs">zufällig mischen</button>${(S.prevOrder&&JSON.stringify(S.pairs)===S.shuffledSig)?`<button class="link-btn" data-a="undoShuffle" style="font-size:var(--fs-xs);font-weight:400;color:var(--ink2);margin-left:6px">Rückgängig</button>`:''}</div>`:''}`;
   const warn=c>0&&c<6?`<div class="warn">⚠️ Für ein gutes Tandem empfehlen wir mind. 6 Aufgaben (aktuell: ${c}).</div>`:'';
-  return`<div class="setup-page">
+  return`${S.video?videoModalHTML():''}<div class="setup-page">
     <div class="hero">
       <div class="kicker">${logoHTML()}<span class="caps">Für Lehrpersonen</span><button class="link-btn" data-a="goHome" style="margin-left:auto;font-size:var(--fs-xs)">← Startseite</button></div>
       <h1><span class="hl">Tandem erstellen</span></h1>
-      <button class="btn-video caps" onclick="alert('Videotutorial: Link hier einfügen.')">▶ Videotutorial</button>
+      <button class="btn-video caps" data-a="video" data-v="lp">▶ Videotutorial</button>
     </div>
     <div class="flow">
       <div class="flow-step"><div class="flow-num">1</div><div class="flow-label">Titel &amp;<br>Aufgaben erfassen</div></div>
@@ -1103,6 +1186,12 @@ function act(e){
     case 'newSet':{if(!confirm(`Achtung: Titel, Anweisung und ${S.pairs.length===1?'die eine Aufgabe':'alle '+S.pairs.length+' Aufgaben'} dieses Tandems werden gelöscht.\n\nFalls du das Tandem behalten willst: zuerst «Abbrechen» klicken und es unten mit «Tandem speichern» sichern.\n\nWirklich alles löschen und neu beginnen?`))return;
       Object.assign(S,{pairs:[],setName:'',anweisung:'',editIdx:null,tmpF:'',tmpL:'',tmpH:''});saveData();re();break;}
     case 'saveSet':saveSet();break;
+    case 'footToggle':{S.footOpen=!S.footOpen;re();break;}
+    case 'footOpen':{e.preventDefault();S.footOpen=true;re();document.getElementById('fs-'+(el.dataset.k||'ueber'))?.scrollIntoView({behavior:'smooth',block:'center'});break;}
+    case 'video':{if(!VIDEOS[el.dataset.v])break;S.video=el.dataset.v;re();break;}
+    case 'closeVideo':{S.video=null;re();break;}
+    case 'mailMe':{const u=['in','fo'].join(''),d=['tandem','li'].join('.');const a=u+String.fromCharCode(64)+d;
+      const sh=document.getElementById('mailShown');if(sh)sh.textContent=a;location.href='mai'+'lto:'+a;break;}
     case 'tryExample':loadFromUrl('beispiele/'+el.dataset.file);break;
     case 'downloadApp':downloadApp();break;
     case 'startGame':startGame();break;
