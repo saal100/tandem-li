@@ -1,0 +1,5 @@
+Tandem.li – verwendete Fremdbausteine
+
+Schriften (Antonio, Josefin Sans, DM Sans): SIL Open Font License 1.1 – https://openfontlicense.org
+Excel-Bibliothek SheetJS (vendor/xlsx.full.min.js, Version 0.18.5): Apache License 2.0
+Illustrationen: Open Peeps von Pablo Stanley (CC0)

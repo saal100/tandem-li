@@ -1,0 +1,68 @@
+{
+  "format": "tandem.li",
+  "version": 1,
+  "titel": "Argumente und Quellen",
+  "anweisung": "Analysiere die Aussage: Überzeugt sie? Wenn nicht: Wo liegt der Denkfehler?",
+  "aufgaben": [
+    {
+      "frage": "«In Städten mit mehr Feuerwehrleuten gibt es mehr Brände. Die Feuerwehr verursacht also Brände.»",
+      "loesung": "Nein: Korrelation ist nicht Kausalität.",
+      "hinweis": "Eine gemeinsame Ursache erklärt beides: Grosse Städte haben mehr Brände und brauchen deshalb mehr Feuerwehrleute."
+    },
+    {
+      "frage": "Fakt oder Meinung? «Die Schweiz hat vier Landessprachen, und das ist ihre grösste Stärke.»",
+      "loesung": "Der erste Teil ist ein Fakt, der zweite eine Meinung.",
+      "hinweis": "Fakten lassen sich überprüfen, Meinungen begründen. Viele Sätze mischen beides."
+    },
+    {
+      "frage": "«Alle meine Freund:innen finden das neue Handy super. Also ist es das beste Handy auf dem Markt.»",
+      "loesung": "Nein: Die Stichprobe ist zu klein und nicht repräsentativ.",
+      "hinweis": "Wenige, ähnliche Personen sagen wenig über «alle» aus. Und «super finden» heisst nicht «das beste sein»."
+    },
+    {
+      "frage": "«Entweder verbieten wir Autos ganz, oder wir können fürs Klima gar nichts tun.»",
+      "loesung": "Nein: falsches Dilemma.",
+      "hinweis": "Es gibt viele Möglichkeiten dazwischen (ÖV, Velo, E-Autos …). Zwei Extreme werden als einzige Wahl dargestellt."
+    },
+    {
+      "frage": "«Du rauchst doch selbst! Also kannst du mir nicht sagen, dass Rauchen schädlich ist.»",
+      "loesung": "Nein: Angriff auf die Person statt aufs Argument.",
+      "hinweis": "Ob jemand raucht, ändert nichts daran, ob Rauchen schädlich ist (Argumentum ad hominem)."
+    },
+    {
+      "frage": "«Seit das neue Stadion steht, gibt es mehr Verkehrsunfälle in der Stadt. Schuld ist das Stadion.»",
+      "loesung": "Nicht belegt: zeitliche Abfolge ist noch keine Ursache.",
+      "hinweis": "Vielleicht gibt es insgesamt mehr Verkehr oder eine neue Baustelle. Man müsste andere Ursachen prüfen."
+    },
+    {
+      "frage": "«Ein berühmter Fussballer empfiehlt dieses Shampoo. Also ist es gut für die Haare.»",
+      "loesung": "Nein: falsche Autorität.",
+      "hinweis": "Ein Fussballer ist Experte für Fussball, nicht für Haarpflege. Zudem wird er für die Werbung bezahlt."
+    },
+    {
+      "frage": "«Eine Umfrage auf der Website eines Autoclubs zeigt: 85 % sind gegen Tempo 30.»",
+      "loesung": "Wenig aussagekräftig: verzerrte Stichprobe.",
+      "hinweis": "Wer auf dieser Website abstimmt, ist kaum repräsentativ für die Bevölkerung. Immer fragen: Wer wurde befragt – und von wem?"
+    },
+    {
+      "frage": "«Wenn wir das Handy in der Pause erlauben, schauen bald alle auch im Unterricht nur noch aufs Handy, und am Ende lernt niemand mehr etwas.»",
+      "loesung": "Nein: Dammbruch-Argument.",
+      "hinweis": "Aus einem kleinen Schritt wird ohne Belege eine Kette von Folgen bis zur Katastrophe abgeleitet."
+    },
+    {
+      "frage": "Eine Studie kommt zum Schluss, dass Zucker unbedenklich ist. Bezahlt hat sie ein Süssgetränkehersteller. Wie glaubwürdig ist sie?",
+      "loesung": "Vorsicht: Interessenkonflikt.",
+      "hinweis": "Die Studie ist nicht automatisch falsch, aber man sollte unabhängige Studien vergleichen."
+    },
+    {
+      "frage": "«Die Jugend von heute hat keinen Respekt mehr. Früher war das anders.»",
+      "loesung": "Nicht überzeugend: pauschal und ohne Belege.",
+      "hinweis": "Solche Klagen gibt es schon seit der Antike. Eine ganze Generation wird verallgemeinert."
+    },
+    {
+      "frage": "«Die Hälfte der Menschen verdient weniger als das Durchschnittseinkommen.»",
+      "loesung": "Nicht unbedingt: Das gilt für den Median, nicht für den Durchschnitt.",
+      "hinweis": "Wenige sehr hohe Einkommen ziehen den Durchschnitt nach oben. Darum verdienen meist mehr als die Hälfte weniger als der Durchschnitt."
+    }
+  ]
+}

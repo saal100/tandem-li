@@ -1,0 +1,58 @@
+{
+  "format": "tandem.li",
+  "version": 1,
+  "titel": "Behauptungen prüfen",
+  "anweisung": "Stimmt die Behauptung? Antworte mit Ja oder Nein und begründe.",
+  "aufgaben": [
+    {
+      "frage": "«20 % Rabatt und danach nochmals 30 % Rabatt ergeben zusammen 50 % Rabatt.»",
+      "loesung": "Nein, zusammen sind es 44 %.",
+      "hinweis": "Der zweite Rabatt gilt nur noch auf 80 % des Preises: 0,8 × 0,7 = 0,56 → 44 % Rabatt."
+    },
+    {
+      "frage": "«Wird ein Preis zuerst um 10 % erhöht und dann um 10 % gesenkt, ist er wieder gleich hoch wie am Anfang.»",
+      "loesung": "Nein, er ist 1 % tiefer.",
+      "hinweis": "1,1 × 0,9 = 0,99. Die 10 % Senkung beziehen sich auf einen höheren Grundwert."
+    },
+    {
+      "frage": "«Ein Medikament senkt das Risiko einer Krankheit von 2 % auf 1 %. Das Risiko sinkt also um die Hälfte.»",
+      "loesung": "Ja – relativ um 50 %, absolut aber nur um 1 Prozentpunkt.",
+      "hinweis": "Beides stimmt. Werbung nennt gern die eindrücklichere relative Zahl. Kritisch fragen: relativ oder absolut?"
+    },
+    {
+      "frage": "«Astronaut:innen schweben in der Raumstation, weil es dort keine Schwerkraft gibt.»",
+      "loesung": "Nein.",
+      "hinweis": "In der Höhe der ISS wirkt noch rund 90 % der Erdanziehung. Die Astronaut:innen schweben, weil sie mit der Station ständig um die Erde «fallen»."
+    },
+    {
+      "frage": "«Ohne Luftwiderstand fällt eine schwere Kugel schneller als eine leichte.»",
+      "loesung": "Nein, beide fallen gleich schnell.",
+      "hinweis": "Ohne Luft fallen alle Körper gleich schnell (Galilei). Auf dem Mond fallen Hammer und Feder gleichzeitig."
+    },
+    {
+      "frage": "«Bei uns ist im Sommer warm, weil die Erde dann der Sonne am nächsten ist.»",
+      "loesung": "Nein.",
+      "hinweis": "Die Erde ist der Sonne Anfang Januar am nächsten. Die Jahreszeiten entstehen durch die Neigung der Erdachse."
+    },
+    {
+      "frage": "«Auf einem hohen Berg kocht Wasser erst bei über 100 °C.»",
+      "loesung": "Nein, schon unter 100 °C.",
+      "hinweis": "Der Luftdruck ist tiefer, deshalb kocht Wasser früher: auf rund 4000 m bei etwa 86 °C. Darum werden Teigwaren dort langsamer gar."
+    },
+    {
+      "frage": "«Eine Münze zeigt fünfmal hintereinander Kopf. Beim sechsten Wurf ist Zahl deshalb wahrscheinlicher.»",
+      "loesung": "Nein, die Chance bleibt 50 %.",
+      "hinweis": "Die Münze hat kein Gedächtnis. Der Denkfehler heisst «Spielerfehlschluss»."
+    },
+    {
+      "frage": "«Die Hälfte von 2 plus 2 ist 3.»",
+      "loesung": "Beides ist möglich: 2 oder 3.",
+      "hinweis": "Die Aussage ist mehrdeutig: (2 + 2) : 2 = 2, aber 2 : 2 + 2 = 3. In der Mathematik schaffen Klammern Klarheit."
+    },
+    {
+      "frage": "«0,999… (mit unendlich vielen Neunen) ist ein kleines bisschen kleiner als 1.»",
+      "loesung": "Nein, 0,999… ist genau 1.",
+      "hinweis": "Beweisidee: 1/3 = 0,333…; mal 3 gerechnet: 3/3 = 0,999… = 1."
+    }
+  ]
+}

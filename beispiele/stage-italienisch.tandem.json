@@ -1,0 +1,208 @@
+{
+  "format": "tandem.li",
+  "version": 1,
+  "titel": "Stage-Vorbereitung auf Italienisch",
+  "anweisung": "",
+  "aufgaben": [
+    {
+      "frage": "Du kommst bei deiner Gastfamilie (oder deinem Arbeitsort) an. Stell dich vor: Name, woher du kommst, wie lange du bleibst.",
+      "loesung": "«Buongiorno, sono …, vengo da Zurigo. Faccio uno stage qui per due settimane. Piacere!»",
+      "hinweis": "«Piacere!» + Händedruck. In Ticino/Italien schnell «due baci» — nicht erschrecken!"
+    },
+    {
+      "frage": "Du stehst vor der Haustür deiner Gastfamilie. Frag, ob man die Schuhe auszieht, bevor man reingeht.",
+      "loesung": "«Devo togliermi le scarpe?»",
+      "hinweis": "Reflexiv: togliersi le scarpe. Fragen wirkt immer aufmerksam. In vielen Familien gibt’s «le ciabatte» (Finken) für Gäste. In anderen ist es normal, die Schuhe anzulassen."
+    },
+    {
+      "frage": "Du möchtest wissen, wann bei der Familie gegessen wird. Frag nach.",
+      "loesung": "«A che ora si cena?»",
+      "hinweis": "«si cena» — unpersönliches si, sehr italienisch! In Italien isst man später als bei uns (20–21 Uhr), im Ticino etwa wie zu Hause. Bonus, der wirklich gut ankommt: «Posso aiutare a preparare?»"
+    },
+    {
+      "frage": "Du bist gerade angekommen. Frag, wo du deine Sachen hinstellen kannst.",
+      "loesung": "«Dove posso mettere le mie cose?»",
+      "hinweis": "Einfach und universell. Erweitern: «Dov'è il mio letto?», «Posso lasciare qui la valigia?»."
+    },
+    {
+      "frage": "Du brauchst Internet. Frag nach dem WLAN und dem Passwort.",
+      "loesung": "«C'è il wifi? Qual è la password?»",
+      "hinweis": "«C'è …?» = die wichtigste Mini-Struktur überhaupt. Um höflicher zu wirken, kann man häufig ein «chiedo scusa» und ein «forse» hinzufügen. Hier: «Chiedo scusa… c'è forse un wi-fi?»."
+    },
+    {
+      "frage": "Das Abendessen war fein. Bedank dich und sag, dass es sehr gut war.",
+      "loesung": "«Grazie mille, era tutto buonissimo!»",
+      "hinweis": "Superlative werden häufig gebraucht: buonissimo, ottimo! Im italienischsprachigen Raum ist ein Kompliment ans Essen quasi Pflicht und öffnet alle Herzen."
+    },
+    {
+      "frage": "Nach ein paar Tagen brauchst du frische Kleider. Frag, ob du etwas waschen könntest.",
+      "loesung": "«Potrei lavare alcuni vestiti?»",
+      "hinweis": "«Potrei» (Konditional) = höfliches Bitten. Alternative: «Potrei forse usare la lavatrice?»."
+    },
+    {
+      "frage": "Es ist spät. Sag ganz nett, dass du ins Bett gehst, und verabschiede dich bis morgen.",
+      "loesung": "«Credo di aver bisogno di dormire. Se per te/Lei/voi va bene, andrei a letto. Buonanotte, a domani!»",
+      "hinweis": "«Buonanotte» nur beim Schlafengehen, am Abend sonst «buonasera»!"
+    },
+    {
+      "frage": "Du bist «al bar» und möchtest einen koffeinfreien Cappuccino bestellen. Was sagst du?",
+      "loesung": "«Buongiorno, un cappuccio/ cappuccino decaffeinato, per favore.» (oder kurz: «Un deca, grazie.»)",
+      "hinweis": "Am Tresen kurz und knapp bestellen ist völlig normal. Viele bestellen auch ohne «buongiorno» und «per favore». Kultur-Tipp: Cappuccino nach dem Mittagessen verrät oft Tourist:innen, obwohl auch immer öfters Italiener:innen Cappuccino nach dem Mittagessen bestellen 😉 Und: Espresso heisst einfach «un caffè». Achtung: Je nach Bar kostet ein Cappuccino am Tisch mehr als am Tresen."
+    },
+    {
+      "frage": "Du möchtest ein Glace mit zwei Kugeln (Schokolade und Zitrone) im Cornet bestellen.",
+      "loesung": "«Vorrei un cono con due gusti: cioccolato e limone, per favore.»",
+      "hinweis": "«il gusto» = die Sorte, «il cono» (Cornet) / «la coppetta» (Becher). Oft fragt man zurück: «Con panna? Con biscotto?» Mit Rahm? Mit Guezli? Antwort parat haben!"
+    },
+    {
+      "frage": "Ihr habt fertig gegessen. Verlang die Rechnung und frag, ob man mit Karte zahlen kann.",
+      "loesung": "«Il conto, per favore. Posso pagare con la carta?»",
+      "hinweis": "Im Restaurant ist oft auch «il coperto» auf der Rechnung (Gedeck-Gebühr, normal in Italien!). Trinkgeld: kein Muss, aufrunden ist nett."
+    },
+    {
+      "frage": "Du suchst die Toilette im Restaurant. Frag höflich.",
+      "loesung": "«Scusi, dov'è il bagno?»",
+      "hinweis": "«Scusi» (Sie-Form) an Fremde, «scusa» ist die Du-Form. Dieser Unterschied ist Gold wert, gleich testen!"
+    },
+    {
+      "frage": "Du bist im Supermarkt und findest die Milch nicht. Frag jemanden vom Personal.",
+      "loesung": "«Scusi, dove trovo il latte?»",
+      "hinweis": "Versuch gleich die Struktur «Dove trovo …?» mit anderen Produkten durchzuspielen: il pane, le uova, l'acqua frizzante."
+    },
+    {
+      "frage": "Du bist gegen Nüsse allergisch. Sag es und frag, ob Nüsse im Gericht sind.",
+      "loesung": "«Sono allergico/a alle noci. Ci sono noci in questo piatto?»",
+      "hinweis": "Überlebenswichtig! allergico a + Artikel. Luca è allergico alle noci, Clara è allergica al lattosio, Andrea e Sofia sono allergici al glutine."
+    },
+    {
+      "frage": "Du möchtest dein Essen mitnehmen statt vor Ort essen. Was sagst du?",
+      "loesung": "«Da portare via, per favore.»",
+      "hinweis": "Kurz und idiomatisch. Gegenteil: «Mangio qui.»"
+    },
+    {
+      "frage": "Erster Arbeitstag (Restaurant, Reitstall, Tennisclub, Berghütte …). Frag, was du tun sollst und womit du anfangen sollst.",
+      "loesung": "«Buongiorno! Cosa posso fare? Da dove comincio?»",
+      "hinweis": "Initiative am ersten Tag = halber Erfolg. Auch nützlich: «Mi può far vedere?» (Können Sie es mir zeigen?)"
+    },
+    {
+      "frage": "Dein Chef / deine Chefin erklärt dir eine Aufgabe. Sag, dass du dich sofort an die Arbeit machst.",
+      "loesung": "«Va bene, mi metto subito al lavoro!»",
+      "hinweis": "«mettersi al lavoro» = sich an die Arbeit machen, idiomatisch und motiviert. Auch: «Ci penso io!» (Das übernehme ich!) macht grossen Eindruck."
+    },
+    {
+      "frage": "Du hast eine Anweisung nicht verstanden. Bitte darum, es langsamer zu wiederholen.",
+      "loesung": "«Scusa/Scusi, non ho capito. Puoi/Può ripetere più lentamente, per favore?»",
+      "hinweis": "Der wichtigste Satz des Stages, übe ihn, bis er automatisch kommt! Nie nicken, wenn man nichts verstanden hat: lieber dreimal fragen als einmal falsch machen."
+    },
+    {
+      "frage": "Du brauchst einen Gegenstand, kennst aber das Wort nicht. Zeig darauf und frag, wie das heisst.",
+      "loesung": "«Come si chiama questo in italiano?»",
+      "hinweis": "Zeigen + fragen = beste Vokabelstrategie. Antwort laut wiederholen lassen: «Ah, lo strofinaccio!» (Putzlappen)"
+    },
+    {
+      "frage": "Dir ist ein Fehler passiert (etwas ist runtergefallen, falsch serviert …). Entschuldige dich und frag, wie du es wiedergutmachen kannst.",
+      "loesung": "«Mi dispiace, ho fatto un errore. Come posso rimediare?»",
+      "hinweis": "Fehler zugeben + Lösung anbieten = professionell. «rimediare» = wiedergutmachen. Auch: «Scusi, è colpa mia.»"
+    },
+    {
+      "frage": "Du arbeitest seit Stunden. Frag, ob du eine kurze Pause machen kannst oder wann Pause ist.",
+      "loesung": "«Posso fare una piccola pausa? / A che ora è la pausa?»",
+      "hinweis": "«una piccola pausa» klingt bescheiden und nett. Timing: nicht mitten im Service fragen! In Italien ist die Kaffeepause heilig (nutzen für Kontakte!)"
+    },
+    {
+      "frage": "Du verpasst den Bus und kommst zu spät zur Arbeit. Ruf an und sag Bescheid.",
+      "loesung": "«Pronto, buongiorno, sono … Scusi, ho perso il bus. Arrivo con dieci minuti di ritardo, mi dispiace molto.»",
+      "hinweis": "Am Telefon meldet man sich mit «Pronto». Struktur: melden → entschuldigen → Grund → Ankunftszeit → Entschuldigung."
+    },
+    {
+      "frage": "Du bist krank und kannst nicht zur Arbeit. Was sagst du am Telefon?",
+      "loesung": "«Buongiorno, sono … Sono malato/a, oggi non posso venire. Mi dispiace tanto.»",
+      "hinweis": "Früh anrufen! «Mi dispiace tanto» zeigt echtes Bedauern. «Guarisci presto!» heisst «Gute Besserung»."
+    },
+    {
+      "frage": "Du hast eine Aufgabe erledigt und willst wissen, ob es so gut ist. Frag nach Feedback.",
+      "loesung": "«Va bene così?»",
+      "hinweis": "Drei Wörter, riesige Wirkung: zeigt, dass man Feedback will. Antworten verstehen: «Perfetto!», «Quasi, guarda …»"
+    },
+    {
+      "frage": "Letzter Arbeitstag. Bedank dich, sag, dass du viel gelernt hast, und verabschiede dich.",
+      "loesung": "«Grazie di tutto! Ho imparato tantissimo. Arrivederci, e magari a presto!»",
+      "hinweis": "«magari» = vielleicht/hoffentlich, kleines Wort, sehr italienisch."
+    },
+    {
+      "frage": "Ihr wart um 16 Uhr verabredet, aber niemand kommt. Was schreibst oder sagst du? (Und: Was machst du nach 15 Minuten?)",
+      "loesung": "«Avevamo detto alle 16, o forse mi sono confuso/a? Dove siete? Vi aspetto davanti alla stazione.»",
+      "hinweis": "Erst freundlich nachfragen: vielleicht ein Missverständnis? Nach 15 Minuten: anrufen statt warten. Kultur-Hinweis: In Italien ist ein «quarto d'ora» Verspätung in vielen Kontexten fast normal. Wenn man sich aber in der Piazza verabredet, sind auch halbe und ganze Stunden normal, weil man dort sowieso andere Bekannte treffen kann!"
+    },
+    {
+      "frage": "Es regnet seit Tagen ohne Pause. Mach Smalltalk und beklage dich über das Wetter.",
+      "loesung": "«Che tempo! Piove da tre giorni…»",
+      "hinweis": "Wetter-Smalltalk = Türöffner. Auch schön: «Non smette più!» Leicht dramatisieren gehört dazu."
+    },
+    {
+      "frage": "Es ist unerträglich heiss. Sag, dass du die Hitze nicht mehr aushältst.",
+      "loesung": "«Che caldo! Non ne posso più.»",
+      "hinweis": "«Non ne posso più» = ich kann nicht mehr. «Che …!»-Ausrufe üben: che caldo, che afa! Che bello, che caldo, che stanchezza…"
+    },
+    {
+      "frage": "Jemand lädt dich ein, etwas zu unternehmen. Nimm begeistert an.",
+      "loesung": "«Volentieri! Che bello, ci sto!»",
+      "hinweis": "«Ci sto!» = Ich bin dabei! Wer Einladungen annimmt, findet Anschluss: wichtig im Stage! Alternative, weniger begeistert: «ci sta» (es passt)."
+    },
+    {
+      "frage": "Jemand lädt dich ein, aber du kannst (oder willst) nicht. Lehn höflich ab.",
+      "loesung": "«Grazie, sei gentile, ma stasera non posso. Un'altra volta, volentieri!»",
+      "hinweis": "Formel: Dank → Absage → Gegenangebot. So bleibt die Tür offen. «Sei gentile» nicht vergessen!"
+    },
+    {
+      "frage": "Du möchtest mit den anderen nach der Arbeit etwas trinken gehen. Schlag es vor.",
+      "loesung": "«Andiamo a bere qualcosa dopo il lavoro?»",
+      "hinweis": "«Andiamo a …?» = einfachste Vorschlagsform. Auch: «Ci facciamo un aperitivo?». «Ci facciamo X?» zeigt, dass man mittlerweile dazugehört."
+    },
+    {
+      "frage": "Jemand spricht viel zu schnell mit dir. Bitte die Person (per Du), langsamer zu sprechen.",
+      "loesung": "«Puoi parlare un po' più lentamente, per favore?»",
+      "hinweis": "Registerwechsel: unter Jungen «tu» (puoi), an Fremde «Lei» (può)."
+    },
+    {
+      "frage": "Jemand nervt dich und lässt dich nicht in Ruhe. Schick ihn/sie höflich in die Wüste.",
+      "loesung": "«Senti, lasciami in pace, per favore.»",
+      "hinweis": "Höflich, aber bestimmt: ruhiger Ton, klarer Blick. Stärker (wenn nötig): «Adesso basta, eh!»"
+    },
+    {
+      "frage": "Du hast dich verlaufen und suchst den Bahnhof. Frag jemanden auf der Strasse.",
+      "loesung": "«Scusi, cerco la stazione. Da che parte è?»",
+      "hinweis": "«Da che parte è?» = in welche Richtung? Antworten verstehen üben: sempre dritto, a sinistra, a destra."
+    },
+    {
+      "frage": "Du hast den Bus verpasst. Frag, wann der nächste fährt.",
+      "loesung": "«Ho perso il bus. A che ora parte il prossimo?»",
+      "hinweis": "«perdere il bus» = verpassen."
+    },
+    {
+      "frage": "Dein Handy ist leer. Frag, ob du es irgendwo laden kannst — oder frag jemanden nach der Uhrzeit.",
+      "loesung": "«Ho il telefono scarico. Posso caricarlo da qualche parte? / Scusi, sa che ore sono?»",
+      "hinweis": "«scarico» = leer (Akku), «il caricatore» = Ladegerät. «Sa che ore sono?» = klassische Kontaktfrage."
+    },
+    {
+      "frage": "Etwas stimmt nicht (Zimmer, Essen, Material …). Drück deine Unzufriedenheit höflich aus und such eine Lösung.",
+      "loesung": "«Scusi, c'è un piccolo problema con … Possiamo trovare una soluzione?»",
+      "hinweis": "«un piccolo problema» — verkleinern entschärft. Reklamieren auf Italienisch: freundlich, lösungsorientiert, mit einem Lächeln — nie frontal."
+    },
+    {
+      "frage": "Es gab ein Missverständnis: Man hat dich falsch verstanden. Kläre es.",
+      "loesung": "«No, non volevo dire questo. Volevo dire che …»",
+      "hinweis": "Missverständnisse sofort klären! «Volevo dire …» = ich meinte … Auch gut: «Ci siamo capiti male.»"
+    },
+    {
+      "frage": "Du fühlst dich nicht gut. Sag es und frag nach einer Apotheke in der Nähe.",
+      "loesung": "«Non mi sento bene. C'è una farmacia qui vicino?»",
+      "hinweis": "«Non mi sento bene» deckt alles ab. Präziser: «Mi fa male la testa / la pancia.» (Achtung Struktur: mi fa male + Körperteil)."
+    },
+    {
+      "frage": "Echter Notfall: Jemand ist verletzt. Ruf um Hilfe und bitte jemanden, die Ambulanz zu rufen.",
+      "loesung": "«Aiuto! C'è una persona che sta male! Chiamate un'ambulanza, per favore! Chiamate il 144 (CH) / il 118 (IT)!»",
+      "hinweis": "Notfallnummern: 144 Ambulanz (CH), 118/112 in Italien, 117 Polizei (CH). Muss sitzen — hoffentlich braucht es niemand."
+    }
+  ]
+}

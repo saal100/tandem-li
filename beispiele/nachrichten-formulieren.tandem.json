@@ -1,0 +1,58 @@
+{
+  "format": "tandem.li",
+  "version": 1,
+  "titel": "Nachrichten angemessen formulieren",
+  "anweisung": "Passt die Nachricht zur Situation? Wenn nicht: Formuliere sie passend um.",
+  "aufgaben": [
+    {
+      "frage": "E-Mail an die Klassenlehrerin: «hey, kann morgen nicht kommen, bin krank. lg»",
+      "loesung": "Nein. Z. B.: «Liebe Frau Meier, leider bin ich krank und kann morgen nicht in die Schule kommen. Ich hole den Stoff nach. Freundliche Grüsse, Lea»",
+      "hinweis": "Checkliste: Anrede – Grund – Angebot – Grussformel – Name."
+    },
+    {
+      "frage": "WhatsApp an eine Kollegin: «Sehr geehrte Frau Keller, hätten Sie heute Abend Zeit für einen Kinobesuch? Mit freundlichen Grüssen»",
+      "loesung": "Nein, viel zu förmlich. Z. B.: «Hey Nina, hast du heute Abend Lust auf Kino? 🍿»",
+      "hinweis": "Zu förmlich ist auch unpassend: Es wirkt distanziert oder ironisch."
+    },
+    {
+      "frage": "Bewerbung für eine Schnupperlehre: «Ich will bei euch schnuppern, weil ich Autos cool finde.»",
+      "loesung": "Nein. Z. B.: «Sehr geehrte Damen und Herren, ich interessiere mich sehr für den Beruf der Automobil-Fachfrau und möchte gerne bei Ihnen schnuppern …»",
+      "hinweis": "Sie-Form, sachliche Begründung, keine Jugendsprache."
+    },
+    {
+      "frage": "SMS an den Chef im Praktikum: «komme 10 min später, bus weg»",
+      "loesung": "Fast. Besser: «Guten Morgen Herr Rossi, entschuldigen Sie, ich habe den Bus verpasst und komme etwa 10 Minuten später.»",
+      "hinweis": "Die Information stimmt, aber Anrede und Entschuldigung fehlen."
+    },
+    {
+      "frage": "Reklamation an einen Onlineshop: «Ihr seid die schlimmste Firma überhaupt!!! Paket kaputt!!!»",
+      "loesung": "Nein. Z. B.: «Guten Tag, meine Bestellung Nr. 4711 ist beschädigt angekommen. Könnten Sie mir bitte Ersatz schicken? Freundliche Grüsse»",
+      "hinweis": "Sachlich bleiben: Was ist passiert? Welche Lösung wünsche ich? Beleidigungen schwächen die Reklamation."
+    },
+    {
+      "frage": "Zettel an der Tür der Nachbarn: «Seid endlich leise!!!»",
+      "loesung": "Nein. Z. B.: «Liebe Nachbarn, ich wäre froh, wenn es ab 22 Uhr etwas ruhiger wäre. Danke und liebe Grüsse, Tim (2. Stock)»",
+      "hinweis": "Freundliche Bitte statt Befehl – und mit Namen unterschreiben."
+    },
+    {
+      "frage": "Du kannst nicht zum Geburtstag deiner Grossmutter kommen und schreibst ihr: «kann nicht»",
+      "loesung": "Nein. Z. B.: «Liebe Grossmutter, leider kann ich am Sonntag nicht kommen, das tut mir sehr leid. Ich rufe dich an! Alles Liebe zum Geburtstag»",
+      "hinweis": "Bei Absagen: Bedauern ausdrücken, Grund oder Alternative nennen, persönlich bleiben."
+    },
+    {
+      "frage": "Mail an den Schulleiter: «Hallo, darf ich am Freitag frei nehmen? Danke»",
+      "loesung": "Fast. Besser: «Sehr geehrter Herr Huber, ich möchte Sie um einen freien Tag am Freitag, 14. März, bitten, weil … Freundliche Grüsse»",
+      "hinweis": "Formelle Anrede, Datum und Grund angeben."
+    },
+    {
+      "frage": "Frage im Klassenchat: «Könnte mir bitte jemand mitteilen, welche Seiten wir für die Prüfung lernen müssen? Vielen Dank im Voraus und freundliche Grüsse»",
+      "loesung": "Nicht falsch, aber zu förmlich. Z. B.: «Weiss jemand, welche Seiten wir für die Prüfung lernen müssen? Danke!»",
+      "hinweis": "Im Klassenchat passt ein lockerer, freundlicher Ton."
+    },
+    {
+      "frage": "Mail an die Lehrerin: «Sie haben meine Prüfung falsch korrigiert.»",
+      "loesung": "Nein, das ist ein Vorwurf. Z. B.: «Liebe Frau Weber, könnten Sie bei Aufgabe 3 nochmals nachschauen? Ich bin nicht sicher, ob … Vielen Dank!»",
+      "hinweis": "Eine Frage statt eines Vorwurfs: So bleibt das Gespräch offen."
+    }
+  ]
+}

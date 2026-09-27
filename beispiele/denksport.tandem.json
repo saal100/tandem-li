@@ -1,0 +1,68 @@
+{
+  "format": "tandem.li",
+  "version": 1,
+  "titel": "Denksport",
+  "anweisung": "Löse das Rätsel und erkläre, wie du darauf kommst.",
+  "aufgaben": [
+    {
+      "frage": "Ein Schläger und ein Ball kosten zusammen Fr. 1.10. Der Schläger kostet einen Franken mehr als der Ball. Wie viel kostet der Ball?",
+      "loesung": "5 Rappen.",
+      "hinweis": "Die spontane Antwort «10 Rappen» ist falsch: Dann würde der Schläger Fr. 1.10 kosten, zusammen also Fr. 1.20."
+    },
+    {
+      "frage": "5 Maschinen brauchen 5 Minuten für 5 Teile. Wie lange brauchen 100 Maschinen für 100 Teile?",
+      "loesung": "5 Minuten.",
+      "hinweis": "Jede Maschine braucht 5 Minuten für ein Teil – egal, wie viele Maschinen gleichzeitig arbeiten."
+    },
+    {
+      "frage": "Eine Seerose verdoppelt jeden Tag ihre Fläche. Nach 48 Tagen bedeckt sie den ganzen See. Nach wie vielen Tagen bedeckt sie die Hälfte?",
+      "loesung": "Nach 47 Tagen.",
+      "hinweis": "Rückwärts denken: Am Tag vor dem ganzen See war es die Hälfte."
+    },
+    {
+      "frage": "Welches passt nicht dazu: Adler, Pinguin, Strauss, Fledermaus?",
+      "loesung": "Fledermaus – sie ist kein Vogel.",
+      "hinweis": "Andere Lösungen gelten, wenn die Begründung stimmt: z. B. Adler, weil er als einziger Vogel der Liste fliegen kann."
+    },
+    {
+      "frage": "Marias Vater hat fünf Töchter: Nana, Nene, Nini und Nono. Wie heisst die fünfte Tochter?",
+      "loesung": "Maria.",
+      "hinweis": "Die Reihe verleitet zu «Nunu» – die Antwort steht aber schon in der Frage."
+    },
+    {
+      "frage": "Ein Bauer hat 17 Schafe. Alle bis auf 9 sterben. Wie viele Schafe bleiben übrig?",
+      "loesung": "9.",
+      "hinweis": "«Alle bis auf 9» heisst: 9 überleben. Genau lesen lohnt sich!"
+    },
+    {
+      "frage": "Wie viele Monate haben 28 Tage?",
+      "loesung": "Alle 12.",
+      "hinweis": "Jeder Monat hat mindestens 28 Tage – nicht nur der Februar."
+    },
+    {
+      "frage": "Du überholst bei einem Rennen die Person auf dem 2. Platz. Auf welchem Platz bist du jetzt?",
+      "loesung": "Auf dem 2. Platz.",
+      "hinweis": "Du nimmst ihren Platz ein – die erste Person hast du noch nicht überholt."
+    },
+    {
+      "frage": "Wie geht die Folge weiter? 2 – 6 – 12 – 20 – 30 – ?",
+      "loesung": "42.",
+      "hinweis": "Die Abstände wachsen um 2: +4, +6, +8, +10, +12."
+    },
+    {
+      "frage": "Wie geht die Folge weiter? 1 – 1 – 2 – 3 – 5 – 8 – ?",
+      "loesung": "13.",
+      "hinweis": "Jede Zahl ist die Summe der beiden vorherigen (Fibonacci-Folge)."
+    },
+    {
+      "frage": "Was wird umso nasser, je mehr es trocknet?",
+      "loesung": "Ein Handtuch.",
+      "hinweis": "Rätselwörter wörtlich nehmen: Es trocknet etwas anderes ab."
+    },
+    {
+      "frage": "Ein Mann zeigt auf ein Foto: «Geschwister habe ich keine, aber der Vater dieses Mannes ist der Sohn meines Vaters.» Wen zeigt das Foto?",
+      "loesung": "Seinen Sohn.",
+      "hinweis": "«Der Sohn meines Vaters» ist – ohne Geschwister – er selbst. Also ist er der Vater des Mannes auf dem Foto."
+    }
+  ]
+}

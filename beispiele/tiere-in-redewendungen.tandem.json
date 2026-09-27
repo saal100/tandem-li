@@ -1,0 +1,58 @@
+{
+  "format": "tandem.li",
+  "version": 1,
+  "titel": "Tiere in Redewendungen",
+  "anweisung": "Kennst du eine Entsprechung mit einem Tier auf Englisch, Französisch, Italienisch oder Spanisch? Eine Sprache genügt.",
+  "aufgaben": [
+    {
+      "frage": "Zwei Fliegen mit einer Klappe schlagen (zwei Ziele mit einer Handlung erreichen)",
+      "loesung": "E: to kill two birds with one stone\nI: prendere due piccioni con una fava\nS: matar dos pájaros de un tiro",
+      "hinweis": "Aus Fliegen werden Vögel oder Tauben. Französisch ohne Tier: faire d’une pierre deux coups."
+    },
+    {
+      "frage": "Krokodilstränen weinen (falsches Mitleid zeigen)",
+      "loesung": "E: to shed crocodile tears\nF: verser des larmes de crocodile\nI: versare lacrime di coccodrillo\nS: llorar lágrimas de cocodrilo",
+      "hinweis": "Hier sind sich alle Sprachen einig!"
+    },
+    {
+      "frage": "Wie ein Elefant im Porzellanladen (sehr ungeschickt, taktlos)",
+      "loesung": "F: comme un éléphant dans un magasin de porcelaine\nI: come un elefante in una cristalleria\nS: como un elefante en una cacharrería\nE: like a bull in a china shop",
+      "hinweis": "Im Englischen ist es ein Stier."
+    },
+    {
+      "frage": "Einen Frosch im Hals haben (heiser sein)",
+      "loesung": "E: to have a frog in one’s throat\nF: avoir un chat dans la gorge",
+      "hinweis": "Im Französischen sitzt eine Katze im Hals! Italienisch und Spanisch sagen es ohne Tier."
+    },
+    {
+      "frage": "Die Katze im Sack kaufen (etwas ungeprüft kaufen)",
+      "loesung": "F: acheter chat en poche\nE: to buy a pig in a poke\nS: dar gato por liebre",
+      "hinweis": "Englisch: ein Schwein im Sack. Spanisch heisst es «jemandem eine Katze statt eines Hasen andrehen», also betrügen. Italienisch ohne Tier: comprare a scatola chiusa."
+    },
+    {
+      "frage": "Hunde, die bellen, beissen nicht",
+      "loesung": "E: barking dogs seldom bite\nF: chien qui aboie ne mord pas\nI: can che abbaia non morde\nS: perro ladrador, poco mordedor",
+      "hinweis": "Ein Sprichwort, das es in allen fünf Sprachen gibt."
+    },
+    {
+      "frage": "Wie Hund und Katze sein (sich ständig streiten)",
+      "loesung": "E: to fight like cats and dogs\nF: s’entendre comme chien et chat\nI: essere come cane e gatto\nS: llevarse como el perro y el gato",
+      "hinweis": "Im Englischen steht die Katze zuerst."
+    },
+    {
+      "frage": "Mit den Hühnern ins Bett gehen (sehr früh schlafen gehen)",
+      "loesung": "F: se coucher comme les poules\nI: andare a letto con le galline\nS: acostarse con las gallinas",
+      "hinweis": "Im Englischen sagt man meist einfach «to go to bed early»."
+    },
+    {
+      "frage": "Die Ratten verlassen das sinkende Schiff",
+      "loesung": "E: rats desert a sinking ship\nF: les rats quittent le navire\nI: quando la nave affonda, i topi scappano\nS: las ratas abandonan el barco",
+      "hinweis": "Im Italienischen sind es Mäuse (topi)."
+    },
+    {
+      "frage": "Da liegt der Hund begraben (das ist der Kern des Problems)",
+      "loesung": "I: qui casca l’asino",
+      "hinweis": "Im Italienischen fällt hier ein Esel hin. Andere Sprachen ohne Tier: E that’s the crux, F c’est là que le bât blesse, S ahí está el quid."
+    }
+  ]
+}
