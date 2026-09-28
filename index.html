@@ -41,6 +41,7 @@ h1,h2{font-family:'Antonio','Arial Narrow',sans-serif;font-weight:700;text-trans
 .hero p{font-size:var(--fs-md);color:var(--ink2);max-width:560px;line-height:1.7}
 .btn-video{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:10px 20px;border-radius:50px;background:var(--ink);color:#fff;font-size:var(--fs-xs);border:none;cursor:pointer}
 .btn-video:hover{background:#333}
+@media (max-width:480px){.btn-video{letter-spacing:.06em;font-size:12px;gap:10px;padding:12px 14px 10px}}
 .flow{display:flex;align-items:stretch;margin-bottom:clamp(1.5rem,4vw,2.5rem);background:var(--paper);border-radius:var(--rxl);border:var(--line);overflow:hidden}
 .flow-step{flex:1;padding:clamp(12px,2vw,20px) clamp(8px,1.5vw,16px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px}
 .flow-num{width:clamp(30px,3vw,40px);height:clamp(30px,3vw,40px);border-radius:var(--organic);display:flex;align-items:center;justify-content:center;font-family:'Antonio',sans-serif;font-weight:700;font-size:var(--fs-md);background:var(--yl);color:var(--ink);border:var(--line)}
@@ -276,6 +277,62 @@ textarea{resize:vertical}
 .vmodal-x{position:absolute;top:-16px;right:-16px;width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--ink);font-size:18px;font-weight:700;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center}
 .vmodal-x:hover{background:var(--yl)}
 @media (max-width:600px){.vmodal-x{top:-12px;right:-6px}}
+.btn-pair{display:flex;flex-wrap:wrap;gap:8px}
+.gmodal{position:relative;width:min(900px,100%);max-height:92vh;overflow:auto;background:var(--paper);border-radius:var(--rlg);border:var(--line);padding:clamp(16px,3vw,28px);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.gtitle{font-size:clamp(24px,3vw,36px);line-height:1.05;margin:0 30px 14px 0}
+.gstage{position:relative;display:flex;align-items:center;justify-content:center;background:var(--bg);border:1px solid var(--bg3);border-radius:var(--r);min-height:200px}
+.gstage video{display:block;max-width:100%;max-height:60vh;border-radius:var(--r)}
+.gcredit{flex-basis:100%;font-size:11px;color:var(--ink3)}
+.gstage img{display:block;max-width:100%;max-height:60vh;height:auto;border-radius:var(--r)}
+.garrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:#fff;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.garrow:hover{background:var(--yl)}
+.gprev{left:8px}.gnext{right:8px}
+.gmodal .vmodal-x{top:12px;right:12px}
+@media (max-width:600px){.garrow{width:34px;height:34px;font-size:20px}.gmodal .vmodal-x{top:8px;right:8px}}
+.gcap{font-size:var(--fs-md);color:var(--ink2);line-height:1.55;margin:14px 0 12px}
+.gvar{font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:var(--fs-xs);color:var(--ink);margin:0 0 10px}
+.gvar2{margin-top:22px;padding-top:18px;border-top:1px solid var(--bg3)}
+.gvar2 .soon-tag{white-space:nowrap}
+.gvar2 .link-off{font-size:var(--fs-sm)}
+.gvar2-txt{font-size:var(--fs-sm);color:var(--ink2);margin:0 0 10px}
+.gfoot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;font-size:var(--fs-xs)}
+.gdots{display:flex;gap:6px}
+.gdot{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--ink);background:#fff;padding:0;cursor:pointer}
+.gdot.on{background:var(--ink)}
+.gmore{color:var(--ink3);font-style:italic}
+.door-wrap{display:contents}
+.door-wrap .door{position:relative;z-index:1;min-width:0}
+.drawer{justify-self:center;align-self:start;min-width:0}
+@media (min-width:701px){.doors{grid-template-rows:auto auto;row-gap:0!important;align-items:stretch}
+.door-learn{grid-column:1;grid-row:1}.door-teach{grid-column:2;grid-row:1}
+#drawer-ln{grid-column:1;grid-row:2}#drawer-lp{grid-column:2;grid-row:2}}
+@media (max-width:700px){.doors{row-gap:0!important}.door-wrap+.door-wrap .door{margin-top:clamp(14px,2.5vw,28px)}}
+.drawer{width:calc(100% - 36px);display:flex;flex-direction:column;align-items:center}
+.drawer.open{border:var(--line);border-top:none;border-radius:0 0 var(--rlg) var(--rlg);background:var(--paper);margin-top:-1px}
+.drawer-body{width:100%;padding:22px clamp(16px,2.6vw,28px) 6px;text-align:left}
+.drawer-body .howto{margin-bottom:14px}
+.drawer-body .howto li{font-size:var(--fs-sm);line-height:1.55;color:var(--ink2)}
+.drawer-tab{margin-top:-1.5px;background:var(--yl);border:var(--line);border-top:none;border-radius:0 0 14px 14px;padding:8px 22px 7px;font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:12px;color:var(--ink);cursor:pointer}
+.drawer-tab:hover{background:var(--yl-dk)}
+.drawer-close{width:34px;height:34px;border-radius:50%;border:var(--line);background:#fff;color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:500;font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;margin:8px 0 14px;padding-bottom:3px!important;cursor:pointer;padding:0}
+.drawer-close:hover{background:var(--yl)}
+.btn-video{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;background:var(--ink);color:#fff;border:none;border-radius:50px;padding:14px 20px 12px;margin-bottom:20px;font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:var(--fs-sm);cursor:pointer}
+.btn-video .play{width:28px;height:28px;flex-shrink:0;border-radius:50%;background:var(--yl);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12px;padding-left:2px;margin-top:-2px}
+.btn-video:hover{background:#333}
+@media (max-width:480px){.btn-video{letter-spacing:.06em;font-size:12px;gap:10px;padding:12px 14px 10px}}
+.sacc{border-top:var(--line);scroll-margin-top:16px}
+.sacc:last-of-type{border-bottom:var(--line)}
+.sacc>summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:clamp(16px,2.4vw,24px) 0}
+.sacc>summary::-webkit-details-marker{display:none}
+.sacc>summary h2{font-size:clamp(28px,4vw,46px);line-height:1;margin:0}
+.sacc>summary::after{content:'+';flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--yl);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-weight:500;font-size:28px;line-height:1;padding-bottom:3px;box-sizing:border-box}
+.sacc[open]>summary::after{content:'\2212'}
+.sacc>summary:hover h2{text-decoration:underline;text-decoration-color:var(--yl);text-decoration-thickness:6px;text-underline-offset:4px}
+.sacc-body{padding:0 0 clamp(24px,3.5vw,40px)}
+.sacc-body.sec{padding-top:0}
+.saccs{margin-top:clamp(36px,6vw,64px)}
+.sacc .foot-grid .foot-sec p{font-size:var(--fs-sm);line-height:1.6;color:var(--ink2);margin-bottom:8px}
+.sacc .foot-grid a{color:var(--ink);text-underline-offset:2px}
 .tile-plus{text-decoration:none;color:var(--ink);background:var(--yl);border-style:dashed}
 .tile-plus:hover{background:var(--yl-dk)}
 .tile-plus .plus{font-family:'Antonio',sans-serif;font-weight:700;font-size:44px;line-height:.9}
@@ -495,12 +552,14 @@ function re(){
   const keepY=window.scrollY, keepList=document.getElementById('pList')?.scrollTop||0;
   if(!samePhase){lastPhase=S.phase;window.scrollTo(0,0);}
   document.title=S.setName?S.setName+' · Tandem.li':'Tandem.li';
+  const openD=samePhase?[...document.querySelectorAll('#app details[id]')].filter(d=>d.open).map(d=>d.id):[];
   document.getElementById('app').innerHTML=
     S.phase==='home'   ?homeHTML():
     S.phase==='setup'  ?setupHTML():
     S.phase==='intro'  ?introHTML():
     S.phase==='game'   ?gameHTML():resultsHTML();
   bind();
+  openD.forEach(id=>{const d=document.getElementById(id);if(d)d.open=true;});
   if(samePhase){
     const pl=document.getElementById('pList');if(pl)pl.scrollTop=keepList;
     window.scrollTo(0,keepY);
@@ -548,13 +607,38 @@ function infoModalHTML(){
       <p class="modal-tip">Tipp 2: Bevor man zur nächsten Aufgabe geht, lohnt es sich, den Sichtschutz wegzunehmen und die Lösung gemeinsam anzuschauen.</p>
       <p>Klickt man auf «Nächste Aufgabe», kommt B an die Reihe und löst eine Aufgabe. Es gewinnt, wer am Ende mehr Punkte hat.</p>
       <hr style="border:none;border-top:1px solid var(--bg3);margin:14px 0">
-      <p style="font-size:var(--fs-xs);color:var(--ink3);line-height:1.6"><strong style="color:var(--ink2)">Credits</strong><br>Die Tandemübung wurde in den 90er-Jahren von Anita Pfau auf Papier entwickelt und 2020 erstmals digital im Lehrmittel «Tocca a te!» (HEP Verlag) umgesetzt. Tandem.li hat Sara Alloatti 2026 im Vibe-Coding mit Claude (Anthropic) entwickelt – mit der Unterstützung von Leo Waltenspül bei der technischen Umsetzung sowie von Italienisch-Kolleg:innen und ihren Klassen.<br>Lizenz: CC BY-NC-SA 4.0 · Illustrationen: Open Peeps (CC0).</p>
+      <p style="font-size:var(--fs-xs);color:var(--ink3);line-height:1.6"><strong style="color:var(--ink2)">Credits</strong><br>Die Tandemübung wurde in den 90er-Jahren von Anita Pfau auf Papier entwickelt und 2020 erstmals digital im Lehrmittel <a href="https://www.tocca-a-te.ch" target="_blank" rel="noopener">«Tocca a te!»</a> (HEP Verlag) umgesetzt. Tandem.li hat Sara Alloatti 2026 im Vibe-Coding mit Claude (Anthropic) entwickelt – mit der Unterstützung von Leo Waltenspül bei der technischen Umsetzung sowie von Italienisch-Kolleg:innen und ihren Klassen.<br>Lizenz: CC BY-NC-SA 4.0 · Illustrationen: Open Peeps (CC0).</p>
       <button class="modal-close caps" data-a="closeInfo">Verstanden ✓</button>
     </div>
   </div>`;
 }
 
 // ══ STARTSEITE ══
+// ══ ANLEITUNG als Schublade unter jeder Tür ══
+function drawerHTML(k){
+  const open=!!(S.drawer&&S.drawer[k]);
+  const body=k==='ln'?`
+        <button class="btn-video" data-a="video" data-v="ln"><span class="play" aria-hidden="true">▶</span>Videotutorial für Lernende</button>
+        <ol class="howto">
+          <li><span class="step-n">1</span><span>Die Datei deiner Lehrperson auf dein Gerät laden, dann oben auf <strong>«Tandem öffnen»</strong> klicken und sie auswählen.</span></li>
+          <li><span class="step-n">2</span><span>Ein Blatt oder Buch als Sichtschutz auf den schwarzen Streifen in der Mitte stellen.</span></li>
+          <li><span class="step-n">3</span><span>Abwechselnd lösen und coachen. Die gelbe Fläche zeigt, wer gerade dran ist.</span></li>
+        </ol>
+        <img class="howto-img" src="sichtschutz.svg" alt="Zwei Lernende an einem Laptop: Ein aufgestelltes Buch trennt die gelbe Aufgaben-Hälfte von der Lösungs-Hälfte.">
+        <div class="btn-pair"><button class="btn" data-a="openGal">Wie baue ich einen Sichtschutz?</button></div>`
+    :`
+        <button class="btn-video" data-a="video" data-v="lp"><span class="play" aria-hidden="true">▶</span>Videotutorial für Lehrpersonen</button>
+        <ol class="howto">
+          <li><span class="step-n">1</span><span>Oben auf <strong>«Tandem erstellen»</strong> klicken, Titel und Aufgaben mit Musterlösungen eingeben.</span></li>
+          <li><span class="step-n">2</span><span><strong>«Tandem speichern»</strong> – das Tandem landet als Datei auf deinem Gerät.</span></li>
+          <li><span class="step-n">3</span><span>Die Datei mit der Klasse teilen: in Teams, per Mail oder auf der Lernplattform.</span></li>
+        </ol>
+        `;
+  return`<div class="drawer${open?' open':''}" id="drawer-${k}">
+      ${open?`<div class="drawer-body">${body}</div>`:''}
+      ${open?`<button class="drawer-close" data-a="drawer" data-k="${k}" aria-expanded="true" aria-label="Anleitung schliessen" title="Anleitung schliessen">&minus;</button>`:`<button class="drawer-tab" data-a="drawer" data-k="${k}" aria-expanded="false">Anleitung ▾</button>`}
+    </div>`;
+}
 function homeHTML(){
   return`<div class="home" id="home">
     <header class="home-head">
@@ -562,22 +646,29 @@ function homeHTML(){
       <p class="home-claim caps">Challenges &amp; Coaching für jeden Unterricht</p>
     </header>
     <div class="doors">
+      <div class="door-wrap">
       <section class="door door-learn">
         <div class="door-art">${ART_CLASS}</div>
         <h2>Für Lernende</h2>
         <p>Öffne das Tandem, das du von deiner Lehrperson bekommen hast.</p>
         <label class="btn-door caps">Tandem öffnen<input type="file" id="openPlay" accept=".json,application/json,.html,text/html" style="display:none"></label>
       </section>
+      ${drawerHTML('ln')}
+      </div>
+      <div class="door-wrap">
       <section class="door door-teach">
         <div class="door-art">${ART_TEACHER}</div>
         <h2>Für Lehrpersonen</h2>
         <p>Tandems erstellen, speichern und mit der Klasse teilen.</p>
         <button class="btn-door caps" data-a="goCreate">Tandem erstellen</button>
       </section>
+      ${drawerHTML('lp')}
+      </div>
     </div>
     ${siteHTML()}
     ${S.showPrompt?promptModalHTML():''}
     ${S.video?videoModalHTML():''}
+    ${S.gal!=null?galleryHTML():''}
     ${infoModalHTML()}
   </div>`;
 }
@@ -596,7 +687,39 @@ function videoModalHTML(){
       onerror="this.closest('.vframe').innerHTML='<div class=&quot;vfallback&quot;><p>Das Video lässt sich hier gerade nicht abspielen.</p><a class=&quot;btn&quot; href=&quot;${v.url}&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Video in neuem Tab öffnen</a></div>'"></video></div>
   </div></div>`;
 }
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&S.video){S.video=null;re();}});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&(S.video||S.gal!=null)){S.video=null;S.gal=null;re();}
+  if(S.gal!=null&&(e.key==='ArrowRight'||e.key==='ArrowLeft')){S.gal=(S.gal+(e.key==='ArrowRight'?1:-1)+SICHTSCHUTZ.length)%SICHTSCHUTZ.length;re();}
+});
+// Galerie «Wie baue ich einen Sichtschutz?» — neue Fotos: Datei in den Ordner «sichtschutz» legen und hier eine Zeile ergänzen
+const SICHTSCHUTZ=[
+  {bild:'sichtschutz/sichtschutz-falten.mp4',text:'',alt:'Video: Ein A4-Blatt wird gefaltet, eingeschnitten und als Sichtschutz über den Bildschirm gehängt.'}
+];
+const DRUCK3D='';   // Link zur 3D-Druckvorlage, sobald vorhanden
+function galleryHTML(){
+  const n=SICHTSCHUTZ.length,i=S.gal,g=SICHTSCHUTZ[i];
+  return`<div class="vmodal-bg" data-a="closeGal"><div class="gmodal" onclick="event.stopPropagation()" role="dialog" aria-label="Wie baue ich einen Sichtschutz?">
+    <button class="vmodal-x" data-a="closeGal" aria-label="Schliessen">✕</button>
+    <h2 class="gtitle">Wie baue ich einen Sichtschutz?</h2>
+    <p class="gvar">Variante 1: aus Papier</p>
+    <div class="gstage" id="gstage">
+      ${n>1?`<button class="garrow gprev" data-a="galPrev" aria-label="Vorheriges Bild">‹</button>`:''}
+      ${/\.(mp4|webm)$/i.test(g.bild)?`<video src="${g.bild}" autoplay muted loop playsinline aria-label="${(g.alt||g.text).replace(/"/g,'&quot;')}"></video>`:`<img src="${g.bild}" alt="${(g.alt||g.text).replace(/"/g,'&quot;')}">`}
+      ${n>1?`<button class="garrow gnext" data-a="galNext" aria-label="Nächstes Bild">›</button>`:''}
+    </div>
+    ${g.text?`<p class="gcap">${g.text}</p>`:''}
+    ${n>1?`<div class="gfoot"><div class="gdots">${SICHTSCHUTZ.map((_,k)=>`<button class="gdot${k===i?' on':''}" data-a="galGo" data-i="${k}" aria-label="Bild ${k+1}"></button>`).join('')}</div></div>`:''}
+    <div class="gvar2">
+      <p class="gvar">Variante 2: Halterung aus dem 3D&#8209;Drucker</p>
+      <p class="gvar2-txt">Prototyp von Gian Burki</p>
+      ${DRUCK3D?`<a class="btn" href="${DRUCK3D}" download>⬇ Vorlage für den 3D-Drucker</a>`:`<span><span class="link-off" aria-disabled="true">⬇ Vorlage für den 3D-Drucker</span> <span class="soon-tag">folgt bald</span></span>`}
+    </div>
+  </div></div>`;
+}
+// Wischen auf dem Handy
+document.addEventListener('touchstart',e=>{if(S.gal!=null&&e.target.closest('#gstage'))S._tx=e.touches[0].clientX;},{passive:true});
+document.addEventListener('touchend',e=>{if(S.gal==null||S._tx==null)return;const dx=e.changedTouches[0].clientX-S._tx;S._tx=null;
+  if(Math.abs(dx)>40&&SICHTSCHUTZ.length>1){S.gal=(S.gal+(dx<0?1:-1)+SICHTSCHUTZ.length)%SICHTSCHUTZ.length;re();}},{passive:true});
 const BEISPIELE=[
   {file:'denksport.tandem.json',tag:'Für alle',titel:'Denksport',text:'Knifflige Rätsel und Zahlenfolgen – erklären, wie man darauf kommt.'},
   {file:'behauptungen-pruefen.tandem.json',tag:'MINT',titel:'Behauptungen prüfen',text:'Rabatte, Risiken, Physik: Stimmt das? Mit Begründung.'},
@@ -619,7 +742,7 @@ function siteHTML(){
    ['Warum heisst Tandem.li so?','Weil man mit Tandem.li kleine Tandems erstellt: Das schweizerdeutsche «-li» entspricht dem deutschen «-chen» (z.&nbsp;B. Löffeli/Löffelchen).'],
    ['Was ist ein Tandem?','Ein bewährtes Übungsformat: Zwei Lernende arbeiten zusammen, sehen aber unterschiedliche Inhalte. Person A löst eine Aufgabe, Person B sieht die Musterlösung und coacht – dann wird gewechselt. So sprechen, erklären und korrigieren beide abwechselnd.'],
    ['Woher kommt das Tandem-Format?',`<p>Die «Tandemaufgabe» hat in der Zürcher Fremdsprachendidaktik eine über 30-jährige Tradition. Zwei Lernende decken jeweils eine Hälfte der Tabelle ab (A oder B) und lösen abwechselnd eine Aufgabe: Während die eine Person sie bearbeitet, coacht die andere, gestützt auf eine Musterlösung. Das Format geht auf die Fachdidaktikerin Anita Pfau zurück; das Italienischlehrmittel Tracce.ch (Alloatti, Heierli, Tarantino 2012–13) enthält solche Tandemformate.</p>
-     <p>2020 wurde das Papierformat erstmals digital umgesetzt – in der Webapp des Lehrmittels «Tocca a te!» (HEP Verlag), bisher als einziges Lehrmittel in der Schweiz mit diesem Aufgabentyp. Dort koppeln sich zwei Geräte über einen gemeinsamen Code. Viele Lehrpersonen wünschten sich seither eine App, mit der sie eigene Inhalte erstellen können – doch Serverkosten, Wartung und eine datenschutzkonforme Infrastruktur hätten eine dauerhafte Finanzierung erfordert.</p>
+     <p>2020 wurde das Papierformat erstmals digital umgesetzt – in der Webapp des Lehrmittels <a href="https://www.tocca-a-te.ch" target="_blank" rel="noopener">«Tocca a te!»</a> (HEP Verlag), bisher als einziges Lehrmittel in der Schweiz mit diesem Aufgabentyp. Dort koppeln sich zwei Geräte über einen gemeinsamen Code. Viele Lehrpersonen wünschten sich seither eine App, mit der sie eigene Inhalte erstellen können – doch Serverkosten, Wartung und eine datenschutzkonforme Infrastruktur hätten eine dauerhafte Finanzierung erfordert.</p>
      <p>Mit KI-gestütztem Vibe-Coding (mit Claude) liess sich dieser Wunsch 2026 erfüllen: Tandem.li läuft komplett im Browser, ohne Server. Deshalb teilen sich die Tandempartner:innen einen einzigen Bildschirm – getrennt durch ein Blatt Papier.</p>`],
    ['Was kostet Tandem.li?','Nichts.'],
    ['Brauchen meine Schüler:innen einen Account? Wo werden die Daten gespeichert?','Nein. Kein Login, keine Registrierung, keine E-Mail-Adresse. Tandem.li läuft komplett im Browser, und die Tandems liegen als Dateien bei euch. Es werden keine Personendaten erhoben oder übertragen.'],
@@ -634,8 +757,7 @@ function siteHTML(){
    ['Welche Geräte brauche ich im Unterricht?','Pro Tandem ein Gerät mit Browser (Laptop, Tablet) und einen einfachen Sichtschutz – ein aufgestelltes Buch oder Mäppli genügt, damit beide nur ihre Hälfte des Bildschirms sehen.'],
    ['Wie baue ich einen Sichtschutz?',`<p>Am einfachsten: ein Buch, ein Mäppli oder ein gefaltetes A4-Blatt senkrecht auf den schwarzen Streifen in der Mitte des Bildschirms stellen. Wichtig ist nur, dass A die rechte und B die linke Hälfte nicht sehen kann.</p>
      <img class="faq-img" src="sichtschutz.svg" alt="Ein aufgestelltes Buch trennt die beiden Bildschirmhälften.">
-     <p><em>Fotos mit weiteren Varianten (z.&nbsp;B. gefaltete Papierwände) folgen.</em></p>
-     <p><span class="link-off" aria-disabled="true">⬇ Vorlage für den 3D-Drucker</span> <span class="soon-tag">folgt bald</span></p>`],
+     <p><button class="btn" data-a="openGal">▶ Video: Sichtschutz aus Papier</button></p>`],
    ['Braucht es eine Internetverbindung?','Nur zum Laden. Einmal geladen, läuft jedes Tandem.li auch ohne Internetverbindung weiter – solange man die Seite nicht neu lädt.'],
    ['Funktioniert Tandem.li nur im Sprachunterricht?','Nein. Überall, wo es Aufgaben mit Musterlösungen gibt, gibt es auch Challenges – von Mathematik über Geschichte bis Chemie.'],
    ['Kann ich bestehende Tandemübungen aus Lehrmitteln digitalisieren?','Technisch ja. Wenn du die Übung weitergeben willst, brauchst du dafür aber die Erlaubnis des Verlags. Für den eigenen Unterricht gelten die üblichen Schranken des Schulgebrauchs.'],
@@ -643,44 +765,14 @@ function siteHTML(){
      <p>Gut zu wissen: Auf iPads und manchen Tablets lässt sich eine heruntergeladene Datei nicht direkt starten. Für die Arbeit mit der Klasse ist deshalb tandem.li der einfachere Weg. Die heruntergeladene Version ist vor allem eine Sicherheitskopie – falls die Website einmal nicht erreichbar ist.</p>
      <p><button class="btn" data-a="downloadApp">⬇ Tandem.li herunterladen</button></p>`]
   ];
-  const acc=(list,cls)=>list.map(([q,a])=>`<details class="${cls}"><summary>${q}</summary>${a.startsWith('<p>')?a:`<p>${a}</p>`}</details>`).join('');
+  const acc=(list,cls,pre)=>list.map(([q,a],i)=>`<details class="${cls}" id="${pre}-${i}"><summary>${q}</summary>${a.startsWith('<p>')?a:`<p>${a}</p>`}</details>`).join('');
   return`
-  <nav class="site-nav" aria-label="Seiteninhalt">
-    <a href="#vorteile">Vorteile</a><a href="#anleitung">Anleitung</a><a href="#beispiele">Beispiele</a><a href="#faq">FAQ</a><a href="#fuss" data-a="footOpen" data-k="kontakt">Kontakt</a>
-  </nav>
+  <div class="saccs">
+  <details class="sacc" id="sec-vorteile"><summary><h2>Vorteile</h2></summary><div class="sacc-body">
+    <div class="vorteile">${acc(vorteile,'vt','vt')}</div>
+  </div></details>
 
-  <section class="sec" id="vorteile">
-    <h2>Vorteile</h2>
-    <div class="vorteile">${acc(vorteile,'vt')}</div>
-  </section>
-
-  <section class="sec" id="anleitung">
-    <h2>Anleitung</h2>
-    <div class="grid2s">
-      <div class="card">
-        <h3>Für Lehrpersonen</h3>
-        <ol class="howto">
-          <li><span class="step-n">1</span><span>Oben auf <strong>«Tandem erstellen»</strong> klicken, Titel und Aufgaben mit Musterlösungen eingeben.</span></li>
-          <li><span class="step-n">2</span><span><strong>«Tandem speichern»</strong> – das Tandem landet als Datei auf deinem Gerät.</span></li>
-          <li><span class="step-n">3</span><span>Die Datei mit der Klasse teilen: in Teams, per Mail oder auf der Lernplattform.</span></li>
-        </ol>
-        <button class="btn" data-a="video" data-v="lp">▶ Video für Lehrpersonen</button>
-      </div>
-      <div class="card">
-        <h3>Für Lernende</h3>
-        <ol class="howto">
-          <li><span class="step-n">1</span><span>Die Datei deiner Lehrperson auf dein Gerät laden, dann hier oben auf <strong>«Tandem öffnen»</strong> klicken und sie auswählen.</span></li>
-          <li><span class="step-n">2</span><span>Ein Blatt oder Buch als Sichtschutz auf den schwarzen Streifen in der Mitte stellen.</span></li>
-          <li><span class="step-n">3</span><span>Abwechselnd lösen und coachen. Die gelbe Fläche zeigt, wer gerade dran ist.</span></li>
-        </ol>
-        <img class="howto-img" src="sichtschutz.svg" alt="Zwei Lernende an einem Laptop: Ein aufgestelltes Buch trennt die gelbe Aufgaben-Hälfte von der Lösungs-Hälfte.">
-        <button class="btn" data-a="video" data-v="ln">▶ Video für Lernende</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="beispiele">
-    <h2>Beispiele &amp; Tandems von Kolleg:innen</h2>
+  <details class="sacc" id="sec-beispiele"><summary><h2>Beispiele &amp; Tandems von Kolleg:innen</h2></summary><div class="sacc-body sec">
     <div class="tiles">${BEISPIELE.map(b=>`<div class="tile">
         <span class="tile-tag">${b.tag}</span>
         <h3>${b.titel}</h3>
@@ -693,25 +785,24 @@ function siteHTML(){
         <p>Auf unserem Padlet laden Lehrpersonen ihre Tandem-Dateien hoch und finden Tandems von Kolleg:innen. Neue Beiträge werden vor der Veröffentlichung kurz geprüft.</p>
         <span class="tile-go">Zum Padlet →</span>
       </a></div>
-  </section>
+  </div></details>
 
-  <section class="sec faq" id="faq">
-    <h2>FAQ</h2>
-    ${acc(faq,'')}
-  </section>
+  <details class="sacc" id="sec-faq"><summary><h2>FAQ</h2></summary><div class="sacc-body sec faq">
+    ${acc(faq,'','faq')}
+  </div></details>
 
+  <details class="sacc" id="sec-ueber"><summary><h2>Über Tandem.li &amp; Kontakt</h2></summary><div class="sacc-body">
+    <div class="foot-grid">${FOOT.map(([k,t])=>`<div class="foot-sec" id="fs-${k}"><h3>${t}</h3>${footPanel(k)}</div>`).join('')}</div>
+  </div></details>
+  </div>
 
   <footer class="site-foot" id="fuss">
-    <div class="foot-row">
-      <button class="foot-pill${S.footOpen?' on':''}" data-a="footToggle" aria-expanded="${!!S.footOpen}">Über Tandem.li · Kontakt · Datenschutz · Lizenz ${S.footOpen?'▴':'▾'}</button>
-      <span class="foot-copy">Sara Alloatti, 2026 · Lizenz CC BY-NC-SA 4.0</span>
-    </div>
-    ${S.footOpen?`<div class="foot-panel foot-grid">${FOOT.map(([k,t])=>`<div class="foot-sec" id="fs-${k}"><h3>${t}</h3>${footPanel(k)}</div>`).join('')}</div>`:''}
+    <div class="foot-row"><span class="foot-copy">Sara Alloatti, 2026 · Lizenz CC BY-NC-SA 4.0</span></div>
   </footer>`;
 }
 const FOOT=[['ueber','Über Tandem.li'],['kontakt','Kontakt'],['datenschutz','Datenschutz'],['lizenz','Lizenz']];
 function footPanel(k){
-  if(k==='ueber')return`<p>Konzipiert und entwickelt von <a href="https://www.ife.uzh.ch/de/llbm/personen/fachdidaktikerinnen/alloattisara.html" target="_blank" rel="noopener">Sara Alloatti</a> im Vibe-Coding mit Claude (Anthropic) – mit der Unterstützung von Leo Waltenspül bei der technischen Umsetzung sowie von Italienisch-Kolleg:innen und ihren Klassen, die Tandem.li im Unterricht erprobt haben, darunter Klassen der <a href="https://www.kuezh.ch" target="_blank" rel="noopener">Kantonsschule Uetikon am See</a>.</p><p>Die Idee der Tandemübung stammt von Anita Pfau; digital umgesetzt wurde sie erstmals 2020 im Lehrmittel «Tocca a te!» (HEP Verlag).</p>`;
+  if(k==='ueber')return`<p>Konzipiert und entwickelt von <a href="https://www.ife.uzh.ch/de/llbm/personen/fachdidaktikerinnen/alloattisara.html" target="_blank" rel="noopener">Sara Alloatti</a> im Vibe-Coding mit Claude (Anthropic) – mit der Unterstützung von Leo Waltenspül bei der technischen Umsetzung sowie von Italienisch-Kolleg:innen und ihren Klassen, die Tandem.li im Unterricht erprobt haben, darunter Klassen der <a href="https://www.kuezh.ch" target="_blank" rel="noopener">Kantonsschule Uetikon am See</a>. Den Prototyp der Halterung für den Sichtschutz hat Gian Burki entwickelt.</p><p>Tandem.li wurde im Rahmen von micro_innovation der Universität Zürich gefördert.</p><p>Die Idee der Tandemübung stammt von Anita Pfau; digital umgesetzt wurde sie erstmals 2020 im Lehrmittel <a href="https://www.tocca-a-te.ch" target="_blank" rel="noopener">«Tocca a te!»</a> (HEP Verlag).</p>`;
   if(k==='kontakt')return`<p>Fragen, Rückmeldungen oder Ideen für Tandem.li? Wir freuen uns über deine Nachricht.</p><p><button class="btn btn-ink" data-a="mailMe">E-Mail schreiben</button> <span class="mail-shown" id="mailShown"></span></p>`;
   if(k==='datenschutz')return`<p>Keine Cookies, kein Tracking, kein Konto. Tandems bleiben auf deinem Gerät und werden nie an einen Server übertragen.</p><p>Die Website wird über GitHub Pages (GitHub Inc., USA) bereitgestellt; GitHub speichert aus Sicherheitsgründen technische Zugriffsdaten wie die IP-Adresse. Wer uns schreibt, dessen E-Mail-Adresse verwenden wir nur für die Antwort.</p><p>Die Anleitungsvideos liegen direkt auf dieser Website. Der Austausch von Tandems läuft über Padlet (Wallwisher Inc., USA); diese Seite öffnet sich separat, dort gelten deren Datenschutzbestimmungen.</p>`;
   return`<p>Tandem.li – Code, Texte und Beispiel-Tandems – steht unter der Lizenz <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>: frei nutzbar und veränderbar mit Namensnennung, nicht kommerziell, Weitergabe unter gleichen Bedingungen. Deine eigenen Tandems gehören dir.</p><p>Bausteine Dritter: Illustrationen Open Peeps von Pablo Stanley (CC0) · Schriften Antonio, Josefin Sans, DM Sans (SIL Open Font License) · Excel-Bibliothek SheetJS (Apache 2.0).</p>`;
@@ -1186,10 +1277,18 @@ function act(e){
     case 'newSet':{if(!confirm(`Achtung: Titel, Anweisung und ${S.pairs.length===1?'die eine Aufgabe':'alle '+S.pairs.length+' Aufgaben'} dieses Tandems werden gelöscht.\n\nFalls du das Tandem behalten willst: zuerst «Abbrechen» klicken und es unten mit «Tandem speichern» sichern.\n\nWirklich alles löschen und neu beginnen?`))return;
       Object.assign(S,{pairs:[],setName:'',anweisung:'',editIdx:null,tmpF:'',tmpL:'',tmpH:''});saveData();re();break;}
     case 'saveSet':saveSet();break;
+    case 'drawer':{S.drawer=S.drawer||{};S.drawer[el.dataset.k]=!S.drawer[el.dataset.k];re();break;}
+    case 'openSec':{e.preventDefault();const d=document.getElementById('sec-'+el.dataset.k);if(d){d.open=true;d.scrollIntoView({behavior:'smooth',block:'start'});}break;}
+    case 'drawerAll':{e.preventDefault();S.drawer={ln:true,lp:true};re();document.querySelector('.doors')?.scrollIntoView({behavior:'smooth',block:'start'});break;}
     case 'footToggle':{S.footOpen=!S.footOpen;re();break;}
-    case 'footOpen':{e.preventDefault();S.footOpen=true;re();document.getElementById('fs-'+(el.dataset.k||'ueber'))?.scrollIntoView({behavior:'smooth',block:'center'});break;}
+    case 'footOpen':{e.preventDefault();const d=document.getElementById('sec-ueber');if(d)d.open=true;document.getElementById('fs-'+(el.dataset.k||'ueber'))?.scrollIntoView({behavior:'smooth',block:'center'});break;}
     case 'video':{if(!VIDEOS[el.dataset.v])break;S.video=el.dataset.v;re();break;}
     case 'closeVideo':{S.video=null;re();break;}
+    case 'openGal':{S.gal=0;re();break;}
+    case 'closeGal':{S.gal=null;re();break;}
+    case 'galNext':{S.gal=(S.gal+1)%SICHTSCHUTZ.length;re();break;}
+    case 'galPrev':{S.gal=(S.gal-1+SICHTSCHUTZ.length)%SICHTSCHUTZ.length;re();break;}
+    case 'galGo':{S.gal=+el.dataset.i;re();break;}
     case 'mailMe':{const u=['in','fo'].join(''),d=['tandem','li'].join('.');const a=u+String.fromCharCode(64)+d;
       const sh=document.getElementById('mailShown');if(sh)sh.textContent=a;location.href='mai'+'lto:'+a;break;}
     case 'tryExample':loadFromUrl('beispiele/'+el.dataset.file);break;
