@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tandem.li</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="fonts/fonts.css" id="fontsCss">
 <style>
 :root{
@@ -28,6 +31,8 @@ h1,h2{font-family:'Antonio','Arial Narrow',sans-serif;font-weight:700;text-trans
 .wavy{background:var(--blob) center/100% 100% no-repeat}
 
 /* Logo (Platzhalter: Punkt halb schwarz, halb gelb) */
+.logo-home{background:none;border:none;padding:0;margin:0;cursor:pointer;font:inherit;color:inherit}
+.logo-home:hover .logo{opacity:.7}
 .logo{font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:.01em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink)}
 .logo-dot{display:inline-block;width:.24em;height:.24em;border-radius:50%;background:var(--yl);border:max(1px,.028em) solid var(--ink);margin:0 .05em;box-sizing:border-box}
 
@@ -261,7 +266,7 @@ textarea{resize:vertical}
 .foot-panel a{color:var(--ink);text-underline-offset:2px}
 .mail-shown{font-weight:700;color:var(--ink);font-size:var(--fs-md)}
 
-.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:10px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:12px}
 .tile{border:var(--line);border-radius:var(--r);background:var(--paper);padding:12px 14px;display:flex;flex-direction:column;gap:4px}
 .tile-tag{font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:10px;color:var(--ink2);align-self:flex-start;background:var(--bg2);border-radius:20px;padding:3px 8px 2px}
 .howto-img{display:block;width:100%;max-width:420px;height:auto;margin:6px 0 14px;border:1px solid var(--bg3);border-radius:var(--r)}
@@ -294,6 +299,7 @@ textarea{resize:vertical}
 .gvar2{margin-top:22px;padding-top:18px;border-top:1px solid var(--bg3)}
 .gvar2 .soon-tag{white-space:nowrap}
 .gvar2 .link-off{font-size:var(--fs-sm)}
+.gvar2-img{display:block;width:100%;max-width:320px;border-radius:var(--r);border:1px solid var(--bg3);margin:0 0 10px}
 .gvar2-txt{font-size:var(--fs-sm);color:var(--ink2);margin:0 0 10px}
 .gfoot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;font-size:var(--fs-xs)}
 .gdots{display:flex;gap:6px}
@@ -333,6 +339,17 @@ textarea{resize:vertical}
 .saccs{margin-top:clamp(36px,6vw,64px)}
 .sacc .foot-grid .foot-sec p{font-size:var(--fs-sm);line-height:1.6;color:var(--ink2);margin-bottom:8px}
 .sacc .foot-grid a{color:var(--ink);text-underline-offset:2px}
+.vthumb{display:block;width:100%;margin:22px 0 4px;padding:0;background:none;border:none;cursor:pointer;text-align:left;color:var(--ink)}
+.vthumb-img{position:relative;display:block;border:var(--line);border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;background:var(--bg2)}
+.vthumb-img img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9)}
+.vthumb-img::after{content:'';position:absolute;inset:0;background:rgba(20,20,20,.18);transition:background .2s}
+.vthumb:hover .vthumb-img::after{background:rgba(20,20,20,.05)}
+.vthumb-play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:var(--yl);border:var(--line);z-index:1;transition:transform .2s}
+.vthumb-play::before{content:'';position:absolute;left:25px;top:19px;border-style:solid;border-width:13px 0 13px 21px;border-color:transparent transparent transparent var(--ink)}
+.vthumb:hover .vthumb-play{transform:scale(1.08)}
+.vthumb-dur{position:absolute;right:8px;bottom:8px;z-index:1;background:var(--ink);color:#fff;font-size:12px;font-weight:600;border-radius:6px;padding:2px 7px}
+.vthumb-cap{display:block;margin-top:8px;font-weight:700;font-size:var(--fs-sm)}
+.vthumb-kick{font-family:'Josefin Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:10px;background:var(--yl);border:1px solid var(--ink);border-radius:20px;padding:2px 8px 1px;margin-right:8px;vertical-align:2px}
 .tile-plus{text-decoration:none;color:var(--ink);background:var(--yl);border-style:dashed}
 .tile-plus:hover{background:var(--yl-dk)}
 .tile-plus .plus{font-family:'Antonio',sans-serif;font-weight:700;font-size:44px;line-height:.9}
@@ -343,6 +360,18 @@ a.btn,a.btn-video{text-decoration:none}
 .tile p{font-size:var(--fs-xs);line-height:1.45;color:var(--ink2)}
 .tile-links{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:auto;padding-top:6px;font-size:var(--fs-xs)}
 .tile-links .link-btn{font-size:var(--fs-xs)}
+.tile-links{align-items:center}
+.tile-try{background:var(--ink);color:#fff;border:none;border-radius:50px;padding:7px 14px 6px;font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:11px;cursor:pointer}
+.tile-try:hover{background:#333}
+.tile-dl{font-size:11px;color:var(--ink3);text-decoration:underline;text-underline-offset:2px}
+.tile-dl:hover{color:var(--ink2)}
+.bloom{display:flex;flex-wrap:wrap;align-items:center;gap:2px 7px;font-size:11px;font-weight:600;color:var(--ink2);margin-top:2px}
+.bloom-dots{display:inline-flex;gap:3px}
+.bloom-dots i{width:7px;height:7px;border-radius:50%;border:1px solid var(--ink3);display:block}
+.bloom-dots i.on{background:var(--ink);border-color:var(--ink)}
+.bloom-coach{flex-basis:100%;font-weight:500;color:var(--ink3)}
+.boerse-sub{font-weight:700;font-size:var(--fs-md);margin-bottom:6px}
+.boerse-txt{font-size:var(--fs-sm);color:var(--ink2);line-height:1.6;max-width:640px;margin-bottom:16px}
 a.link-btn{color:var(--ink);font-weight:700}
 
 .q-text,.sol-text,.mini-q-text{white-space:pre-line}
@@ -481,7 +510,7 @@ const ART_CLASS=`<svg viewBox="-70 -45 1255 690" preserveAspectRatio="xMidYMid m
 
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 const LOGO_MARK=`<span class="logo-dot"></span>`;
-function logoHTML(){return`<span class="logo">tandem${LOGO_MARK}li</span>`;}
+function logoHTML(){const l=`<span class="logo">tandem${LOGO_MARK}li</span>`;return S.phase==='home'?l:`<button class="logo-home" data-a="goHome" title="Zur Startseite" aria-label="tandem.li – zur Startseite">${l}</button>`;}
 function fileBase(){const n=(S.setName||'').trim().replace(/[\\/:*?"<>|]+/g,'').replace(/\s*[–—-]\s*/g,'-').replace(/\s+/g,'_');return n||'Mein_Tandem';}
 function leftAnswers(){return S.idx%2===0;}
 function shuffle(arr){
@@ -550,7 +579,10 @@ let lastPhase=null;
 function re(){
   const samePhase=S.phase===lastPhase;
   const keepY=window.scrollY, keepList=document.getElementById('pList')?.scrollTop||0;
-  if(!samePhase){lastPhase=S.phase;window.scrollTo(0,0);}
+  if(!samePhase){
+    // Browser-Zurück: jeder Wechsel der Ansicht wird ein Schritt im Verlauf
+    try{ if(lastPhase===null)history.replaceState({p:S.phase},'');else if(!S._fromPop)history.pushState({p:S.phase},''); }catch(e){}
+    lastPhase=S.phase;window.scrollTo(0,0);}
   document.title=S.setName?S.setName+' · Tandem.li':'Tandem.li';
   const openD=samePhase?[...document.querySelectorAll('#app details[id]')].filter(d=>d.open).map(d=>d.id):[];
   document.getElementById('app').innerHTML=
@@ -599,7 +631,7 @@ function infoModalHTML(){
   if(!S.showInfo)return'';
   return`<div class="modal-bg" data-a="closeInfo">
     <div class="modal" onclick="event.stopPropagation()">
-      <h2>So funktioniert ein Tandem</h2>
+      <h2>So funktioniert ein Tandemli</h2>
       <p>Eine Person ist A, die andere B. Stellt ein Blatt senkrecht zwischen euch — so sieht jede Person nur eine Bildschirmhälfte.</p>
       <p>A löst die erste Aufgabe – B darf A coachen (z.&nbsp;B. Tipps geben) und die Antwort bewerten (Korrekt: 2P · Fast: 1P · Falsch: 0P).</p>
       <p class="modal-tip modal-yl">Gelb zeigt, wo du gerade dran bist: die gelbe Fläche, wenn du eine Aufgabe löst — die gelbe Glühbirne, wenn du coachst.</p>
@@ -618,22 +650,21 @@ function infoModalHTML(){
 function drawerHTML(k){
   const open=!!(S.drawer&&S.drawer[k]);
   const body=k==='ln'?`
-        <button class="btn-video" data-a="video" data-v="ln"><span class="play" aria-hidden="true">▶</span>Videotutorial für Lernende</button>
         <ol class="howto">
-          <li><span class="step-n">1</span><span>Die Datei deiner Lehrperson auf dein Gerät laden, dann oben auf <strong>«Tandem öffnen»</strong> klicken und sie auswählen.</span></li>
+          <li><span class="step-n">1</span><span>Die Datei deiner Lehrperson auf dein Gerät laden, dann oben auf <strong>«Tandemli öffnen»</strong> klicken und sie auswählen.</span></li>
           <li><span class="step-n">2</span><span>Ein Blatt oder Buch als Sichtschutz auf den schwarzen Streifen in der Mitte stellen.</span></li>
           <li><span class="step-n">3</span><span>Abwechselnd lösen und coachen. Die gelbe Fläche zeigt, wer gerade dran ist.</span></li>
         </ol>
         <img class="howto-img" src="sichtschutz.svg" alt="Zwei Lernende an einem Laptop: Ein aufgestelltes Buch trennt die gelbe Aufgaben-Hälfte von der Lösungs-Hälfte.">
-        <div class="btn-pair"><button class="btn" data-a="openGal">Wie baue ich einen Sichtschutz?</button></div>`
+        <div class="btn-pair"><button class="btn" data-a="openGal">Wie baue ich einen Sichtschutz?</button></div>
+        ${vthumbHTML('ln')}`
     :`
-        <button class="btn-video" data-a="video" data-v="lp"><span class="play" aria-hidden="true">▶</span>Videotutorial für Lehrpersonen</button>
         <ol class="howto">
-          <li><span class="step-n">1</span><span>Oben auf <strong>«Tandem erstellen»</strong> klicken, Titel und Aufgaben mit Musterlösungen eingeben.</span></li>
-          <li><span class="step-n">2</span><span><strong>«Tandem speichern»</strong> – das Tandem landet als Datei auf deinem Gerät.</span></li>
+          <li><span class="step-n">1</span><span>Oben auf <strong>«Tandemli erstellen»</strong> klicken, Titel und Aufgaben mit Musterlösungen eingeben.</span></li>
+          <li><span class="step-n">2</span><span><strong>«Tandemli speichern»</strong> – das Tandemli landet als Datei auf deinem Gerät.</span></li>
           <li><span class="step-n">3</span><span>Die Datei mit der Klasse teilen: in Teams, per Mail oder auf der Lernplattform.</span></li>
         </ol>
-        `;
+        ${vthumbHTML('lp')}`;
   return`<div class="drawer${open?' open':''}" id="drawer-${k}">
       ${open?`<div class="drawer-body">${body}</div>`:''}
       ${open?`<button class="drawer-close" data-a="drawer" data-k="${k}" aria-expanded="true" aria-label="Anleitung schliessen" title="Anleitung schliessen">&minus;</button>`:`<button class="drawer-tab" data-a="drawer" data-k="${k}" aria-expanded="false">Anleitung ▾</button>`}
@@ -650,8 +681,8 @@ function homeHTML(){
       <section class="door door-learn">
         <div class="door-art">${ART_CLASS}</div>
         <h2>Für Lernende</h2>
-        <p>Öffne das Tandem, das du von deiner Lehrperson bekommen hast.</p>
-        <label class="btn-door caps">Tandem öffnen<input type="file" id="openPlay" accept=".json,application/json,.html,text/html" style="display:none"></label>
+        <p>Öffne das Tandemli, das du von deiner Lehrperson bekommen hast.</p>
+        <label class="btn-door caps">Tandemli öffnen<input type="file" id="openPlay" accept=".json,application/json,.html,text/html" style="display:none"></label>
       </section>
       ${drawerHTML('ln')}
       </div>
@@ -659,8 +690,8 @@ function homeHTML(){
       <section class="door door-teach">
         <div class="door-art">${ART_TEACHER}</div>
         <h2>Für Lehrpersonen</h2>
-        <p>Tandems erstellen, speichern und mit der Klasse teilen.</p>
-        <button class="btn-door caps" data-a="goCreate">Tandem erstellen</button>
+        <p>Tandemli erstellen, speichern und mit der Klasse teilen.</p>
+        <button class="btn-door caps" data-a="goCreate">Tandemli erstellen</button>
       </section>
       ${drawerHTML('lp')}
       </div>
@@ -676,9 +707,13 @@ function homeHTML(){
 // ══ WEBSITE-INHALT (nach Saras Mockup, überarbeitet) ══
 // Videos liegen als MP4 im Ordner «videos» auf der Website. Fehlt die Datei, öffnet sich der Link zu MediaSpace.
 const VIDEOS={
-  lp:{titel:'Video für Lehrpersonen',file:'videos/lehrpersonen.mp4',url:'https://uzh.mediaspace.cast.switch.ch/media/AnweisungenTANDEMLI/0_xhsbwgxn'},
-  ln:{titel:'Video für Lernende',file:'videos/lernende.mp4',url:'https://uzh.mediaspace.cast.switch.ch/media/ANWEISUNG_LERNENDE_TANDEMLI/0_gl3t2byi/141205'}
+  lp:{titel:'Video für Lehrpersonen',bild:'videos/lehrpersonen.jpg',dauer:'2:45',file:'videos/lehrpersonen.mp4',url:'https://uzh.mediaspace.cast.switch.ch/media/AnweisungenTANDEMLI/0_xhsbwgxn'},
+  ln:{titel:'Video für Lernende',bild:'videos/lernende.jpg',dauer:'2:24',file:'videos/lernende.mp4',url:'https://uzh.mediaspace.cast.switch.ch/media/ANWEISUNG_LERNENDE_TANDEMLI/0_gl3t2byi/141205'}
 };
+function vthumbHTML(k){const v=VIDEOS[k];
+  return`<button class="vthumb" data-a="video" data-v="${k}" aria-label="Videotutorial ${k==='ln'?'für Lernende':'für Lehrpersonen'} abspielen (${v.dauer})">
+    <span class="vthumb-img"><img src="${v.bild}" alt="" loading="lazy"><span class="vthumb-play" aria-hidden="true"></span><span class="vthumb-dur">${v.dauer}</span></span>
+    <span class="vthumb-cap"><span class="vthumb-kick">Video</span>Videotutorial ${k==='ln'?'für Lernende':'für Lehrpersonen'}</span></button>`;}
 function videoModalHTML(){
   const v=VIDEOS[S.video];if(!v)return'';
   return`<div class="vmodal-bg" data-a="closeVideo"><div class="vmodal" onclick="event.stopPropagation()" role="dialog" aria-label="${v.titel}">
@@ -711,7 +746,8 @@ function galleryHTML(){
     ${n>1?`<div class="gfoot"><div class="gdots">${SICHTSCHUTZ.map((_,k)=>`<button class="gdot${k===i?' on':''}" data-a="galGo" data-i="${k}" aria-label="Bild ${k+1}"></button>`).join('')}</div></div>`:''}
     <div class="gvar2">
       <p class="gvar">Variante 2: Halterung aus dem 3D&#8209;Drucker</p>
-      <p class="gvar2-txt">Prototyp von Gian Burki</p>
+      <img class="gvar2-img" src="sichtschutz/halterung-prototyp.jpg" alt="Prototyp der Halterung aus dem 3D-Drucker" loading="lazy">
+      <p class="gvar2-txt">Prototyp von Gian Burki – noch in Weiterentwicklung.</p>
       ${DRUCK3D?`<a class="btn" href="${DRUCK3D}" download>⬇ Vorlage für den 3D-Drucker</a>`:`<span><span class="link-off" aria-disabled="true">⬇ Vorlage für den 3D-Drucker</span> <span class="soon-tag">folgt bald</span></span>`}
     </div>
   </div></div>`;
@@ -720,72 +756,78 @@ function galleryHTML(){
 document.addEventListener('touchstart',e=>{if(S.gal!=null&&e.target.closest('#gstage'))S._tx=e.touches[0].clientX;},{passive:true});
 document.addEventListener('touchend',e=>{if(S.gal==null||S._tx==null)return;const dx=e.changedTouches[0].clientX-S._tx;S._tx=null;
   if(Math.abs(dx)>40&&SICHTSCHUTZ.length>1){S.gal=(S.gal+(dx<0?1:-1)+SICHTSCHUTZ.length)%SICHTSCHUTZ.length;re();}},{passive:true});
+const BLOOM=['','Erinnern','Verstehen','Anwenden','Analysieren','Bewerten','Erschaffen'];
 const BEISPIELE=[
-  {file:'denksport.tandem.json',tag:'Für alle',titel:'Denksport',text:'Knifflige Rätsel und Zahlenfolgen – erklären, wie man darauf kommt.'},
-  {file:'behauptungen-pruefen.tandem.json',tag:'MINT',titel:'Behauptungen prüfen',text:'Rabatte, Risiken, Physik: Stimmt das? Mit Begründung.'},
-  {file:'argumente-und-quellen.tandem.json',tag:'Gesellschaft',titel:'Argumente und Quellen',text:'Denkfehler erkennen: Korrelation, falsche Autorität, verzerrte Umfragen.'},
-  {file:'nachrichten-formulieren.tandem.json',tag:'Sprachen',titel:'Nachrichten formulieren',text:'Passt der Ton? Nachrichten beurteilen und passend umschreiben.'},
-  {file:'tiere-in-redewendungen.tandem.json',tag:'Sprachen',titel:'Tiere in Redewendungen',text:'Welches Tier steckt auf Englisch, Französisch, Italienisch oder Spanisch dahinter?'},
-  {file:'stage-italienisch.tandem.json',tag:'Sprachen',titel:'Stage-Vorbereitung',text:'Nützliche Sätze auf Italienisch für zwei Wochen in einer anderen Sprachregion.'}
+  {file:'tiere-in-redewendungen.tandem.json',fach:'Englisch, Französisch, Italienisch, Spanisch',k:[1,2],titel:'Tiere in Redewendungen',text:'Welches Tier steckt auf Englisch, Französisch, Italienisch oder Spanisch dahinter?'},
+  {file:'stage-italienisch.tandem.json',fach:'Italienisch',k:[3],titel:'Stage-Vorbereitung',text:'Nützliche Sätze auf Italienisch für zwei Wochen in einer anderen Sprachregion.'},
+  {file:'denksport.tandem.json',fach:'Fächerübergreifend',k:[4],titel:'Denksport',text:'Knifflige Rätsel und Zahlenfolgen – erklären, wie man darauf kommt.'},
+  {file:'argumente-und-quellen.tandem.json',fach:'ABU',k:[4],titel:'Argumente und Quellen',text:'Denkfehler erkennen: Korrelation, falsche Autorität, verzerrte Umfragen.'},
+  {file:'nachrichten-formulieren.tandem.json',fach:'ABU',k:[3,5],titel:'Nachrichten formulieren',text:'Passt der Ton? Nachrichten beurteilen und passend umschreiben.'},
+  {file:'stilmittel-erfinden.tandem.json',fach:'Deutsch',k:[5,6],titel:'Stilmittel erfinden',text:'Vergleich, Metapher, Euphemismus & Co.: selbst Stilmittel erfinden – der Coach prüft mit klaren Kriterien.'}
 ];
+function bloomHTML(b){
+  const lab=b.k.map(n=>'K'+n).join(b.k.length===2&&b.k[1]-b.k[0]===1?'–':' + ')+' · '+b.k.map(n=>BLOOM[n]).join(', ');
+  return`<span class="bloom" title="Stufe der Lernziel-Taxonomie nach Anderson &amp; Krathwohl"><span class="bloom-dots" aria-hidden="true">${[1,2,3,4,5,6].map(n=>`<i class="${b.k.includes(n)?'on':''}"></i>`).join('')}</span>${lab}${b.coach?`<span class="bloom-coach">Coach: K${b.coach} · ${BLOOM[b.coach]}</span>`:''}</span>`;}
 function siteHTML(){
   const vorteile=[
    ['Echte Gespräche statt Bildschirm-Verstecken','Lernende, die sich hinter ihren Bildschirmen verstecken oder nebenbei online shoppen? Nicht mit Tandem.li! Hier regt der Bildschirm mündliche Gespräche an: Die Lernenden coachen sich beim Lösen der Challenges gegenseitig.'],
    ['Wer coacht, lernt doppelt','Beim Erklären, Nachfragen und Korrigieren verarbeiten die Lernenden den Stoff tiefer als beim blossen Lösen.'],
    ['Alle sind mal Expertin oder Experte','Der ständige Rollenwechsel sorgt dafür, dass sich beide immer wieder als Coach erleben – und nicht nur als die Person, die geprüft wird.'],
-   ['Kein Login, keine Daten','Keine Anmeldung, kein Account, keine E-Mail-Adresse. Tandem.li läuft komplett im Browser, die Tandems bleiben als Dateien bei euch.'],
-   ['Auch bei wackligem WLAN','Schüler:innen brauchen nur ein Gerät, ein Blatt als Sichtschutz und das Tandem ihrer Lehrperson. Einmal geladen, läuft jedes Tandem.li auch ohne Internetverbindung weiter.'],
-   ['In wenigen Minuten erstellt','Tandemübungen auf Papier herzustellen ist aufwendig, und eine Software, mit der Lehrpersonen selbst Tandems erstellen können, gab es bisher nicht. Mit Tandem.li erstellst du ein Tandem in wenigen Minuten – von Hand oder aus einer Excel-Tabelle.'],
-   ['Deine Tandems gehören dir','Jedes Tandem wird als kleine Datei auf deinem Gerät gespeichert. Du kannst es jederzeit wieder öffnen, weiterbearbeiten und mit Kolleg:innen teilen.']
+   ['Kein Login, keine Daten','Keine Anmeldung, kein Account, keine E-Mail-Adresse. Tandem.li läuft komplett im Browser, die Tandemli bleiben als Dateien bei euch.'],
+   ['Auch bei wackligem WLAN','Schüler:innen brauchen nur ein Gerät, ein Blatt als Sichtschutz und das Tandemli ihrer Lehrperson. Einmal geladen, läuft jedes Tandem.li auch ohne Internetverbindung weiter.'],
+   ['In wenigen Minuten erstellt','Tandemübungen auf Papier herzustellen ist aufwendig, und eine Software, mit der Lehrpersonen selbst Tandemli erstellen können, gab es bisher nicht. Mit Tandem.li erstellst du ein Tandemli in wenigen Minuten – von Hand oder aus einer Excel-Tabelle.'],
+   ['Deine Tandemli gehören dir','Jedes Tandemli wird als kleine Datei auf deinem Gerät gespeichert. Du kannst es jederzeit wieder öffnen, weiterbearbeiten und mit Kolleg:innen teilen.']
   ];
   const faq=[
-   ['Warum heisst Tandem.li so?','Weil man mit Tandem.li kleine Tandems erstellt: Das schweizerdeutsche «-li» entspricht dem deutschen «-chen» (z.&nbsp;B. Löffeli/Löffelchen).'],
-   ['Was ist ein Tandem?','Ein bewährtes Übungsformat: Zwei Lernende arbeiten zusammen, sehen aber unterschiedliche Inhalte. Person A löst eine Aufgabe, Person B sieht die Musterlösung und coacht – dann wird gewechselt. So sprechen, erklären und korrigieren beide abwechselnd.'],
+   ['Warum heisst Tandem.li so?','Weil man damit Tandemli erstellt – kleine Tandems: Das schweizerdeutsche «-li» entspricht dem deutschen «-chen» (z.&nbsp;B. Löffeli/Löffelchen).'],
+   ['Was ist ein Tandemli?','Ein bewährtes Übungsformat: Zwei Lernende arbeiten zusammen, sehen aber unterschiedliche Inhalte. Person A löst eine Aufgabe, Person B sieht die Musterlösung und coacht – dann wird gewechselt. So sprechen, erklären und korrigieren beide abwechselnd.'],
    ['Woher kommt das Tandem-Format?',`<p>Die «Tandemaufgabe» hat in der Zürcher Fremdsprachendidaktik eine über 30-jährige Tradition. Zwei Lernende decken jeweils eine Hälfte der Tabelle ab (A oder B) und lösen abwechselnd eine Aufgabe: Während die eine Person sie bearbeitet, coacht die andere, gestützt auf eine Musterlösung. Das Format geht auf die Fachdidaktikerin Anita Pfau zurück; das Italienischlehrmittel Tracce.ch (Alloatti, Heierli, Tarantino 2012–13) enthält solche Tandemformate.</p>
      <p>2020 wurde das Papierformat erstmals digital umgesetzt – in der Webapp des Lehrmittels <a href="https://www.tocca-a-te.ch" target="_blank" rel="noopener">«Tocca a te!»</a> (HEP Verlag), bisher als einziges Lehrmittel in der Schweiz mit diesem Aufgabentyp. Dort koppeln sich zwei Geräte über einen gemeinsamen Code. Viele Lehrpersonen wünschten sich seither eine App, mit der sie eigene Inhalte erstellen können – doch Serverkosten, Wartung und eine datenschutzkonforme Infrastruktur hätten eine dauerhafte Finanzierung erfordert.</p>
      <p>Mit KI-gestütztem Vibe-Coding (mit Claude) liess sich dieser Wunsch 2026 erfüllen: Tandem.li läuft komplett im Browser, ohne Server. Deshalb teilen sich die Tandempartner:innen einen einzigen Bildschirm – getrennt durch ein Blatt Papier.</p>`],
    ['Was kostet Tandem.li?','Nichts.'],
-   ['Brauchen meine Schüler:innen einen Account? Wo werden die Daten gespeichert?','Nein. Kein Login, keine Registrierung, keine E-Mail-Adresse. Tandem.li läuft komplett im Browser, und die Tandems liegen als Dateien bei euch. Es werden keine Personendaten erhoben oder übertragen.'],
-   ['Muss ich alle Aufgaben von Hand eintippen?',`<p>Nein. Unter «Tandem erstellen» gibt es drei Wege, die sich auch kombinieren lassen:</p>
+   ['Brauchen meine Schüler:innen einen Account? Wo werden die Daten gespeichert?','Nein. Kein Login, keine Registrierung, keine E-Mail-Adresse. Tandem.li läuft komplett im Browser, und die Tandemli liegen als Dateien bei euch. Es werden keine Personendaten erhoben oder übertragen.'],
+   ['Muss ich alle Aufgaben von Hand eintippen?',`<p>Nein. Unter «Tandemli erstellen» gibt es drei Wege, die sich auch kombinieren lassen:</p>
      <ul class="faq-list">
        <li><strong>Von Hand eintippen:</strong> Aufgabe, Musterlösung und (optional) einen Coaching-Hinweis eingeben.</li>
        <li><strong>Aus Excel importieren:</strong> Spalte A enthält die Aufgabe, Spalte B die Musterlösung, Spalte C (optional) den Coaching-Hinweis. Zeile 1 ist die Kopfzeile.</li>
-       <li><strong>Gespeichertes Tandem öffnen:</strong> ein eigenes oder von Kolleg:innen erhaltenes Tandem laden und anpassen.</li>
+       <li><strong>Gespeichertes Tandemli öffnen:</strong> ein eigenes oder von Kolleg:innen erhaltenes Tandemli laden und anpassen.</li>
      </ul>
-     <p>Die Excel-Tabelle kannst du auch von einer KI erstellen lassen. <button class="link-btn" data-a="showPrompt">Hier ist ein fertiger Prompt dafür.</button> Prüfe die Musterlösungen aber immer, bevor du das Tandem mit der Klasse teilst.</p>`],
-   ['Kann ich meine Tandems später weiterbearbeiten?','Ja. Über «Tandem erstellen» → «Tandem öffnen» öffnest du ein bereits gespeichertes Tandem wieder, kannst es ändern und neu abspeichern. Zusätzlich lassen sich die Aufgaben als Excel-Datei exportieren.'],
-   ['Welche Geräte brauche ich im Unterricht?','Pro Tandem ein Gerät mit Browser (Laptop, Tablet) und einen einfachen Sichtschutz – ein aufgestelltes Buch oder Mäppli genügt, damit beide nur ihre Hälfte des Bildschirms sehen.'],
+     <p>Die Excel-Tabelle kannst du auch von einer KI erstellen lassen. <button class="link-btn" data-a="showPrompt">Hier ist ein fertiger Prompt dafür.</button> Prüfe die Musterlösungen aber immer, bevor du das Tandemli mit der Klasse teilst.</p>`],
+   ['Kann ich meine Tandemli später weiterbearbeiten?','Ja. Über «Tandemli erstellen» → «Tandemli öffnen» öffnest du ein bereits gespeichertes Tandemli wieder, kannst es ändern und neu abspeichern. Zusätzlich lassen sich die Aufgaben als Excel-Datei exportieren.'],
+   ['Welche Geräte brauche ich im Unterricht?','Pro Zweierteam ein Gerät mit Browser (Laptop, Tablet) und einen einfachen Sichtschutz – ein aufgestelltes Buch oder Mäppli genügt, damit beide nur ihre Hälfte des Bildschirms sehen.'],
    ['Wie baue ich einen Sichtschutz?',`<p>Am einfachsten: ein Buch, ein Mäppli oder ein gefaltetes A4-Blatt senkrecht auf den schwarzen Streifen in der Mitte des Bildschirms stellen. Wichtig ist nur, dass A die rechte und B die linke Hälfte nicht sehen kann.</p>
      <img class="faq-img" src="sichtschutz.svg" alt="Ein aufgestelltes Buch trennt die beiden Bildschirmhälften.">
      <p><button class="btn" data-a="openGal">▶ Video: Sichtschutz aus Papier</button></p>`],
    ['Braucht es eine Internetverbindung?','Nur zum Laden. Einmal geladen, läuft jedes Tandem.li auch ohne Internetverbindung weiter – solange man die Seite nicht neu lädt.'],
    ['Funktioniert Tandem.li nur im Sprachunterricht?','Nein. Überall, wo es Aufgaben mit Musterlösungen gibt, gibt es auch Challenges – von Mathematik über Geschichte bis Chemie.'],
    ['Kann ich bestehende Tandemübungen aus Lehrmitteln digitalisieren?','Technisch ja. Wenn du die Übung weitergeben willst, brauchst du dafür aber die Erlaubnis des Verlags. Für den eigenen Unterricht gelten die üblichen Schranken des Schulgebrauchs.'],
-   ['Für alle, die gern alles selbst in der Hand haben: Kann ich Tandem.li herunterladen?',`<p>Ja. Tandem.li besteht aus einer einzigen Datei. Du kannst sie herunterladen, auf deinem Laptop speichern und dort mit einem Doppelklick im Browser öffnen – ganz ohne Website und ohne Internet. Deine Tandem-Dateien öffnest du darin genau gleich wie hier.</p>
+   ['Für alle, die gern alles selbst in der Hand haben: Kann ich Tandem.li herunterladen?',`<p>Ja. Tandem.li besteht aus einer einzigen Datei. Du kannst sie herunterladen, auf deinem Laptop speichern und dort mit einem Doppelklick im Browser öffnen – ganz ohne Website und ohne Internet. Deine Tandemli-Dateien öffnest du darin genau gleich wie hier.</p>
      <p>Gut zu wissen: Auf iPads und manchen Tablets lässt sich eine heruntergeladene Datei nicht direkt starten. Für die Arbeit mit der Klasse ist deshalb tandem.li der einfachere Weg. Die heruntergeladene Version ist vor allem eine Sicherheitskopie – falls die Website einmal nicht erreichbar ist.</p>
      <p><button class="btn" data-a="downloadApp">⬇ Tandem.li herunterladen</button></p>`]
   ];
   const acc=(list,cls,pre)=>list.map(([q,a],i)=>`<details class="${cls}" id="${pre}-${i}"><summary>${q}</summary>${a.startsWith('<p>')?a:`<p>${a}</p>`}</details>`).join('');
   return`
   <div class="saccs">
+  <details class="sacc" id="sec-beispiele"><summary><h2>Beispiele</h2></summary><div class="sacc-body sec">
+    <div class="tiles">${BEISPIELE.map(b=>`<div class="tile">
+        <span class="tile-tag">${b.fach}</span>
+        ${bloomHTML(b)}
+        <h3>${b.titel}</h3>
+        <p>${b.text}</p>
+        <div class="tile-links"><button class="tile-try" data-a="tryExample" data-file="${b.file}">Ausprobieren</button><a class="tile-dl" href="beispiele/${b.file}" download>Herunterladen</a></div>
+      </div>`).join('')}</div>
+  </div></details>
+
   <details class="sacc" id="sec-vorteile"><summary><h2>Vorteile</h2></summary><div class="sacc-body">
     <div class="vorteile">${acc(vorteile,'vt','vt')}</div>
   </div></details>
 
-  <details class="sacc" id="sec-beispiele"><summary><h2>Beispiele &amp; Tandems von Kolleg:innen</h2></summary><div class="sacc-body sec">
-    <div class="tiles">${BEISPIELE.map(b=>`<div class="tile">
-        <span class="tile-tag">${b.tag}</span>
-        <h3>${b.titel}</h3>
-        <p>${b.text}</p>
-        <div class="tile-links"><button class="link-btn" data-a="tryExample" data-file="${b.file}">Ausprobieren</button><a class="link-btn" href="beispiele/${b.file}" download>Herunterladen</a></div>
-      </div>`).join('')}
-      <a class="tile tile-plus" href="https://padlet.com/sara_alloatti/tandem-li-s023z1e4598e2429lmo7" target="_blank" rel="noopener">
-        <span class="plus" aria-hidden="true">+</span>
-        <h3>Tandems teilen und entdecken</h3>
-        <p>Auf unserem Padlet laden Lehrpersonen ihre Tandem-Dateien hoch und finden Tandems von Kolleg:innen. Neue Beiträge werden vor der Veröffentlichung kurz geprüft.</p>
-        <span class="tile-go">Zum Padlet →</span>
-      </a></div>
+  <details class="sacc" id="sec-boerse"><summary><h2>Tandemli-Börse</h2></summary><div class="sacc-body">
+    <p class="boerse-sub">Tandemli teilen und von Kolleg:innen entdecken.</p>
+    <p class="boerse-txt">Auf unserem Padlet laden Lehrpersonen ihre Tandemli-Dateien hoch und finden Tandemli von Kolleg:innen. Neue Beiträge werden vor der Veröffentlichung kurz geprüft.</p>
+    <a class="btn" href="https://padlet.com/sara_alloatti/tandem-li-s023z1e4598e2429lmo7" target="_blank" rel="noopener">Zur Tandemli-Börse (Padlet) →</a>
   </div></details>
+
 
   <details class="sacc" id="sec-faq"><summary><h2>FAQ</h2></summary><div class="sacc-body sec faq">
     ${acc(faq,'','faq')}
@@ -804,15 +846,15 @@ const FOOT=[['ueber','Über Tandem.li'],['kontakt','Kontakt'],['datenschutz','Da
 function footPanel(k){
   if(k==='ueber')return`<p>Konzipiert und entwickelt von <a href="https://www.ife.uzh.ch/de/llbm/personen/fachdidaktikerinnen/alloattisara.html" target="_blank" rel="noopener">Sara Alloatti</a> im Vibe-Coding mit Claude (Anthropic) – mit der Unterstützung von Leo Waltenspül bei der technischen Umsetzung sowie von Italienisch-Kolleg:innen und ihren Klassen, die Tandem.li im Unterricht erprobt haben, darunter Klassen der <a href="https://www.kuezh.ch" target="_blank" rel="noopener">Kantonsschule Uetikon am See</a>. Den Prototyp der Halterung für den Sichtschutz hat Gian Burki entwickelt.</p><p>Tandem.li wurde im Rahmen von micro_innovation der Universität Zürich gefördert.</p><p>Die Idee der Tandemübung stammt von Anita Pfau; digital umgesetzt wurde sie erstmals 2020 im Lehrmittel <a href="https://www.tocca-a-te.ch" target="_blank" rel="noopener">«Tocca a te!»</a> (HEP Verlag).</p>`;
   if(k==='kontakt')return`<p>Fragen, Rückmeldungen oder Ideen für Tandem.li? Wir freuen uns über deine Nachricht.</p><p><button class="btn btn-ink" data-a="mailMe">E-Mail schreiben</button> <span class="mail-shown" id="mailShown"></span></p>`;
-  if(k==='datenschutz')return`<p>Keine Cookies, kein Tracking, kein Konto. Tandems bleiben auf deinem Gerät und werden nie an einen Server übertragen.</p><p>Die Website wird über GitHub Pages (GitHub Inc., USA) bereitgestellt; GitHub speichert aus Sicherheitsgründen technische Zugriffsdaten wie die IP-Adresse. Wer uns schreibt, dessen E-Mail-Adresse verwenden wir nur für die Antwort.</p><p>Die Anleitungsvideos liegen direkt auf dieser Website. Der Austausch von Tandems läuft über Padlet (Wallwisher Inc., USA); diese Seite öffnet sich separat, dort gelten deren Datenschutzbestimmungen.</p>`;
-  return`<p>Tandem.li – Code, Texte und Beispiel-Tandems – steht unter der Lizenz <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>: frei nutzbar und veränderbar mit Namensnennung, nicht kommerziell, Weitergabe unter gleichen Bedingungen. Deine eigenen Tandems gehören dir.</p><p>Bausteine Dritter: Illustrationen Open Peeps von Pablo Stanley (CC0) · Schriften Antonio, Josefin Sans, DM Sans (SIL Open Font License) · Excel-Bibliothek SheetJS (Apache 2.0).</p>`;
+  if(k==='datenschutz')return`<p>Keine Cookies, kein Tracking, kein Konto. Tandemli bleiben auf deinem Gerät und werden nie an einen Server übertragen.</p><p>Die Website wird über GitHub Pages (GitHub Inc., USA) bereitgestellt; GitHub speichert aus Sicherheitsgründen technische Zugriffsdaten wie die IP-Adresse. Wer uns schreibt, dessen E-Mail-Adresse verwenden wir nur für die Antwort.</p><p>Die Anleitungsvideos liegen direkt auf dieser Website. Der Austausch von Tandemli läuft über Padlet (Wallwisher Inc., USA); diese Seite öffnet sich separat, dort gelten deren Datenschutzbestimmungen.</p>`;
+  return`<p>Tandem.li – Code, Texte und Beispiel-Tandemli – steht unter der Lizenz <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>: frei nutzbar und veränderbar mit Namensnennung, nicht kommerziell, Weitergabe unter gleichen Bedingungen. Deine eigenen Tandemli gehören dir.</p><p>Bausteine Dritter: Illustrationen Open Peeps von Pablo Stanley (CC0) · Schriften Antonio, Josefin Sans, DM Sans (SIL Open Font License) · Excel-Bibliothek SheetJS (Apache 2.0).</p>`;
 }
 
 // ══ INTRO (erste Folie) ══
 function introHTML(){
   const back=S.mode==='teacher'
     ?`<button class="back-link" data-a="backSetup">← Überarbeiten</button>`
-    :`<button class="back-link" data-a="goHome">← Anderes Tandem</button>`;
+    :`<button class="back-link" data-a="goHome">← Startseite</button>`;
   return`<div class="intro-wrap">
     <header class="intro-head">
       ${back}
@@ -863,9 +905,9 @@ Falls du keine Excel-Datei erstellen kannst: Gib mir die Tabelle so aus, dass ic
 function promptModalHTML(){
   return`<div class="modal-bg" data-a="closePrompt"><div class="modal" onclick="event.stopPropagation()">
     <h2>Excel mit einer KI erstellen</h2>
-    <p>Kopiere diesen Prompt in einen Chatbot (z.&nbsp;B. Claude), ersetze die Angaben in [eckigen Klammern] und importiere die fertige Tabelle unter «Tandem erstellen» mit «Aus Excel importieren».</p>
+    <p>Kopiere diesen Prompt in einen Chatbot (z.&nbsp;B. Claude), ersetze die Angaben in [eckigen Klammern] und importiere die fertige Tabelle unter «Tandemli erstellen» mit «Aus Excel importieren».</p>
     <textarea id="aiPrompt" rows="14" style="font-size:var(--fs-xs);line-height:1.5">${esc(AI_PROMPT)}</textarea>
-    <p style="font-size:var(--fs-xs);margin-top:10px"><strong>Wichtig:</strong> Prüfe die Musterlösungen, bevor du das Tandem mit der Klasse teilst! Korrigiere allfällige Fehler der KI und passe die Aufgaben den Vorkenntnissen deiner Schüler:innen an.</p>
+    <p style="font-size:var(--fs-xs);margin-top:10px"><strong>Wichtig:</strong> Prüfe die Musterlösungen, bevor du das Tandemli mit der Klasse teilst! Korrigiere allfällige Fehler der KI und passe die Aufgaben den Vorkenntnissen deiner Schüler:innen an.</p>
     <button class="modal-close caps" data-a="copyPrompt">Prompt kopieren</button>
     <button class="link-btn" data-a="closePrompt" style="display:block;margin:12px auto 0">Schliessen</button>
   </div></div>`;
@@ -895,17 +937,17 @@ function setupHTML(){
         </div>
       </div>`;}).join('')}</div>
       ${c>1?`<div class="order-row"><span class="drag-hint">↕ Reihenfolge per Drag &amp; Drop ändern</span><span class="order-sep">oder</span><button class="link-btn order-link" data-a="shufflePairs">zufällig mischen</button>${(S.prevOrder&&JSON.stringify(S.pairs)===S.shuffledSig)?`<button class="link-btn" data-a="undoShuffle" style="font-size:var(--fs-xs);font-weight:400;color:var(--ink2);margin-left:6px">Rückgängig</button>`:''}</div>`:''}`;
-  const warn=c>0&&c<6?`<div class="warn">⚠️ Für ein gutes Tandem empfehlen wir mind. 6 Aufgaben (aktuell: ${c}).</div>`:'';
+  const warn=c>0&&c<6?`<div class="warn">⚠️ Für ein gutes Tandemli empfehlen wir mind. 6 Aufgaben (aktuell: ${c}).</div>`:'';
   return`${S.video?videoModalHTML():''}<div class="setup-page">
     <div class="hero">
       <div class="kicker">${logoHTML()}<span class="caps">Für Lehrpersonen</span><button class="link-btn" data-a="goHome" style="margin-left:auto;font-size:var(--fs-xs)">← Startseite</button></div>
-      <h1><span class="hl">Tandem erstellen</span></h1>
+      <h1><span class="hl">Tandemli erstellen</span></h1>
       <button class="btn-video caps" data-a="video" data-v="lp">▶ Videotutorial</button>
     </div>
     <div class="flow">
       <div class="flow-step"><div class="flow-num">1</div><div class="flow-label">Titel &amp;<br>Aufgaben erfassen</div></div>
       <div class="flow-arrow">›</div>
-      <div class="flow-step"><div class="flow-num">2</div><div class="flow-label">Tandem<br>speichern</div></div>
+      <div class="flow-step"><div class="flow-num">2</div><div class="flow-label">Tandemli<br>speichern</div></div>
       <div class="flow-arrow">›</div>
       <div class="flow-step"><div class="flow-num">3</div><div class="flow-label">Mit Lernenden<br>teilen</div></div>
     </div>
@@ -918,7 +960,7 @@ function setupHTML(){
         <div class="start-opts">
           <button class="opt-card" data-a="focusManual"><span class="opt-t">Von Hand eintippen</span><span class="opt-d">Aufgabe und Musterlösung unten eingeben — eine nach der anderen.</span></button>
           <label class="opt-card"><span class="opt-t">Aus Excel importieren</span><span class="opt-d">Spalte A: Aufgabe · B: Musterlösung · C (optional): Coaching-Hinweis. Zeile 1 ist die Kopfzeile.</span><input type="file" accept=".xlsx,.xls,.csv" id="impXlsx" style="display:none"></label>
-          <label class="opt-card"><span class="opt-t">Gespeichertes Tandem öffnen</span><span class="opt-d">Ein früher gespeichertes Tandem laden und weiterbearbeiten.</span><input type="file" accept=".json,application/json,.html,text/html" id="openEdit" style="display:none"></label>
+          <label class="opt-card"><span class="opt-t">Gespeichertes Tandemli öffnen</span><span class="opt-d">Ein früher gespeichertes Tandemli laden und weiterbearbeiten.</span><input type="file" accept=".json,application/json,.html,text/html" id="openEdit" style="display:none"></label>
         </div>
         <p class="opts-note">Die drei Wege lassen sich kombinieren: z.&nbsp;B. Excel importieren und dann von Hand ergänzen. · <button class="link-btn" data-a="showPrompt">Excel-Tabelle von einer KI erstellen lassen? Hier ist ein Prompt</button></p>
         ${S.showPrompt?promptModalHTML():''}
@@ -945,19 +987,19 @@ function setupHTML(){
             <button class="btn btn-ink" data-a="add">Aufgabe hinzufügen</button>
           </div>
         </div>
-        <div style="display:flex;justify-content:flex-end"><button class="btn" data-a="start" ${c===0?'disabled':''} style="font-size:var(--fs-xs)">▶ Tandem testen</button></div>
+        <div style="display:flex;justify-content:flex-end"><button class="btn" data-a="start" ${c===0?'disabled':''} style="font-size:var(--fs-xs)">▶ Tandemli testen</button></div>
         ${warn}
       </div>
     </div>
 
     <div class="block">
-      <div class="block-head"><div class="block-num">2</div><div class="block-title caps">Tandem speichern</div></div>
+      <div class="block-head"><div class="block-num">2</div><div class="block-title caps">Tandemli speichern</div></div>
       <div class="block-body">
-        <p style="font-size:var(--fs-sm);color:var(--ink2);margin-bottom:10px">Speichert dein Tandem (Titel, Anweisung und alle Aufgaben) als Datei auf deinem Gerät. Damit öffnest du es später wieder zum Bearbeiten — und genau diese Datei teilst du mit deinen Lernenden.</p>
+        <p style="font-size:var(--fs-sm);color:var(--ink2);margin-bottom:10px">Speichert dein Tandemli (Titel, Anweisung und alle Aufgaben) als Datei auf deinem Gerät. Damit öffnest du es später wieder zum Bearbeiten — und genau diese Datei teilst du mit deinen Lernenden.</p>
         <p style="font-size:var(--fs-xs);color:var(--ink3);margin-bottom:14px">Dateiname: <span class="fname" id="fnamePrev">${esc(fileBase())}.tandem.json</span></p>
-        <button class="btn btn-ink btn-full" data-a="saveSet" ${c===0?'disabled':''}>⬇ Tandem speichern</button>
+        <button class="btn btn-ink btn-full" data-a="saveSet" ${c===0?'disabled':''}>⬇ Tandemli speichern</button>
         <div class="alt-box">
-          <p><strong>Lieber in Excel weiterarbeiten?</strong> Du kannst die Aufgaben zusätzlich als Excel-Tabelle speichern, dort bearbeiten und später über «Aus Excel importieren» wieder hereinholen. Zum Teilen mit den Lernenden brauchst du aber immer die Tandem-Datei oben.</p>
+          <p><strong>Lieber in Excel weiterarbeiten?</strong> Du kannst die Aufgaben zusätzlich als Excel-Tabelle speichern, dort bearbeiten und später über «Aus Excel importieren» wieder hereinholen. Zum Teilen mit den Lernenden brauchst du aber immer die Tandemli-Datei oben.</p>
           <button class="btn" data-a="exportXlsx" ${c===0?'disabled':''}>Aufgaben als Excel speichern</button>
         </div>
       </div>
@@ -967,16 +1009,16 @@ function setupHTML(){
       <div class="block-head"><div class="block-num">3</div><div class="block-title caps">Mit Lernenden teilen</div></div>
       <div class="block-body">
         <ol class="share-steps">
-          <li><span class="n">1</span><span>Die gespeicherte Tandem-Datei in Teams, per Mail oder auf der Lernplattform teilen — wie jede andere Datei.</span></li>
-          <li><span class="n">2</span><span>Die Lernenden öffnen im Browser die Website <strong>tandem.li</strong>, klicken auf «Tandem öffnen» und wählen die Datei aus, die sie von dir bekommen haben.</span></li>
+          <li><span class="n">1</span><span>Die gespeicherte Tandemli-Datei in Teams, per Mail oder auf der Lernplattform teilen — wie jede andere Datei.</span></li>
+          <li><span class="n">2</span><span>Die Lernenden öffnen im Browser die Website <strong>tandem.li</strong>, klicken auf «Tandemli öffnen» und wählen die Datei aus, die sie von dir bekommen haben.</span></li>
           <li><span class="n">3</span><span>Sichtschutz aufstellen — los!</span></li>
         </ol>
         <details class="legacy">
-          <summary>Für eigene Websites und Lernplattformen: Tandem einbetten</summary>
+          <summary>Für eigene Websites und Lernplattformen: Tandemli einbetten</summary>
           <div class="export-center">
-            <p class="lead" style="margin-top:0">Hast du eine eigene Website oder eine Lernplattform wie Moodle, die HTML einbetten kann? Dann kannst du das Tandem direkt dort einbauen. Die Lernenden starten es mit einem Klick, ohne Datei und ohne tandem.li.</p>
-            <button class="btn btn-full" data-a="export" ${c===0?'disabled':''} style="max-width:340px;margin:0 auto">⬇ Tandem als HTML-Datei herunterladen</button>
-            <p class="lead">Die HTML-Datei enthält das Tandem mit allen Aufgaben. Du kannst sie auf deine Website hochladen oder als Datei in dein System einbinden.</p>
+            <p class="lead" style="margin-top:0">Hast du eine eigene Website oder eine Lernplattform wie Moodle, die HTML einbetten kann? Dann kannst du das Tandemli direkt dort einbauen. Die Lernenden starten es mit einem Klick, ohne Datei und ohne tandem.li.</p>
+            <button class="btn btn-full" data-a="export" ${c===0?'disabled':''} style="max-width:340px;margin:0 auto">⬇ Tandemli als HTML-Datei herunterladen</button>
+            <p class="lead">Die HTML-Datei enthält das Tandemli mit allen Aufgaben. Du kannst sie auf deine Website hochladen oder als Datei in dein System einbinden.</p>
             <button class="btn" data-a="exportTxt" ${c===0?'disabled':''} style="font-size:var(--fs-xs);color:var(--ink2);border-color:var(--ink3)">⬇ HTML-Code als Text herunterladen</button>
             <p class="lead" style="font-size:var(--fs-xs)">Den Code aus dieser Textdatei kopierst du in ein Einbettungsfeld (z.&nbsp;B. «HTML einbetten» in Google Sites oder im Moodle-Editor).</p>
             <div class="note"><strong>Gut zu wissen:</strong> Direkt aus einem Dateiordner geöffnet, läuft die HTML-Datei nur auf Laptops und Desktops. Eingebettet in eine Website oder Lernplattform funktioniert sie auch auf Tablets.</div>
@@ -1069,7 +1111,7 @@ function gameHTML(){
     <div class="game">
       ${leftInner}
       <div class="divider">
-        <button class="div-exit" data-a="exitGame" aria-label="Tandem beenden" title="Tandem beenden">✕</button>
+        <button class="div-exit" data-a="exitGame" aria-label="Tandemli beenden – zur Startseite" title="Tandemli beenden – zur Startseite">✕</button>
         <div class="div-text caps">Sichtschutz aufstellen</div>
         <button class="div-info-btn" data-a="openInfo" aria-label="Spielregeln">i</button>
       </div>
@@ -1099,7 +1141,7 @@ function resultsHTML(){
     <div class="btn-row">
       <button class="btn btn-ink" data-a="replay">↺ Nochmals (gleiche Reihenfolge)</button>
       <button class="btn" data-a="shuffleReplay">🔀 Neu mischen &amp; starten</button>
-      ${S.mode==='teacher'?`<button class="btn" data-a="backSetup">← Überarbeiten</button>`:`<button class="btn" data-a="goHome">📂 Anderes Tandem öffnen</button>`}
+      ${S.mode==='teacher'?`<button class="btn" data-a="backSetup">← Überarbeiten</button>`:`<button class="btn" data-a="goHome">← Startseite</button>`}
     </div>
   </div>`;
 }
@@ -1154,7 +1196,8 @@ function buildHtml(data){
   return document.documentElement.outerHTML
     .replace(/const EMBEDDED = [^\n]*;/,`const EMBEDDED = ${data};`)
     .replace('href="fonts/fonts.css"',`href="${SITE}fonts/fonts.css"`)
-    .replace('src="vendor/xlsx.full.min.js"',`src="${SITE}vendor/xlsx.full.min.js"`);
+    .replace('src="vendor/xlsx.full.min.js"',`src="${SITE}vendor/xlsx.full.min.js"`)
+    .replace('href="favicon.svg"',`href="${SITE}favicon.svg"`).replace('href="favicon-32.png"',`href="${SITE}favicon-32.png"`).replace('href="apple-touch-icon.png"',`href="${SITE}apple-touch-icon.png"`);
 }
 function exportHTML(){if(!S.pairs.length)return;dl(buildHtml(JSON.stringify({pairs:S.pairs,setName:S.setName,anweisung:S.anweisung})),fileBase()+'.html','text/html');}
 function exportTeacher(){if(!S.pairs.length)return;dl(buildHtml(JSON.stringify({pairs:S.pairs,setName:S.setName,anweisung:S.anweisung,mode:'teacher'})),fileBase()+'_EDIT.html','text/html');}
@@ -1193,13 +1236,13 @@ function readSetFile(file,target){
     try{set=parseSetText(ev.target.result);}
     catch(e){alert(e.message==='empty'
       ?'In dieser Datei wurden keine Aufgaben gefunden.'
-      :'Diese Datei ist kein Tandem.\nBitte wähle eine Datei, die auf «.tandem.json» endet.');return;}
+      :'Diese Datei ist kein Tandemli.\nBitte wähle eine Datei, die auf «.tandem.json» endet.');return;}
     if(target==='play'){
       Object.assign(S,set,{mode:'student',showInfo:false});
       Object.assign(S,{idx:0,showSol:false,scored:false,scoresL:[],scoresR:[],lastPts:null,showAnw:{left:false,right:false},phase:'intro'});
       re();
     }else{
-      if(S.pairs.length&&!confirm(`Achtung: Das Tandem, an dem du gerade arbeitest («${S.setName||'ohne Titel'}», ${S.pairs.length} Aufgabe${S.pairs.length===1?'':'n'}), wird durch das geöffnete ersetzt.\n\nFalls du es behalten willst: zuerst «Abbrechen» klicken und es mit «Tandem speichern» sichern.\n\nWeiter?`))return;
+      if(S.pairs.length&&!confirm(`Achtung: Das Tandemli, an dem du gerade arbeitest («${S.setName||'ohne Titel'}», ${S.pairs.length} Aufgabe${S.pairs.length===1?'':'n'}), wird durch das geöffnete ersetzt.\n\nFalls du es behalten willst: zuerst «Abbrechen» klicken und es mit «Tandemli speichern» sichern.\n\nWeiter?`))return;
       Object.assign(S,set,{editIdx:null,tmpF:'',tmpL:'',tmpH:''});
       saveData();re();
     }
@@ -1207,7 +1250,7 @@ function readSetFile(file,target){
   r.onerror=()=>alert('Die Datei konnte nicht gelesen werden.');
   r.readAsText(file);
 }
-// Offline-Version: die App selbst als Datei (ohne eingebautes Tandem)
+// Offline-Version: die App selbst als Datei (ohne eingebautes Tandemli)
 // Offline-Version: Excel-Bibliothek direkt in die Datei einbauen, damit auch der Excel-Import ohne Internet funktioniert
 function downloadApp(){
   const base=buildHtml('null');
@@ -1215,14 +1258,14 @@ function downloadApp(){
     .then(js=>dl(base.replace(/<script src="[^"]*xlsx\.full\.min\.js"[^>]*><\/script>/,()=>'<script>'+js.replace(/<\/script/gi,'<\\/script')+'<\/script>'),'tandem-li.html','text/html'))
     .catch(()=>dl(base,'tandem-li.html','text/html'));
 }
-// Tandem von einer Adresse laden (Beispiele und Links wie tandem.li/?tandem=beispiele/denksport.tandem.json)
+// Tandemli von einer Adresse laden (Beispiele und Links wie tandem.li/?tandem=beispiele/denksport.tandem.json)
 function loadFromUrl(url){
-  if(location.protocol==='file:'){alert('Beispiele lassen sich nur auf der Website tandem.li direkt ausprobieren.\nLade das Beispiel mit «Herunterladen» herunter und öffne es dann mit «Tandem öffnen».');return;}
+  if(location.protocol==='file:'){alert('Beispiele lassen sich nur auf der Website tandem.li direkt ausprobieren.\nLade das Beispiel mit «Herunterladen» herunter und öffne es dann mit «Tandemli öffnen».');return;}
   fetch(url,{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error('http');return r.text();})
     .then(t=>{const set=parseSetText(t);
       Object.assign(S,set,{mode:'student',showInfo:false});
       Object.assign(S,{idx:0,showSol:false,scored:false,scoresL:[],scoresR:[],lastPts:null,showAnw:{left:false,right:false},phase:'intro'});re();})
-    .catch(()=>alert('Dieses Tandem konnte nicht geladen werden.'));
+    .catch(()=>alert('Dieses Tandemli konnte nicht geladen werden.'));
 }
 // Autorentool: Entwurf aus dem Browser laden (getrennt von gespielten Sets)
 function openCreate(){
@@ -1274,7 +1317,7 @@ function act(e){
       else{t.select();document.execCommand('copy');done();}
       break;}
     case 'focusManual':{const h=document.getElementById('manualHead');h&&h.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>document.getElementById('nF')?.focus({preventScroll:true}),350);break;}
-    case 'newSet':{if(!confirm(`Achtung: Titel, Anweisung und ${S.pairs.length===1?'die eine Aufgabe':'alle '+S.pairs.length+' Aufgaben'} dieses Tandems werden gelöscht.\n\nFalls du das Tandem behalten willst: zuerst «Abbrechen» klicken und es unten mit «Tandem speichern» sichern.\n\nWirklich alles löschen und neu beginnen?`))return;
+    case 'newSet':{if(!confirm(`Achtung: Titel, Anweisung und ${S.pairs.length===1?'die eine Aufgabe':'alle '+S.pairs.length+' Aufgaben'} in diesem Tandemli werden gelöscht.\n\nFalls du das Tandemli behalten willst: zuerst «Abbrechen» klicken und es unten mit «Tandemli speichern» sichern.\n\nWirklich alles löschen und neu beginnen?`))return;
       Object.assign(S,{pairs:[],setName:'',anweisung:'',editIdx:null,tmpF:'',tmpL:'',tmpH:''});saveData();re();break;}
     case 'saveSet':saveSet();break;
     case 'drawer':{S.drawer=S.drawer||{};S.drawer[el.dataset.k]=!S.drawer[el.dataset.k];re();break;}
@@ -1341,7 +1384,7 @@ function act(e){
     case 'next':doNext();break;
     case 'exitGame':{
       const played=S.scoresL.length+S.scoresR.length;
-      if(played&&!confirm('Tandem beenden? Der Punktestand geht dabei verloren.'))return;
+      if(played&&!confirm('Tandemli beenden? Der Punktestand geht dabei verloren.'))return;
       Object.assign(S,{showSol:false,scored:false,showInfo:false,phase:S.mode==='teacher'?'setup':'home'});re();break;}
     case 'replay':{
       Object.assign(S,{idx:0,showSol:false,scored:false,scoresL:[],scoresR:[],lastPts:null,phase:'intro'});
@@ -1352,7 +1395,7 @@ function act(e){
       re();break;}
   }
 }
-// Datei auf die Startseite ziehen = Tandem spielen
+// Datei auf die Startseite ziehen = Tandemli spielen
 ['dragenter','dragover'].forEach(t=>document.addEventListener(t,e=>{
   if(S.phase!=='home'||!e.dataTransfer||!Array.from(e.dataTransfer.types||[]).includes('Files'))return;
   e.preventDefault();document.getElementById('home')?.classList.add('dragging');
@@ -1362,6 +1405,19 @@ document.addEventListener('drop',e=>{
   if(S.phase!=='home'||!e.dataTransfer?.files?.length)return;
   e.preventDefault();document.getElementById('home')?.classList.remove('dragging');
   readSetFile(e.dataTransfer.files[0],'play');
+});
+// Browser-Zurück/Vorwärts
+window.addEventListener('popstate',e=>{
+  let t=(e.state&&e.state.p)||'home';
+  if(S.phase==='game'&&t!=='game'){
+    const played=S.scoresL.length+S.scoresR.length;
+    if(played&&!confirm('Tandemli beenden? Der Punktestand geht dabei verloren.')){try{history.pushState({p:'game'},'');}catch(x){}return;}
+  }
+  if(t==='game'||t==='results')t='intro';
+  if(t==='intro'&&!S.pairs.length)t='home';
+  if(t==='intro')Object.assign(S,{idx:0,showSol:false,scored:false,scoresL:[],scoresR:[],lastPts:null});
+  Object.assign(S,{phase:t,showInfo:false,video:null,gal:null,showPrompt:false});
+  S._fromPop=true;re();S._fromPop=false;
 });
 re();
 try{const q=new URLSearchParams(location.search).get('tandem');if(q&&!/^[a-z]+:|^\/\//i.test(q))loadFromUrl(q);}catch(e){}
