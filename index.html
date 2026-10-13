@@ -358,7 +358,7 @@ textarea{resize:vertical}
 .tile-plus p{color:rgba(0,0,0,.72)}
 .tile-go{margin-top:auto;padding-top:6px;font-weight:700;font-size:var(--fs-xs);text-decoration:underline;text-underline-offset:2px}
 a.btn,a.btn-video{text-decoration:none}
-.tile h3{font-family:'DM Sans',sans-serif;letter-spacing:0;text-transform:none;font-size:var(--fs-sm);margin:4px 0 0}
+.tile h3{font-family:'DM Sans',sans-serif;letter-spacing:0;text-transform:none;font-size:clamp(17px,1.5vw,19px);line-height:1.2;margin:4px 0 0}
 .tile p{font-size:var(--fs-xs);line-height:1.45;color:var(--ink2)}
 .tile-links{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:auto;padding-top:6px;font-size:var(--fs-xs)}
 .tile-links .link-btn{font-size:var(--fs-xs)}
@@ -367,7 +367,9 @@ a.btn,a.btn-video{text-decoration:none}
 .tile-try:hover{background:#333}
 .tile-dl{font-size:11px;color:var(--ink3);text-decoration:underline;text-underline-offset:2px}
 .tile-dl:hover{color:var(--ink2)}
-.bloom{display:flex;flex-wrap:wrap;align-items:center;gap:2px 7px;font-size:11px;font-weight:600;color:var(--ink2);margin-top:2px}
+.bloom{display:flex;align-items:center;gap:10px;border-top:1px solid var(--bg3);margin-top:10px;padding-top:10px;font-size:13px;font-weight:600;color:var(--ink2)}
+.bloom svg{flex-shrink:0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .bloom-dots{display:inline-flex;gap:3px}
 .bloom-dots i{width:7px;height:7px;border-radius:50%;border:1px solid var(--ink3);display:block}
 .bloom-dots i.on{background:var(--ink);border-color:var(--ink)}
@@ -769,7 +771,7 @@ document.addEventListener('touchend',e=>{if(S.gal==null||S._tx==null)return;cons
   if(Math.abs(dx)>40&&SICHTSCHUTZ.length>1){S.gal=(S.gal+(dx<0?1:-1)+SICHTSCHUTZ.length)%SICHTSCHUTZ.length;re();}},{passive:true});
 const BLOOM=['','Erinnern','Verstehen','Anwenden','Analysieren','Bewerten','Erschaffen'];
 const BEISPIELE=[
-  {file:'tiere-in-redewendungen.tandem.json',fach:'Englisch, Französisch, Italienisch, Spanisch',k:[1,2],titel:'Tiere in Redewendungen',text:'Welches Tier steckt auf Englisch, Französisch, Italienisch oder Spanisch dahinter?'},
+  {file:'tiere-in-redewendungen.tandem.json',fach:'Fremdsprachen',k:[1,2],titel:'Tiere in Redewendungen',text:'Welches Tier steckt auf Englisch, Französisch, Italienisch oder Spanisch dahinter?'},
   {file:'stage-italienisch.tandem.json',fach:'Italienisch',k:[3],titel:'Stage-Vorbereitung',text:'Nützliche Sätze auf Italienisch für zwei Wochen in einer anderen Sprachregion.'},
   {file:'denksport.tandem.json',fach:'Fächerübergreifend',k:[4],titel:'Denksport',text:'Knifflige Rätsel und Zahlenfolgen – erklären, wie man darauf kommt.'},
   {file:'argumente-und-quellen.tandem.json',fach:'ABU',k:[4],titel:'Argumente und Quellen',text:'Denkfehler erkennen: Korrelation, falsche Autorität, verzerrte Umfragen.'},
@@ -777,8 +779,11 @@ const BEISPIELE=[
   {file:'stilmittel-erfinden.tandem.json',fach:'Deutsch',k:[5,6],titel:'Stilmittel erfinden',text:'Vergleich, Metapher, Euphemismus & Co.: selbst Stilmittel erfinden – der Coach prüft mit klaren Kriterien.'}
 ];
 function bloomHTML(b){
-  const lab=b.k.map(n=>'K'+n).join(b.k.length===2&&b.k[1]-b.k[0]===1?'–':' + ')+' · '+b.k.map(n=>BLOOM[n]).join(', ');
-  return`<span class="bloom" title="Stufe der Lernziel-Taxonomie nach Anderson &amp; Krathwohl"><span class="bloom-dots" aria-hidden="true">${[1,2,3,4,5,6].map(n=>`<i class="${b.k.includes(n)?'on':''}"></i>`).join('')}</span>${lab}${b.coach?`<span class="bloom-coach">Coach: K${b.coach} · ${BLOOM[b.coach]}</span>`:''}</span>`;}
+  // Piramide a gradini: unten K1 (Erinnern), oben K6 (Erschaffen); passende Stufen gelb
+  const W=44,h=5.2,g=1.4,H=6*h+5*g;
+  const bars=[0,1,2,3,4,5].map(i=>{const k=6-i,w=W*(.30+.70*i/5),x=(W-w)/2,y=i*(h+g);
+    return`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h}" rx="1.2" fill="${b.k.includes(k)?'#F9EC5A':'#fff'}" stroke="#141414" stroke-width="1.1"/>`;}).join('');
+  return`<div class="bloom" title="Taxonomiestufe nach Bloom/Anderson"><svg viewBox="-1 -1 ${W+2} ${(H+2).toFixed(1)}" width="46" height="${Math.round(H+2)}" aria-hidden="true">${bars}</svg><span><span class="sr-only">Taxonomiestufe: </span>${b.k.map(n=>BLOOM[n]).join(', ')}</span></div>`;}
 function siteHTML(){
   const vorteile=[
    ['Echte Gespräche statt Bildschirm-Verstecken','Lernende, die sich hinter ihren Bildschirmen verstecken oder nebenbei online shoppen? Nicht mit Tandem.li! Hier regt der Bildschirm mündliche Gespräche an: Die Lernenden coachen sich beim Lösen der Challenges gegenseitig.'],
@@ -826,10 +831,10 @@ function siteHTML(){
   <details class="sacc" id="sec-beispiele"><summary><h2>Beispiele</h2></summary><div class="sacc-body sec">
     <div class="tiles">${BEISPIELE.map(b=>`<div class="tile">
         <span class="tile-tag">${b.fach}</span>
-        ${bloomHTML(b)}
         <h3>${b.titel}</h3>
         <p>${b.text}</p>
         <div class="tile-links"><button class="tile-try" data-a="tryExample" data-file="${b.file}">Ausprobieren</button><a class="tile-dl" href="beispiele/${b.file}" download>Herunterladen</a></div>
+        ${bloomHTML(b)}
       </div>`).join('')}</div>
   </div></details>
 
