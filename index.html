@@ -37,6 +37,8 @@ h1,h2{font-family:'Antonio','Arial Narrow',sans-serif;font-weight:700;text-trans
 .logo-home:hover .logo{opacity:.7}
 .logo{font-family:'Josefin Sans',sans-serif;font-weight:700;letter-spacing:.01em;display:inline-flex;align-items:baseline;line-height:1;color:var(--ink)}
 .logo-dot{display:inline-block;width:.24em;height:.24em;border-radius:50%;background:var(--yl);border:max(1px,.028em) solid var(--ink);margin:0 .05em;box-sizing:border-box}
+.logo-dot-bulb{display:inline-flex;align-items:center;justify-content:center;width:.38em;height:.38em;margin:0 .07em}
+.logo-dot-bulb svg{width:68%;height:68%;display:block}
 
 /* ══ SETUP ══ */
 .setup-page{max-width:760px;margin:0 auto;padding:clamp(1rem,4vw,2.5rem) clamp(1rem,3vw,1.5rem)}
@@ -525,7 +527,9 @@ function lnk(t){return esc(t).replace(/https?:\/\/[^\s<]+/g,u=>{
   return`<a class="t-link" href="${u}" target="_blank" rel="noopener noreferrer" title="${u}">${host}&nbsp;↗</a>`+tail;});}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 const LOGO_MARK=`<span class="logo-dot"></span>`;
-function logoHTML(){const l=`<span class="logo">tandem${LOGO_MARK}li</span>`;return S.phase==='home'?l:`<button class="logo-home" data-a="goHome" title="Zur Startseite" aria-label="tandem.li – zur Startseite">${l}</button>`;}
+// Grosses Logo auf der Startseite: Punkt mit Glühbirne (wie das Symbol im Browser-Reiter)
+const LOGO_MARK_BULB=`<span class="logo-dot logo-dot-bulb"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 5C20.4 5 12 13.6 12 24.3c0 7.2 3.6 11.6 6.9 15.6 2.4 2.9 4.1 5.3 4.1 8.6v1.5h18v-1.5c0-3.3 1.7-5.7 4.1-8.6 3.3-4 6.9-8.4 6.9-15.6C52 13.6 43.6 5 32 5z" fill="#fff" stroke="#141414" stroke-width="5" stroke-linejoin="round"/><path d="M23 55h18M26 61h12" stroke="#141414" stroke-width="5" stroke-linecap="round"/></svg></span>`;
+function logoHTML(){const l=`<span class="logo">tandem${S.phase==='home'?LOGO_MARK_BULB:LOGO_MARK}li</span>`;return S.phase==='home'?l:`<button class="logo-home" data-a="goHome" title="Zur Startseite" aria-label="tandem.li – zur Startseite">${l}</button>`;}
 function fileBase(){const n=(S.setName||'').trim().replace(/[\\/:*?"<>|]+/g,'').replace(/\s*[–—-]\s*/g,'-').replace(/\s+/g,'_');return n||'Mein_Tandem';}
 function leftAnswers(){return S.idx%2===0;}
 function shuffle(arr){
