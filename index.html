@@ -401,6 +401,8 @@ a.link-btn{color:var(--ink);font-weight:700}
 .home-head{text-align:center;margin-bottom:clamp(20px,4vw,40px)}
 .home-head .logo{font-size:clamp(40px,7vw,84px)}
 .home-claim{margin-top:12px;font-size:var(--fs-xs);color:var(--ink2)}
+.home-sub{max-width:640px;margin:14px auto 0;font-size:var(--fs-md);line-height:1.55;color:var(--ink2);text-align:center;hyphens:manual}
+.home-sub2{max-width:640px;margin:6px auto 0;font-size:var(--fs-sm);line-height:1.5;color:var(--ink);font-weight:600;text-align:center}
 .doors{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(14px,2.5vw,28px);align-items:stretch}
 .door{border:var(--line);background:var(--paper);border-radius:var(--rxl);padding:clamp(20px,3vw,36px) clamp(20px,3vw,36px) clamp(24px,3.5vw,40px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(10px,1.4vw,16px)}
 .door-art{width:100%;height:clamp(170px,30vh,270px);display:flex;align-items:flex-end;justify-content:center;border-bottom:1.5px solid var(--bg3);margin-bottom:6px}
@@ -688,6 +690,7 @@ function homeHTML(){
     <header class="home-head">
       ${logoHTML()}
       <p class="home-claim caps">Challenges &amp; Coaching für jeden Unterricht</p>
+      <p class="home-sub">Eine Person löst eine Challenge. Die andere sieht Lösung und Hinweise – und coacht. Bei der nächsten Challenge werden die Rollen getauscht.</p>
     </header>
     <div class="doors">
       <div class="door-wrap">
@@ -786,12 +789,13 @@ function bloomHTML(b){
   return`<div class="bloom" title="Taxonomiestufe nach Bloom/Anderson"><svg viewBox="-1 -1 ${W+2} ${(H+2).toFixed(1)}" width="46" height="${Math.round(H+2)}" aria-hidden="true">${bars}</svg><span><span class="sr-only">Taxonomiestufe: </span>${b.k.map(n=>BLOOM[n]).join(', ')}</span></div>`;}
 function siteHTML(){
   const vorteile=[
-   ['Echte Gespräche statt Bildschirm-Verstecken','Lernende, die sich hinter ihren Bildschirmen verstecken oder nebenbei online shoppen? Nicht mit Tandem.li! Hier regt der Bildschirm mündliche Gespräche an: Die Lernenden coachen sich beim Lösen der Challenges gegenseitig.'],
+   ['Echte Gespräche statt Bildschirm-Verstecken','Lernende, die sich hinter ihren Bildschirmen verstecken oder nebenbei online shoppen? Nicht mit Tandem.li! Hier regt der Bildschirm mündliche Gespräche an: Die Lernenden coachen sich beim Lösen der Aufgaben gegenseitig.'],
    ['Wer coacht, lernt doppelt','Beim Erklären, Nachfragen und Korrigieren verarbeiten die Lernenden den Stoff tiefer als beim blossen Lösen.'],
    ['Alle sind mal Expertin oder Experte','Der ständige Rollenwechsel sorgt dafür, dass sich beide immer wieder als Coach erleben – und nicht nur als die Person, die geprüft wird.'],
-   ['Kein Login, keine Daten','Keine Anmeldung, kein Account, keine E-Mail-Adresse. Tandem.li läuft komplett im Browser, die Tandemli bleiben als Dateien bei euch.'],
-   ['Auch bei wackligem WLAN','Schüler:innen brauchen nur ein Gerät, ein Blatt als Sichtschutz und das Tandemli ihrer Lehrperson. Einmal geladen, läuft jedes Tandem.li auch ohne Internetverbindung weiter.'],
-   ['In wenigen Minuten erstellt','Tandemübungen auf Papier herzustellen ist aufwendig, und eine Software, mit der Lehrpersonen selbst Tandemli erstellen können, gab es bisher nicht. Mit Tandem.li erstellst du ein Tandemli in wenigen Minuten – von Hand oder aus einer Excel-Tabelle.'],
+   ['Kein Login, keine Personendaten','Keine Anmeldung, kein Account, keine E-Mail-Adresse. Tandem.li läuft komplett im Browser, die Tandemli bleiben als Dateien bei euch.'],
+   ['Auch bei wackligem WLAN','Pro Zweierteam braucht es nur ein Gerät, ein Blatt als Sichtschutz und das Tandemli der Lehrperson. Einmal geladen, läuft jedes Tandemli auch ohne Internetverbindung weiter.'],
+   ['In wenigen Minuten erstellt','<p>Tandemübungen auf Papier herzustellen ist aufwendig, und eine Software, mit der Lehrpersonen selbst Tandemübungen erstellen können, fehlte. Mit Tandem.li erstellst du eine Tandemübung in wenigen Minuten – von Hand, aus einer Excel-Tabelle oder <button class="link-btn" data-a="showPrompt">mit Hilfe einer KI</button>.</p>'],
+   ['Für jedes Fach und jede Stufe','Vom Erinnern von Fakten bis zum Erfinden eigener Stilmittel: Tandemli funktionieren auf allen Stufen der Lernziel-Taxonomie – überall, wo es Musterlösungen oder klare Kriterien gibt.'],
    ['Deine Tandemli gehören dir','Jedes Tandemli wird als kleine Datei auf deinem Gerät gespeichert. Du kannst es jederzeit wieder öffnen, weiterbearbeiten und mit Kolleg:innen teilen.']
   ];
   const faq=[
@@ -800,10 +804,11 @@ function siteHTML(){
    ['Warum arbeiten zwei Personen an einem einzigen Bildschirm?',`<p>Weil das Gespräch das Ziel ist. Wer zu zweit vor einem Bildschirm sitzt, muss sich einander zuwenden: erklären, nachfragen, gemeinsam überlegen. Ablenkungen wie eingehende Nachrichten oder ein offenes Fenster mit Online-Shopping haben dabei kaum Platz.</p>
      <p>In der Webapp von «Tocca a te!» arbeiten die Lernenden an zwei eigenen Geräten, die miteinander verbunden sind. Dafür braucht es einen Server und eine deutlich komplexere Software. Tandem.li verzichtet bewusst darauf. So kann es keine Verbindungsprobleme geben, und Aufgabe und Lösung passen immer zusammen.</p>`],
    ['Woher kommt das Tandem-Format?',`<p>Partnerübungen mit verdeckter Lösung sind im Fremdsprachenunterricht seit Jahrzehnten bekannt, zum Beispiel als «Tandembogen». In der Zürcher Fremdsprachendidaktik hat die Fachdidaktikerin Anita Pfau die «Tandemaufgabe» geprägt und über 30 Jahre lang verbreitet: Zwei Lernende lösen abwechselnd eine Aufgabe, während die andere Person mit der Musterlösung coacht. Das Italienischlehrmittel Tracce.ch (Alloatti, Heierli, Tarantino 2012–13) enthält solche Tandemformate.</p>
-     <p>2020 wurde das Papierformat erstmals digital umgesetzt – in der Webapp des Lehrmittels <a href="https://www.tocca-a-te.ch" target="_blank" rel="noopener">«Tocca a te!»</a> (HEP Verlag), bisher als einziges Lehrmittel in der Schweiz mit diesem Aufgabentyp. Dort koppeln sich zwei Geräte über einen gemeinsamen Code. Viele Lehrpersonen wünschten sich seither eine App, mit der sie eigene Inhalte erstellen können – doch Serverkosten, Wartung und eine datenschutzkonforme Infrastruktur hätten eine dauerhafte Finanzierung erfordert.</p>
-     <p>Mit KI-gestütztem Vibe-Coding (mit Claude) liess sich dieser Wunsch 2026 erfüllen: Tandem.li läuft komplett im Browser, ohne Server. Deshalb teilen sich die Tandempartner:innen einen einzigen Bildschirm – getrennt durch ein Blatt Papier.</p>`],
+     <p>2020 wurde das Papierformat erstmals digital umgesetzt – in der Webapp des Lehrmittels <a href="https://www.tocca-a-te.ch" target="_blank" rel="noopener">«Tocca a te!»</a> (HEP Verlag), bisher als einziges Lehrmittel in der Schweiz mit diesem Aufgabentyp. Viele Lehrpersonen wünschten sich seither eine App, mit der sie eigene Inhalte erstellen können – doch Serverkosten, Wartung und eine datenschutzkonforme Infrastruktur hätten eine dauerhafte Finanzierung erfordert.</p>
+     <p>Mit KI-gestütztem Vibe-Coding (mit Claude) liess sich dieser Wunsch 2026 erfüllen: Tandem.li läuft komplett im Browser, ohne Server.</p>
+     <p>Warum das Format motiviert, erklärt die Selbstbestimmungstheorie von Deci und Ryan. Sie nennt drei Grundbedürfnisse, die Lernen antreiben: Kompetenz, soziale Eingebundenheit und Autonomie. Im Tandem erleben sich beide abwechselnd als Expertin oder Experte und sind aufeinander angewiesen. Autonomie zeigt sich beim Coachen: Man entscheidet selbst, wie man hilft – und ob man die Lösung gleich aufdeckt oder zuerst selbst versucht, die Aufgabe zu lösen. Die Punkte wirken dabei sowohl als Rückmeldung als auch als Belohnung und stärken so das Kompetenzerleben.</p>`],
    ['Was kostet Tandem.li?','Nichts.'],
-   ['Brauchen meine Schüler:innen einen Account? Wo werden die Daten gespeichert?','Nein. Kein Login, keine Registrierung, keine E-Mail-Adresse. Tandem.li läuft komplett im Browser, und die Tandemli liegen als Dateien bei euch. Es werden keine Personendaten erhoben oder übertragen.'],
+   ['Brauchen meine Schüler:innen einen Account? Wo werden die Daten gespeichert?','Nein. Kein Login, keine Registrierung, keine E-Mail-Adresse. Tandem.li läuft komplett im Browser, und die Tandemli liegen als Dateien bei euch. Tandem.li selbst erhebt keine Personendaten, und die Tandemli werden nie auf einen Server übertragen.'],
    ['Muss ich alle Aufgaben von Hand eintippen?',`<p>Nein. Unter «Tandemli erstellen» gibt es drei Wege, die sich auch kombinieren lassen:</p>
      <ul class="faq-list">
        <li><strong>Von Hand eintippen:</strong> Aufgabe, Musterlösung und (optional) einen Coaching-Hinweis eingeben.</li>
@@ -813,15 +818,20 @@ function siteHTML(){
      <p>Die Excel-Tabelle kannst du auch von einer KI erstellen lassen. <button class="link-btn" data-a="showPrompt">Hier ist ein fertiger Prompt dafür.</button> Prüfe die Musterlösungen aber immer, bevor du das Tandemli mit der Klasse teilst.</p>`],
    ['Kann ich Audios einbauen?','Nein. Tandem.li ist bewusst rein textbasiert und kommt ohne Server aus. Audios müssten irgendwo gespeichert werden: auf einem Server oder in der Tandemli-Datei, die dadurch sehr gross würde. Dafür bleibt Tandem.li schlank und datenschutzfreundlich, denn es werden keine Daten übertragen oder gespeichert.'],
    ['Kann ich Links einfügen?','Ja. Schreib die Webadresse einfach in die Aufgabe, die Musterlösung oder den Hinweis, zum Beispiel https://www.srf.ch/… Tandem.li zeigt davon nur den Namen der Website an («srf.ch ↗»). Ein Klick öffnet die Seite in einem neuen Tab, das Tandemli läuft im Hintergrund weiter. Links funktionieren nur mit Internetverbindung.'],
-   ['Kann ich meine Tandemli später weiterbearbeiten?','Ja. Über «Tandemli erstellen» → «Tandemli öffnen» öffnest du ein bereits gespeichertes Tandemli wieder, kannst es ändern und neu abspeichern. Zusätzlich lassen sich die Aufgaben als Excel-Datei exportieren.'],
+   ['Kann ich meine Tandemli später weiterbearbeiten?','Ja. Unter «Tandemli erstellen» → «Gespeichertes Tandemli öffnen» öffnest du ein bereits gespeichertes Tandemli wieder, kannst es ändern und neu abspeichern. Zusätzlich lässt es sich als Excel-Datei speichern, mit Titel und Anweisung.'],
    ['Welche Geräte brauche ich im Unterricht?','Pro Zweierteam ein Gerät mit Browser (Laptop, Tablet) und einen einfachen Sichtschutz – ein aufgestelltes Buch oder Mäppli genügt, damit beide nur ihre Hälfte des Bildschirms sehen.'],
-   ['Wie baue ich einen Sichtschutz?',`<p>Am einfachsten: ein Buch, ein Mäppli oder ein gefaltetes A4-Blatt senkrecht auf den schwarzen Streifen in der Mitte des Bildschirms stellen. Wichtig ist nur, dass A die rechte und B die linke Hälfte nicht sehen kann.</p>
+   ['Wie baue ich einen Sichtschutz?',`<p>Wichtig ist nur, dass A die rechte und B die linke Hälfte des Bildschirms nicht sehen kann. Dafür gibt es drei Möglichkeiten:</p>
+     <ul class="faq-list">
+       <li><strong>Sofort:</strong> ein Buch oder ein Mäppli senkrecht auf den schwarzen Streifen in der Mitte stellen.</li>
+       <li><strong>Variante 1, aus Papier:</strong> ein A4-Blatt falten, einschneiden und über den Bildschirm hängen. Wie das geht, zeigt das Video.</li>
+       <li><strong>Variante 2, aus dem 3D-Drucker:</strong> eine Halterung, entwickelt von Gian Burki. Sie ist noch in Entwicklung.</li>
+     </ul>
      <img class="faq-img" src="sichtschutz.svg" alt="Ein aufgestelltes Buch trennt die beiden Bildschirmhälften.">
      <p><button class="btn" data-a="openGal">▶ Video: Sichtschutz aus Papier</button></p>`],
-   ['Braucht es eine Internetverbindung?','Nur zum Laden. Einmal geladen, läuft jedes Tandem.li auch ohne Internetverbindung weiter – solange man die Seite nicht neu lädt.'],
-   ['Funktioniert Tandem.li nur im Sprachunterricht?','Nein. Überall, wo es Aufgaben mit Musterlösungen gibt, gibt es auch Challenges – von Mathematik über Geschichte bis Chemie.'],
+   ['Braucht es eine Internetverbindung?','Nur zum Laden. Einmal geladen, läuft jedes Tandemli auch ohne Internetverbindung weiter, solange man die Seite nicht neu lädt. Links in Aufgaben, die Videos und die Beispiele brauchen aber Internet.'],
+   ['Funktioniert Tandem.li in jedem Fach?','Ja. Überall, wo es Aufgaben mit Musterlösungen oder klaren Kriterien gibt, gibt es auch Tandemli – von Mathematik über Geschichte bis zum ABU.'],
    ['Kann ich bestehende Tandemübungen aus Lehrmitteln digitalisieren?','Technisch ja. Wenn du die Übung weitergeben willst, brauchst du dafür aber die Erlaubnis des Verlags. Für den eigenen Unterricht gelten die üblichen Schranken des Schulgebrauchs.'],
-   ['Für alle, die gern alles selbst in der Hand haben: Kann ich Tandem.li herunterladen?',`<p>Ja. Tandem.li besteht aus einer einzigen Datei. Du kannst sie herunterladen, auf deinem Laptop speichern und dort mit einem Doppelklick im Browser öffnen – ganz ohne Website und ohne Internet. Deine Tandemli-Dateien öffnest du darin genau gleich wie hier.</p>
+   ['Für alle, die gern alles selbst in der Hand haben: Kann ich Tandem.li herunterladen?',`<p>Ja. Tandem.li besteht aus einer einzigen Datei. Du kannst sie herunterladen, auf deinem Laptop speichern und dort mit einem Doppelklick im Browser öffnen – ganz ohne Website und ohne Internet. Deine Tandemli-Dateien öffnest du darin genau gleich wie hier. Ohne Internet funktionieren Erstellen und Spielen; Videos und Beispiele brauchen eine Verbindung.</p>
      <p>Gut zu wissen: Auf iPads und manchen Tablets lässt sich eine heruntergeladene Datei nicht direkt starten. Für die Arbeit mit der Klasse ist deshalb tandem.li der einfachere Weg. Die heruntergeladene Version ist vor allem eine Sicherheitskopie – falls die Website einmal nicht erreichbar ist.</p>
      <p><button class="btn" data-a="downloadApp">⬇ Tandem.li herunterladen</button></p>`]
   ];
