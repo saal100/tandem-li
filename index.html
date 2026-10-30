@@ -439,6 +439,25 @@ details.legacy[open] summary{margin-bottom:12px}
 .opt-card:hover{background:var(--yl)}
 .opt-t{font-weight:700;font-size:var(--fs-sm)}
 .opt-d{font-size:var(--fs-xs);color:var(--ink2);line-height:1.45;font-weight:400}
+.title-remind{border:var(--line);background:var(--yl);border-radius:var(--r);padding:14px 16px;margin-bottom:14px}
+.title-remind label{display:block;font-weight:700;font-size:var(--fs-sm);margin-bottom:8px}
+.title-remind input{width:100%;box-sizing:border-box;font:inherit;font-size:var(--fs-sm);padding:10px 12px;border:var(--line);border-radius:10px;background:#fff}
+.save-sub{text-align:center;font-size:var(--fs-sm);color:var(--ink2);line-height:1.5;margin-top:10px}
+.save-sub strong{color:var(--ink)}
+.xlsx-link{text-align:center;font-size:var(--fs-xs);color:var(--ink3);margin-top:16px}
+.xlsx-link .link-btn{font-size:inherit;color:var(--ink2);font-weight:400}
+.xlsx-link .link-btn:disabled{opacity:.5;cursor:default}
+.embed{margin-top:14px}
+.embed-lead{font-size:var(--fs-sm);color:var(--ink2);line-height:1.55;margin:0 0 14px}
+.embed-opt{border:1px dashed var(--ink3);border-radius:var(--r);background:var(--bg);padding:14px 16px;margin-bottom:12px}
+.embed-h{font-weight:700;font-size:var(--fs-sm);margin:0 0 4px}
+.embed-t{font-size:var(--fs-xs);color:var(--ink2);line-height:1.55;margin:0 0 10px}
+.embed-opt .btn{font-size:var(--fs-xs)}
+.kbd{font-family:ui-monospace,Menlo,monospace;font-size:.95em;border:1px solid var(--ink3);border-radius:5px;padding:0 5px;background:#fff;color:var(--ink)}
+.embed-json{font-size:var(--fs-xs);color:var(--ink2);line-height:1.55;margin:14px 0 0;padding-top:12px;border-top:1px dashed var(--ink3)}
+.embed-json strong{color:var(--ink)}
+.embed-h .hl{background:linear-gradient(transparent 12%,var(--yl) 12%,var(--yl) 88%,transparent 88%);color:inherit;padding:0 .15em;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.embed-note{font-size:var(--fs-xs);color:var(--ink3);line-height:1.5;margin:10px 0 0}
 .alt-box{margin-top:18px;padding:14px 16px;border:1px dashed var(--ink3);border-radius:var(--r);background:var(--bg)}
 .alt-box p{font-size:var(--fs-xs);color:var(--ink2);line-height:1.55;margin-bottom:10px}
 .alt-box strong{color:var(--ink)}
@@ -617,7 +636,7 @@ function re(){
   const openD=samePhase?[...document.querySelectorAll('#app details[id]')].filter(d=>d.open).map(d=>d.id):[];
   document.getElementById('app').innerHTML=
     S.phase==='home'   ?homeHTML():
-    S.phase==='setup'  ?setupHTML():
+    S.phase==='setup'  ?setupHTML()+(S.gal!=null?galleryHTML():''):
     S.phase==='intro'  ?introHTML():
     S.phase==='game'   ?gameHTML():resultsHTML();
   bind();
@@ -1040,13 +1059,13 @@ function setupHTML(){
     <div class="block">
       <div class="block-head"><div class="block-num">2</div><div class="block-title caps">Tandemli speichern</div></div>
       <div class="block-body">
-        <p style="font-size:var(--fs-sm);color:var(--ink2);margin-bottom:10px">Speichert dein Tandemli (Titel, Anweisung und alle Aufgaben) als Datei auf deinem Gerät. Damit öffnest du es später wieder zum Bearbeiten — und genau diese Datei teilst du mit deinen Lernenden.</p>
-        <p style="font-size:var(--fs-xs);color:var(--ink3);margin-bottom:14px">Dateiname: <span class="fname" id="fnamePrev">${esc(fileBase())}.tandem.json</span></p>
+        ${S.setName.trim()?'':`<div class="title-remind" id="titleRemind">
+          <label for="sNameRemind">Dein Tandemli hat noch keinen Titel.</label>
+          <input type="text" id="sNameRemind" placeholder="z. B. Congiuntivo presente" autocomplete="off">
+        </div>`}
         <button class="btn btn-ink btn-full" data-a="saveSet" ${c===0?'disabled':''}>⬇ Tandemli speichern</button>
-        <div class="alt-box">
-          <p><strong>Lieber in Excel weiterarbeiten?</strong> Du kannst die Aufgaben zusätzlich als Excel-Tabelle speichern, dort bearbeiten und später über «Aus Excel importieren» wieder hereinholen. Zum Teilen mit den Lernenden brauchst du aber immer die Tandemli-Datei oben.</p>
-          <button class="btn" data-a="exportXlsx" ${c===0?'disabled':''}>Aufgaben als Excel speichern</button>
-        </div>
+        <p class="save-sub"><strong>Diese Datei teilst du mit deinen Lernenden.</strong><br>Damit kannst du dein Tandemli auch später weiterbearbeiten.</p>
+        <p class="xlsx-link"><button class="link-btn" data-a="exportXlsx" ${c===0?'disabled':''}>Aufgaben als Excel speichern</button> (zum Bearbeiten in Excel)</p>
       </div>
     </div>
 
@@ -1056,17 +1075,35 @@ function setupHTML(){
         <ol class="share-steps">
           <li><span class="n">1</span><span>Die gespeicherte Tandemli-Datei in Teams, per Mail oder auf der Lernplattform teilen — wie jede andere Datei.</span></li>
           <li><span class="n">2</span><span>Die Lernenden öffnen im Browser die Website <strong>tandem.li</strong>, klicken auf «Tandemli öffnen» und wählen die Datei aus, die sie von dir bekommen haben.</span></li>
-          <li><span class="n">3</span><span>Sichtschutz aufstellen — los!</span></li>
+          <li><span class="n">3</span><span>Sichtschutz aufstellen — los! <button class="link-btn" data-a="openGal">So baust du einen Sichtschutz</button></span></li>
         </ol>
         <details class="legacy">
-          <summary>Für eigene Websites und Lernplattformen: Tandemli einbetten</summary>
-          <div class="export-center">
-            <p class="lead" style="margin-top:0">Hast du eine eigene Website oder eine Lernplattform wie Moodle, die HTML einbetten kann? Dann kannst du das Tandemli direkt dort einbauen. Die Lernenden starten es mit einem Klick, ohne Datei und ohne tandem.li.</p>
-            <button class="btn btn-full" data-a="export" ${c===0?'disabled':''} style="max-width:340px;margin:0 auto">⬇ Tandemli als HTML-Datei herunterladen</button>
-            <p class="lead">Die HTML-Datei enthält das Tandemli mit allen Aufgaben. Du kannst sie auf deine Website hochladen oder als Datei in dein System einbinden.</p>
-            <button class="btn" data-a="exportTxt" ${c===0?'disabled':''} style="font-size:var(--fs-xs);color:var(--ink2);border-color:var(--ink3)">⬇ HTML-Code als Text herunterladen</button>
-            <p class="lead" style="font-size:var(--fs-xs)">Den Code aus dieser Textdatei kopierst du in ein Einbettungsfeld (z.&nbsp;B. «HTML einbetten» in Google Sites oder im Moodle-Editor).</p>
-            <div class="note"><strong>Gut zu wissen:</strong> Direkt aus einem Dateiordner geöffnet, läuft die HTML-Datei nur auf Laptops und Desktops. Eingebettet in eine Website oder Lernplattform funktioniert sie auch auf Tablets.</div>
+          <summary>Für Fortgeschrittene: einbetten und offline arbeiten</summary>
+          <div class="embed">
+            <div class="embed-opt">
+              <p class="embed-h">Kannst du auf deiner Website oder Lernplattform <mark class="hl">HTML-Code einfügen?</mark></p>
+              <p class="embed-t">Zum Beispiel über einen Knopf wie <span class="kbd">&lt;/&gt;</span> oder «Einbetten» – etwa in Google Sites oder im Moodle-Editor.</p>
+              <button class="btn" data-a="exportTxt" ${c===0?'disabled':''}>⬇ HTML-Code als Textdatei herunterladen</button>
+              <p class="embed-note">Öffne die Textdatei, kopiere den ganzen Inhalt und füge ihn dort ein.</p>
+            </div>
+            <div class="embed-opt">
+              <p class="embed-h">Kannst du <mark class="hl">Dateien</mark> auf deine Website oder in deine Lernplattform <mark class="hl">hochladen?</mark></p>
+              <p class="embed-t">Zum Beispiel in Moodle als «Datei». Die Lernenden starten das Tandemli dort mit einem Klick.</p>
+              <button class="btn" data-a="export" ${c===0?'disabled':''}>⬇ HTML-Datei herunterladen</button>
+            </div>
+            <div class="embed-opt">
+              <p class="embed-h">Arbeiten alle Lernenden an einem <mark class="hl">Laptop/Desktop</mark>?</p>
+              <p class="embed-t">Dann können sie das Tandemli direkt aus der HTML-Datei öffnen – ohne tandem.li.</p>
+              <button class="btn" data-a="export" ${c===0?'disabled':''}>⬇ HTML-Datei herunterladen</button>
+              <p class="embed-note">Auf Tablets und Handys klappt das nicht.</p>
+            </div>
+            <div class="embed-opt">
+              <p class="embed-h">Willst du ganz <mark class="hl">ohne Internet</mark> Tandemli erstellen und spielen?</p>
+              <p class="embed-t">Lade Tandem.li als Datei auf deinen Laptop. Mit einem Doppelklick öffnest du es im Browser – Erstellen, Speichern und Spielen funktionieren dann ohne Internet.</p>
+              <button class="btn" data-a="downloadApp">⬇ Tandem.li herunterladen</button>
+              <p class="embed-note">Nur für Laptops und Desktops. Lade die Datei ab und zu neu herunter, damit du die neuesten Verbesserungen hast.</p>
+              <p class="embed-json"><strong>Was ist eigentlich eine .tandem.json-Datei?</strong> Eine ganz gewöhnliche Textdatei. Darin stehen dein Titel, die Anweisung und die Aufgaben – sonst nichts. Wir verwenden dieses Format, weil es winzig ist, auf jedem Gerät funktioniert und sich sowohl auf tandem.li als auch in der heruntergeladenen Version öffnen lässt. Und: Die Datei gehört dir. Sie liegt auf deinem Gerät, nicht auf einem fremden Server.</p>
+            </div>
           </div>
         </details>
       </div>
@@ -1326,7 +1363,8 @@ function bind(){
   if(nL)nL.oninput=e=>{if(S.editIdx===null)S.tmpL=e.target.value;};
   if(nH)nH.oninput=e=>{if(S.editIdx===null)S.tmpH=e.target.value;};
   const aw=document.getElementById('anwInput');if(aw)aw.oninput=e=>{S.anweisung=e.target.value;saveData();};
-  const sn=document.getElementById('sName');if(sn)sn.oninput=e=>{S.setName=e.target.value;saveData();document.title=S.setName?S.setName+' · Tandem.li':'Tandem.li';const fp=document.getElementById('fnamePrev');if(fp)fp.textContent=fileBase()+'.tandem.json';};
+  const sn=document.getElementById('sName');if(sn)sn.oninput=e=>{S.setName=e.target.value;saveData();document.title=S.setName?S.setName+' · Tandem.li':'Tandem.li';const tr=document.getElementById('titleRemind');if(tr)tr.style.display=S.setName.trim()?'none':'';};
+  const snr=document.getElementById('sNameRemind');if(snr)snr.oninput=e=>{S.setName=e.target.value;saveData();document.title=S.setName?S.setName+' · Tandem.li':'Tandem.li';const m=document.getElementById('sName');if(m)m.value=S.setName;};
   const op=document.getElementById('openPlay');if(op)op.onchange=e=>{readSetFile(e.target.files[0],'play');e.target.value='';};
   const oe=document.getElementById('openEdit');if(oe)oe.onchange=e=>{readSetFile(e.target.files[0],'edit');e.target.value='';};
   const xi=document.getElementById('impXlsx');if(xi)xi.onchange=e=>{const f=e.target.files[0];if(f)importXlsx(f);e.target.value='';};
