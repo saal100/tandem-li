@@ -732,7 +732,7 @@ function homeHTML(){
         <div class="door-art">${ART_CLASS}</div>
         <h2>Für Lernende</h2>
         <p>Öffne das Tandemli, das du von deiner Lehrperson bekommen hast.</p>
-        <label class="btn-door caps">Tandemli öffnen<input type="file" id="openPlay" accept=".json,application/json,.html,text/html" style="display:none"></label>
+        <label class="btn-door caps">Tandemli öffnen<input type="file" id="openPlay" style="display:none"></label>
       </section>
       ${drawerHTML('ln')}
       </div>
@@ -1024,7 +1024,7 @@ function setupHTML(){
         <div class="start-opts">
           <button class="opt-card" data-a="focusManual"><span class="opt-t">Von Hand eintippen</span><span class="opt-d">Aufgabe und Musterlösung unten eingeben — eine nach der anderen.</span></button>
           <label class="opt-card"><span class="opt-t">Aus Excel importieren</span><span class="opt-d">Spalte A: Aufgabe · B: Musterlösung · C (optional): Coaching-Hinweis. Zeile 1 ist die Kopfzeile.</span><input type="file" accept=".xlsx,.xls,.csv" id="impXlsx" style="display:none"></label>
-          <label class="opt-card"><span class="opt-t">Gespeichertes Tandemli öffnen</span><span class="opt-d">Ein früher gespeichertes Tandemli laden und weiterbearbeiten.</span><input type="file" accept=".json,application/json,.html,text/html" id="openEdit" style="display:none"></label>
+          <label class="opt-card"><span class="opt-t">Gespeichertes Tandemli öffnen</span><span class="opt-d">Ein früher gespeichertes Tandemli laden und weiterbearbeiten.</span><input type="file" id="openEdit" style="display:none"></label>
         </div>
         <p class="opts-note">Die drei Wege lassen sich kombinieren: z.&nbsp;B. Excel importieren und dann von Hand ergänzen. · <button class="link-btn" data-a="showPrompt">Excel-Tabelle von einer KI erstellen lassen? Hier ist ein Prompt</button></p>
         ${S.showPrompt?promptModalHTML():''}
@@ -1102,7 +1102,7 @@ function setupHTML(){
               <p class="embed-t">Lade Tandem.li als Datei auf deinen Laptop. Mit einem Doppelklick öffnest du es im Browser – Erstellen, Speichern und Spielen funktionieren dann ohne Internet.</p>
               <button class="btn" data-a="downloadApp">⬇ Tandem.li herunterladen</button>
               <p class="embed-note">Nur für Laptops und Desktops. Lade die Datei ab und zu neu herunter, damit du die neuesten Verbesserungen hast.</p>
-              <p class="embed-json"><strong>Was ist eigentlich eine .tandem.json-Datei?</strong> Eine ganz gewöhnliche Textdatei. Darin stehen dein Titel, die Anweisung und die Aufgaben – sonst nichts. Wir verwenden dieses Format, weil es winzig ist, auf jedem Gerät funktioniert und sich sowohl auf tandem.li als auch in der heruntergeladenen Version öffnen lässt. Und: Die Datei gehört dir. Sie liegt auf deinem Gerät, nicht auf einem fremden Server.</p>
+              <p class="embed-json"><strong>Was ist eigentlich eine Tandemli-Datei (.json)?</strong> Eine ganz gewöhnliche Textdatei. Darin stehen dein Titel, die Anweisung und die Aufgaben – sonst nichts. Wir verwenden dieses Format, weil es winzig ist, auf jedem Gerät funktioniert und sich sowohl auf tandem.li als auch in der heruntergeladenen Version öffnen lässt. Und: Die Datei gehört dir. Sie liegt auf deinem Gerät, nicht auf einem fremden Server.</p>
             </div>
           </div>
         </details>
@@ -1292,9 +1292,9 @@ function saveSet(){
   if(!S.pairs.length)return;
   const data={format:'tandem.li',version:1,titel:S.setName||'',anweisung:S.anweisung||'',
     aufgaben:S.pairs.map(p=>({frage:p.frage,loesung:p.loesung,hinweis:p.hinweis||''}))};
-  dl(JSON.stringify(data,null,2),fileBase()+'.tandem.json','application/json');
+  dl(JSON.stringify(data,null,2),((S.setName||'').trim()?fileBase():'Mein')+'-tandemli.json','application/json');
 }
-// Liest neue Set-Dateien (.tandem.json) und — zur Übernahme alter Sets — auch bisherige HTML-Exporte
+// Liest Set-Dateien (-tandemli.json, ältere .tandem.json – die Endung spielt keine Rolle, gelesen wird der Inhalt) und — zur Übernahme alter Sets — auch bisherige HTML-Exporte
 function parseSetText(text){
   const t=String(text).replace(/^﻿/,'').trim();
   let d=null;
@@ -1318,7 +1318,7 @@ function readSetFile(file,target){
     try{set=parseSetText(ev.target.result);}
     catch(e){alert(e.message==='empty'
       ?'In dieser Datei wurden keine Aufgaben gefunden.'
-      :'Diese Datei ist kein Tandemli.\nBitte wähle eine Datei, die auf «.tandem.json» endet.');return;}
+      :'Diese Datei ist kein Tandemli.\nBitte wähle die Tandemli-Datei, die du gespeichert oder bekommen hast.');return;}
     if(target==='play'){
       Object.assign(S,set,{mode:'student',showInfo:false});
       Object.assign(S,{idx:0,showSol:false,scored:false,scoresL:[],scoresR:[],lastPts:null,showAnw:{left:false,right:false},phase:'intro'});
