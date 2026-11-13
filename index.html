@@ -509,10 +509,37 @@ h1,h2,h3,.tile h3,.door h2{overflow-wrap:break-word;hyphens:auto}
   .grid2{grid-template-columns:1fr}
   .flow-label{font-size:12px}
 }
+
+#printArea{display:none}
+.intro-print{text-align:center;font-size:var(--fs-xs);color:var(--ink3);margin:14px 0 0}
+.intro-print .link-btn{font-size:inherit;font-weight:400;color:var(--ink2)}
+@media print{
+  @page{size:A4;margin:14mm 12mm}
+  body{background:#fff!important}
+  body>*:not(#printArea){display:none!important}
+  #printArea{display:block!important}
+  .pb{font-family:inherit;color:#141414;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .pb-how{font-size:9.5pt;font-weight:700;color:#666;margin:0 0 2pt}
+  .pb-title{font-size:24pt;margin:0 0 6pt;line-height:1.15;text-transform:none;letter-spacing:0;font-family:Arial,Helvetica,sans-serif;font-weight:700}
+  .pb-anw{font-size:13pt;margin:0 0 14pt}
+  .pb-tab{width:100%;border-collapse:collapse;table-layout:fixed;border:1pt dashed #999}
+  .pb-tab th{background:#141414;color:#fff;font-size:16pt;letter-spacing:.12em;text-transform:uppercase;text-align:left;padding:4pt 10pt}
+  .pb-tab th:first-child,.pb-tab td:first-child{border-right:1pt dashed #999}
+  .pb-tab tr{break-inside:avoid;page-break-inside:avoid}
+  .pb-tab td{vertical-align:top;padding:8pt 10pt;border-bottom:1pt dashed #999}
+  .pb-tab thead{display:table-header-group}
+  .pb-task>*{margin:0}
+  .pb-task .pb-lab,.pb-sol .pb-lab{font-size:7.5pt;letter-spacing:.12em;text-transform:uppercase;color:#777;margin:0 0 3pt}
+  .pb-task{position:relative}
+  .pb-task .pb-q{background:#F9EC5A;border:1.5pt solid #141414;border-radius:6pt;padding:7pt 9pt;font-weight:700;font-size:11.5pt;line-height:1.35}
+  .pb-sol .pb-a{font-size:10pt;margin:0 0 4pt;line-height:1.35}
+  .pb-sol .pb-h{font-size:9pt;color:#444;font-style:italic;margin:0;line-height:1.35}
+}
 </style>
 </head>
 <body>
 <div id="app"></div>
+<div id="printArea" aria-hidden="true"></div>
 <script src="vendor/xlsx.full.min.js" id="xlsxLib"></script>
 <script>
 const EMBEDDED = null;
@@ -711,7 +738,7 @@ function drawerHTML(k){
         <ol class="howto">
           <li><span class="step-n">1</span><span>Oben auf <strong>«Tandemli erstellen»</strong> klicken, Titel und Aufgaben mit Musterlösungen eingeben.</span></li>
           <li><span class="step-n">2</span><span><strong>«Tandemli speichern»</strong> – das Tandemli landet als Datei auf deinem Gerät.</span></li>
-          <li><span class="step-n">3</span><span>Die Datei mit der Klasse teilen: in Teams, per Mail oder auf der Lernplattform.</span></li>
+          <li><span class="step-n">3</span><span>Die Datei mit der Klasse teilen: in Teams, per Mail oder auf der Lernplattform. Oder das Tandemli als Tandembogen ausdrucken.</span></li>
         </ol>
         ${vthumbHTML('lp')}`;
   return`<div class="drawer${open?' open':''}" id="drawer-${k}">
@@ -830,6 +857,7 @@ function siteHTML(){
    ['Auch bei wackligem WLAN','Pro Zweierteam braucht es nur ein Gerät, ein Blatt als Sichtschutz und das Tandemli der Lehrperson. Einmal geladen, läuft jedes Tandemli auch ohne Internetverbindung weiter.'],
    ['In wenigen Minuten erstellt','<p>Tandemübungen auf Papier herzustellen ist aufwendig, und eine Software, mit der Lehrpersonen selbst Tandemübungen erstellen können, fehlte. Mit Tandem.li erstellst du eine Tandemübung in wenigen Minuten – von Hand, aus einer Excel-Tabelle oder <button class="link-btn" data-a="showPrompt">mit Hilfe einer KI</button>.</p>'],
    ['Für jedes Fach und jede Stufe','Vom Erinnern von Fakten bis zum Erfinden eigener Stilmittel: Tandemli funktionieren auf allen Stufen der Lernziel-Taxonomie – überall, wo es Musterlösungen oder klare Kriterien gibt.'],
+   ['Auch auf Papier','Jedes Tandemli lässt sich als Tandembogen ausdrucken: Blatt in der Mitte falten, und los geht’s – ganz ohne Geräte. Als Word-Datei kannst du den Bogen vorher noch anpassen. Am Ende bleibt eine Sammlung mit Aufgaben, Lösungen und Hinweisen zum Wiederholen.'],
    ['Deine Tandemli gehören dir','Jedes Tandemli wird als kleine Datei auf deinem Gerät gespeichert. Du kannst es jederzeit wieder öffnen, weiterbearbeiten und mit Kolleg:innen teilen.']
   ];
   const faq=[
@@ -839,7 +867,7 @@ function siteHTML(){
      <p>In der Webapp von «Tocca a te!» arbeiten die Lernenden an zwei eigenen Geräten, die miteinander verbunden sind. Dafür braucht es einen Server und eine deutlich komplexere Software. Tandem.li verzichtet bewusst darauf. So kann es keine Verbindungsprobleme geben, und Aufgabe und Lösung passen immer zusammen.</p>`],
    ['Woher kommt das Tandem-Format?',`<p>Partnerübungen mit verdeckter Lösung sind im Fremdsprachenunterricht seit Jahrzehnten bekannt, zum Beispiel als «Tandembogen». In der Zürcher Fremdsprachendidaktik hat die Fachdidaktikerin Anita Pfau die «Tandemaufgabe» geprägt und über 30 Jahre lang verbreitet: Zwei Lernende lösen abwechselnd eine Aufgabe, während die andere Person mit der Musterlösung coacht. Das Italienischlehrmittel Tracce.ch (Alloatti, Heierli, Tarantino 2012–13) enthält solche Tandemformate.</p>
      <p>2020 wurde das Papierformat erstmals digital umgesetzt – in der Webapp des Lehrmittels <a href="https://www.tocca-a-te.ch" target="_blank" rel="noopener">«Tocca a te!»</a> (HEP Verlag), bisher als einziges Lehrmittel in der Schweiz mit diesem Aufgabentyp. Viele Lehrpersonen wünschten sich seither eine App, mit der sie eigene Inhalte erstellen können – doch Serverkosten, Wartung und eine datenschutzkonforme Infrastruktur hätten eine dauerhafte Finanzierung erfordert.</p>
-     <p>Mit KI-gestütztem Vibe-Coding (mit Claude) liess sich dieser Wunsch 2026 erfüllen: Tandem.li läuft komplett im Browser, ohne Server.</p>
+     <p>Mit KI-gestütztem Vibe-Coding (mit Claude) liess sich dieser Wunsch 2026 erfüllen: Tandem.li läuft komplett im Browser, ohne Server. Und weil das Papier nach wie vor seinen Platz hat, lässt sich jedes Tandemli auch wieder als Tandembogen ausdrucken.</p>
      <p>Warum das Format motiviert, erklärt die Selbstbestimmungstheorie von Deci und Ryan. Sie nennt drei Grundbedürfnisse, die Lernen antreiben: Kompetenz, soziale Eingebundenheit und Autonomie. Im Tandem erleben sich beide abwechselnd als Expertin oder Experte und sind aufeinander angewiesen. Autonomie zeigt sich beim Coachen: Man entscheidet selbst, wie man hilft – und ob man die Lösung gleich aufdeckt oder zuerst selbst versucht, die Aufgabe zu lösen. Die Punkte wirken dabei sowohl als Rückmeldung als auch als Belohnung und stärken so das Kompetenzerleben.</p>`],
    ['Was kostet Tandem.li?','Nichts.'],
    ['Brauchen meine Schüler:innen einen Account? Wo werden die Daten gespeichert?','Nein. Kein Login, keine Registrierung, keine E-Mail-Adresse. Tandem.li läuft komplett im Browser, und die Tandemli liegen als Dateien bei euch. Tandem.li selbst erhebt keine Personendaten, und die Tandemli werden nie auf einen Server übertragen.'],
@@ -853,7 +881,7 @@ function siteHTML(){
    ['Kann ich Audios einbauen?','Nein. Tandem.li ist bewusst rein textbasiert und kommt ohne Server aus. Audios müssten irgendwo gespeichert werden: auf einem Server oder in der Tandemli-Datei, die dadurch sehr gross würde. Dafür bleibt Tandem.li schlank und datenschutzfreundlich, denn es werden keine Daten übertragen oder gespeichert.'],
    ['Kann ich Links einfügen?','Ja. Schreib die Webadresse einfach in die Aufgabe, die Musterlösung oder den Hinweis, zum Beispiel https://www.srf.ch/… Tandem.li zeigt davon nur den Namen der Website an («srf.ch ↗»). Ein Klick öffnet die Seite in einem neuen Tab, das Tandemli läuft im Hintergrund weiter. Links funktionieren nur mit Internetverbindung.'],
    ['Kann ich meine Tandemli später weiterbearbeiten?','Ja. Unter «Tandemli erstellen» → «Gespeichertes Tandemli öffnen» öffnest du ein bereits gespeichertes Tandemli wieder, kannst es ändern und neu abspeichern. Zusätzlich lässt es sich als Excel-Datei speichern, mit Titel und Anweisung.'],
-   ['Welche Geräte brauche ich im Unterricht?','Pro Zweierteam ein Gerät mit Browser (Laptop, Tablet) und einen einfachen Sichtschutz – ein aufgestelltes Buch oder Mäppli genügt, damit beide nur ihre Hälfte des Bildschirms sehen.'],
+   ['Welche Geräte brauche ich im Unterricht?','<p>Pro Zweierteam ein Gerät mit Browser (Laptop, Tablet) und einen einfachen Sichtschutz – ein aufgestelltes Buch oder Mäppli genügt, damit beide nur ihre Hälfte des Bildschirms sehen.</p><p>Es geht auch ganz ohne Geräte: Jedes Tandemli lässt sich als Tandembogen ausdrucken (unter «Tandemli speichern» oder beim Öffnen eines Tandemli). Das Blatt wird in der Mitte gefaltet, und jede Person sieht nur ihre Spalte. Als Word-Datei kannst du den Bogen vorher anpassen.</p>'],
    ['Wie baue ich einen Sichtschutz?',`<p>Wichtig ist nur, dass A die rechte und B die linke Hälfte des Bildschirms nicht sehen kann. Dafür gibt es drei Möglichkeiten:</p>
      <ul class="faq-list">
        <li><strong>Sofort:</strong> ein Buch oder ein Mäppli senkrecht auf den schwarzen Streifen in der Mitte stellen.</li>
@@ -946,6 +974,7 @@ function introHTML(){
         <button class="btn-los" data-a="startGame">Los!</button>
       </div>
     </div>
+    <p class="intro-print">Lieber auf Papier? <button class="link-btn" data-a="printBogen">Als Tandembogen drucken</button> · <button class="link-btn" data-a="wordBogen">als Word-Datei</button> (zum Anpassen)</p>
     ${infoModalHTML()}
   </div>`;
 }
@@ -1066,6 +1095,7 @@ function setupHTML(){
         <button class="btn btn-ink btn-full" data-a="saveSet" ${c===0?'disabled':''}>⬇ Tandemli speichern</button>
         <p class="save-sub"><strong>Diese Datei teilst du mit deinen Lernenden.</strong><br>Damit kannst du dein Tandemli auch später weiterbearbeiten.</p>
         <p class="xlsx-link"><button class="link-btn" data-a="exportXlsx" ${c===0?'disabled':''}>Aufgaben als Excel speichern</button> (zum Bearbeiten in Excel)</p>
+        <p class="xlsx-link" style="margin-top:6px"><button class="link-btn" data-a="printBogen" ${c===0?'disabled':''}>Als Tandembogen drucken</button> (für die Arbeit auf Papier) · <button class="link-btn" data-a="wordBogen" ${c===0?'disabled':''}>als Word-Datei</button> (zum Anpassen)</p>
       </div>
     </div>
 
@@ -1340,6 +1370,48 @@ function downloadApp(){
     .then(js=>dl(base.replace(/<script src="[^"]*xlsx\.full\.min\.js"[^>]*><\/script>/,()=>'<script>'+js.replace(/<\/script/gi,'<\\/script')+'<\/script>'),'tandem-li.html','text/html'))
     .catch(()=>dl(base,'tandem-li.html','text/html'));
 }
+// Tandembogen: druckbare Fassung (Person A | Person B, abwechselnd Aufgabe / Lösung + Hinweis)
+function plainTxt(t){return esc(t||'').replace(/\n/g,'<br>');}
+function printBogen(){
+  const ps=S.pairs.filter(p=>(p.frage||'').trim());
+  if(!ps.length)return;
+  const task=(p,i)=>`<td class="pb-task"><p class="pb-lab">Aufgabe ${i+1}</p><p class="pb-q">${plainTxt(p.frage)}</p></td>`;
+  const sol=(p,i)=>`<td class="pb-sol"><p class="pb-lab">Lösung ${i+1}</p><p class="pb-a">${plainTxt(p.loesung)}</p>${(p.hinweis||'').trim()?`<p class="pb-h">💡 ${plainTxt(p.hinweis)}</p>`:''}</td>`;
+  const rows=ps.map((p,i)=>`<tr>${i%2===0?task(p,i)+sol(p,i):sol(p,i)+task(p,i)}</tr>`).join('');
+  document.getElementById('printArea').innerHTML=`
+    <div class="pb">
+      <div class="pb-head">
+        <p class="pb-how">Arbeitet zu zweit: Jede Person sieht nur ihre Spalte. Faltet dazu das Blatt in der Mitte oder deckt eine Spalte ab.</p>
+        ${S.setName?`<h1 class="pb-title">${esc(S.setName)}</h1>`:''}
+        ${(S.anweisung||'').trim()?`<p class="pb-anw">${plainTxt(S.anweisung)}</p>`:''}
+      </div>
+      <table class="pb-tab">
+        <thead><tr><th>Person A</th><th>Person B</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+  window.print();
+}
+// Tandembogen als Word-Datei (HTML mit .doc-Endung – Word, Pages und LibreOffice öffnen sie; keine Bibliothek nötig)
+function wordBogen(){
+  const ps=S.pairs.filter(p=>(p.frage||'').trim());
+  if(!ps.length)return;
+  const B='1pt dashed #999';
+  const cell=(inner,last)=>`<td style="width:50%;vertical-align:top;padding:8pt 10pt;border-bottom:${B};${last?'':'border-right:'+B+';'}">${inner}</td>`;
+  const lab=t=>`<p style="font-size:8pt;color:#777;margin:0 0 4pt;text-transform:uppercase;letter-spacing:1.5pt">${t}</p>`;
+  const task=(p,i)=>lab('Aufgabe '+(i+1))+`<table style="width:100%;border-collapse:collapse"><tr><td style="background:#F9EC5A;border:1.5pt solid #141414;padding:7pt 9pt;font-weight:bold;font-size:12pt">${plainTxt(p.frage)}</td></tr></table>`;
+  const sol=(p,i)=>lab('Lösung '+(i+1))+`<p style="font-size:11pt;margin:0 0 5pt">${plainTxt(p.loesung)}</p>`+((p.hinweis||'').trim()?`<p style="font-size:10pt;color:#444;font-style:italic;margin:0">💡 ${plainTxt(p.hinweis)}</p>`:'');
+  const rows=ps.map((p,i)=>'<tr>'+(i%2===0?cell(task(p,i),0)+cell(sol(p,i),1):cell(sol(p,i),0)+cell(task(p,i),1))+'</tr>').join('');
+  const th=(t,last)=>`<th style="width:50%;background:#141414;color:#fff;text-align:left;font-size:18pt;font-weight:bold;letter-spacing:2pt;padding:4pt 10pt;${last?'':'border-right:'+B+';'}">${t}</th>`;
+  const doc=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"><title>${esc(S.setName||'Tandembogen')}</title>
+<style>@page{size:21cm 29.7cm;margin:1.4cm 1.2cm}body{font-family:Arial,sans-serif;color:#141414}</style></head><body>
+<p style="font-size:10pt;font-weight:bold;color:#666;margin:0">Arbeitet zu zweit: Jede Person sieht nur ihre Spalte. Faltet dazu das Blatt in der Mitte oder deckt eine Spalte ab.</p>
+${S.setName?`<h1 style="font-size:26pt;font-weight:bold;margin:2pt 0 8pt">${esc(S.setName)}</h1>`:''}
+${(S.anweisung||'').trim()?`<p style="font-size:14pt;margin:0 0 16pt">${plainTxt(S.anweisung)}</p>`:''}
+<table style="width:100%;border-collapse:collapse;border:${B}"><tr>${th('PERSON A',0)}${th('PERSON B',1)}</tr>${rows}</table></body></html>`;
+  dl('﻿'+doc,((S.setName||'').trim()?fileBase():'Mein')+'-Tandembogen.doc','application/msword');
+}
+window.addEventListener('afterprint',()=>{const pa=document.getElementById('printArea');if(pa)pa.innerHTML='';});
 // Tandemli von einer Adresse laden (Beispiele und Links wie tandem.li/?tandem=beispiele/denksport.tandem.json)
 function loadFromUrl(url){
   if(location.protocol==='file:'){alert('Beispiele lassen sich nur auf der Website tandem.li direkt ausprobieren.\nLade das Beispiel mit «Herunterladen» herunter und öffne es dann mit «Tandemli öffnen».');return;}
@@ -1422,6 +1494,8 @@ function act(e){
       const sh=document.getElementById('mailShown');if(sh)sh.textContent=a;location.href='mai'+'lto:'+a;break;}
     case 'tryExample':loadFromUrl('beispiele/'+el.dataset.file);break;
     case 'downloadApp':downloadApp();break;
+    case 'printBogen':printBogen();break;
+    case 'wordBogen':wordBogen();break;
     case 'startGame':startGame();break;
     case 'add':{
       const f=(document.getElementById('nF')?.value||'').trim();
